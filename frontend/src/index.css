@@ -4,3 +4,26 @@
 body {
   font-family: 'Space Grotesk', sans-serif;
 }
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: #6b7280 !important;
+  margin: 0 7px !important;
+  transition: all 0.3s ease-in-out !important;
+  border-radius: 9999px !important;
+  
+}
+
+.swiper-pagination-bullet-active {
+  background: #ef4444 !important;
+  transform: scale(1.2) !important;
+}
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.swiper-pagination-bullet:hover {
+  background: #ef4444 !important;
+  transform: scale(1.2) !important;
+}
