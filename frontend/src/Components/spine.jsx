@@ -1,79 +1,88 @@
-import connection from "../assets/connection.webp"
-import cricket from "../assets/cricket.webp"
-import dance from "../assets/dance.webp"
-import gaming from "../assets/gaming.webp"
-import gym from "../assets/gym.webp"
-import music from "../assets/music.webp"
-import theatre from "../assets/theatre.webp"
-import swimming from "../assets/swimmingpool.png"
-import gamingicon from "../assets/gamingicon.svg"
-import gymicon from "../assets/gymicon.svg"
-import musicicon from "../assets/musicicon.svg"
-import theatreicon from "../assets/theatreicon.svg"
-import swimmingicon from "../assets/swimmingicon.svg"
-import connectionicon from "../assets/connectionicon.svg"
-import cricketicon from "../assets/cricketicon.svg"
-import danceicon from "../assets/danceicon.svg"
-
+import connection from "../assets/connection.webp";
+import cricket from "../assets/cricket.webp";
+import dance from "../assets/dance.webp";
+import gaming from "../assets/gaming.webp";
+import gym from "../assets/gym.webp";
+import music from "../assets/music.webp";
+import theatre from "../assets/theatre.webp";
+import swimming from "../assets/swimmingpool.png";
+import gamingicon from "../assets/gamingicon.svg";
+import gymicon from "../assets/gymicon.svg";
+import musicicon from "../assets/musicicon.svg";
+import theatreicon from "../assets/theatreicon.svg";
+import swimmingicon from "../assets/swimmingicon.svg";
+import connectionicon from "../assets/connectionicon.svg";
+import cricketicon from "../assets/cricketicon.svg";
+import danceicon from "../assets/danceicon.svg";
 
 const facilities = [
   {
     title: "SWIMMING POOL",
-    icon: "🏊",
+    icon: (
+      <img src={swimmingicon} alt="Swimming Icon" className="w-10 h-full" />
+    ),
     image: swimming,
     description:
       "Dive into the clear waters of the Majestic Swimming Pool. Relax your body and rejuvenate your mind through joyful swimming.",
   },
   {
     title: "INDOOR CRICKET",
-    icon: "🏏",
+    icon: (
+      <img
+        src={cricketicon}
+        alt="Indoor Cricket Icon"
+        className="w-10 h-full"
+      />
+    ),
     image: cricket,
     description:
       "Make the most of your leisure time at the All-Weather Indoor Pitch. Spark your inner sports spirit and give your best shot.",
   },
   {
     title: "GYMNASIUM",
-    icon: "💪",
+    icon: <img src={gymicon} alt="Gym Icon" className="w-10 h-full" />,
     image: gym,
     description:
       "Hit the multipurpose gym, train hard, and burn calories. Shape up with confidence — No Pain, No Gain.",
   },
   {
     title: "GAMING CENTER",
-    icon: "🎮",
+    icon: <img src={gamingicon} alt="Gaming Icon" className="w-10 h-full" />,
     image: gaming,
     description:
       "Enjoy a wide range of innovative games in our Gaming Center. Be an enthusiastic gamer — don’t just pause, start gaming.",
   },
   {
     title: "MINI-THEATRE",
-    icon: "🎬",
+    icon: <img src={theatreicon} alt="Theatre Icon" className="w-10 h-full" />,
     image: theatre,
     description:
       "Watch movies or cultural shows in the plush Mini-Theatre. Relax, entertain yourself, and create lasting memories.",
   },
   {
     title: "MUSIC & RECORDING STUDIO",
-    icon: "🎵",
+    icon: <img src={musicicon} alt="Music Icon" className="w-10 h-full" />,
     image: music,
     description:
       "Feel the beat and fuel your soul at the Music Studio. Record, connect, and unleash your musical talent.",
   },
   {
     title: "DANCE STUDIO & ART ROOM",
-    icon: "🩰",
+    icon: <img src={danceicon} alt="Dance Icon" className="w-10 h-full" />,
     image: dance,
     description:
       "Dance to your rhythm and express your creativity. Explore the world of art and let your imagination soar.",
   },
   {
     title: "CONNECTION LOUNGE",
-    icon: "☕",
+    icon: (
+      <img src={connectionicon} alt="Connection Icon" className="w-10 h-full" />
+    ),
     image: connection,
     description:
       "Take a breath and relax in the Connection Lounge. Unwind fully and recharge during your stay.",
   },
-]
+];
 
 const SpineExperience = () => {
   return (
@@ -81,12 +90,11 @@ const SpineExperience = () => {
       <div className="max-w-full mx-20">
         <div className="text-center mb-12">
           <h2 className="text-white text-4xl font-bold mb-4">
-            SPINE{" "}
-            <span className="text-red-400">Experience</span>
+            SPINE <span className="text-red-400">Experience</span>
           </h2>
           <p className="text-gray-300 max-w-3xl mx-auto">
-            5-level activity center with world-class facilities for sports, arts,
-            entertainment, and personal growth
+            5-level activity center with world-class facilities for sports,
+            arts, entertainment, and personal growth
           </p>
         </div>
         {/* Scrollable cards and fixed gradients */}
@@ -100,14 +108,12 @@ const SpineExperience = () => {
                 >
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center mb-3">
-                      <div className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                      <div className="rounded-full w-10 h-10 flex items-center justify-center mr-3">
                         <span className="text-white text-lg font-bold">
                           {facility.icon}
                         </span>
                       </div>
-                      <h3 className="text-lg font-bold">
-                        {facility.title}
-                      </h3>
+                      <h3 className="text-lg font-bold">{facility.title}</h3>
                     </div>
                     <p className="text-sm text-gray-700 ">
                       {facility.description}
@@ -136,7 +142,7 @@ const SpineExperience = () => {
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
     </section>
-  )
-}
+  );
+};
 
-export default SpineExperience
+export default SpineExperience;
