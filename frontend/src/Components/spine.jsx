@@ -6,6 +6,15 @@ import gym from "../assets/gym.webp"
 import music from "../assets/music.webp"
 import theatre from "../assets/theatre.webp"
 import swimming from "../assets/swimmingpool.png"
+import gamingicon from "../assets/gamingicon.svg"
+import gymicon from "../assets/gymicon.svg"
+import musicicon from "../assets/musicicon.svg"
+import theatreicon from "../assets/theatreicon.svg"
+import swimmingicon from "../assets/swimmingicon.svg"
+import connectionicon from "../assets/connectionicon.svg"
+import cricketicon from "../assets/cricketicon.svg"
+import danceicon from "../assets/danceicon.svg"
+
 
 const facilities = [
   {
