@@ -1,7 +1,6 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
 import Rocket from "../assets/Vector.png";
+import herobg from "../assets/herobg.svg";
 
 const HeroSection = () => {
   // Custom hook for animated counter
@@ -77,8 +76,15 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="bg-red-500 py-20 px-6">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="bg-red-500 py-20 px-6 relative overflow-hidden">
+      {/* Background image */}
+      <img
+        src={herobg}
+        alt="Hero Background"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none"
+        aria-hidden="true"
+      />
+      <div className="max-w-6xl mx-auto text-center relative z-10">
         {/* Main Heading */}
         <h1 className="text-black text-4xl font-bold md:text-7xl mb-3 mt-16 leading-tight">
           <span
@@ -175,11 +181,10 @@ const HeroSection = () => {
 
           <div ref={gradeRef}>
             <div
-              className={`text-5xl font-bold mb-2 transition-all duration-1000 ${
-                gradeVisible
+              className={`text-5xl font-bold mb-2 transition-all duration-1000 ${gradeVisible
                   ? "opacity-100 transform scale-100"
                   : "opacity-0 transform scale-75"
-              }`}
+                }`}
               style={{
                 background:
                   "var(--Golden, linear-gradient(135deg, #FEF3C7 0%, #F59E0B 84.62%))",
