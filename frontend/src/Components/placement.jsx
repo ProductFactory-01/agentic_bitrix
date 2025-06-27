@@ -49,7 +49,7 @@ const PlacementSection = () => {
             <div className="bg-red-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <span className="text-white text-2xl">🏆</span>
             </div>
-            <div className="text-4xl font-bold text-white mb-2">22</div>
+            <div className="text-4xl font-bold text-white mb-2">21 LPA</div>
             <div className="text-gray-300 font-semibold mb-2">Highest Package</div>
             <div className="text-gray-400 text-sm">Achieved by our Computer Science students in top tech companies</div>
           </div>
@@ -58,7 +58,7 @@ const PlacementSection = () => {
             <div className="bg-red-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <span className="text-white text-2xl">📊</span>
             </div>
-            <div className="text-4xl font-bold text-white mb-2">96%</div>
+            <div className="text-4xl font-bold text-white mb-2">96.5%</div>
             <div className="text-gray-300 font-semibold mb-2">Placement Rate</div>
             <div className="text-gray-400 text-sm">Industry-leading placement rate across all branches</div>
           </div>
@@ -67,9 +67,9 @@ const PlacementSection = () => {
             <div className="bg-red-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <span className="text-white text-2xl">🏢</span>
             </div>
-            <div className="text-4xl font-bold text-white mb-2">300+</div>
+            <div className="text-4xl font-bold text-white mb-2">454</div>
             <div className="text-gray-300 font-semibold mb-2">Company Partners</div>
-            <div className="text-gray-400 text-sm">Global tech giants and startups visit our 300+ companies</div>
+            <div className="text-gray-400 text-sm">Global tech giants and startups visit our college</div>
           </div>
         </div>
 

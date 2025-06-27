@@ -71,17 +71,22 @@ const InnovationEcosystem = () => {
               {innovationCards.map((card, idx) => (
                 <div
                   key={idx}
-                  className="bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 min-w-[370px] max-w-sm flex-shrink-0 shadow-lg flex flex-col justify-between h-[430px] scroll-snap-align-start border border-gray-700"
+                  className="bg-white rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 min-w-[370px] max-w-sm flex-shrink-0 shadow-lg flex flex-col justify-between h-[430px] scroll-snap-align-start border border-gray-700"
                 >
                   <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-white text-lg font-bold mb-3">
+                    <div className=" mb-4">
+                      <div className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center">
+                        <span className="text-white text-lg font-bold">🏢</span>
+                      </div>
+                    </div>
+                    <h3 className=" text-lg font-bold mb-3">
                       {card.title}
                     </h3>
                     <div
                       className="relative flex-1 mb-4 overflow-y-auto hide-vertical-scrollbar"
-                      style={{ maxHeight: "100px" }}
+                      style={{ maxHeight: "60px" }}
                     >
-                      <p className="text-gray-300 text-sm">
+                      <p className="text-sm">
                         {card.description}
                       </p>
                     </div>
@@ -96,11 +101,11 @@ const InnovationEcosystem = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="h-48 bg-gray-700">
+                  <div className="h-48 bg-white p-4 pt-0 flex items-center justify-center">
                     <img
                       src={card.image}
                       alt={card.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover rounded-lg"
                     />
                   </div>
                 </div>
