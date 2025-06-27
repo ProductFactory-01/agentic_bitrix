@@ -42,7 +42,7 @@ const AdmissionSection = () => {
           </button>
           <button
             onClick={handleApplyNow}
-            className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center"
+            className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center cursor-pointer "
           >
             <img src={Write} alt="" className="w-4 h-4 mr-2" />
             Apply Online Now
