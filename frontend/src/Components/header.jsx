@@ -16,7 +16,7 @@ const Header = () => {
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
           <div className="">
-            <div className="w-15 h-15 bg-red-500 rounded-full flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <img src={Logo || "/placeholder.svg"} alt="" />
             </div>
           </div>
