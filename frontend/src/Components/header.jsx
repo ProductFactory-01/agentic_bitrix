@@ -1,14 +1,16 @@
-
-"use client"
-import { useNavigate } from "react-router-dom"
-import Logo from "../../src/assets/sns-DxCft4QP 1.png"
+"use client";
+import Logo from "../../src/assets/sns-DxCft4QP 1.png";
 
 const Header = () => {
-  const navigate = useNavigate()
-
-  const handleNavigation = (path) => {
-    navigate(path)
-  }
+  const handleSmoothScroll = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   return (
     <header className=" px-6 py-4 fixed top-0 w-full shadow-lg z-50 backdrop-blur-md bg-transparent">
@@ -22,7 +24,9 @@ const Header = () => {
           </div>
           <div>
             <h1 className="text-white font-bold text-lg">SNSCT</h1>
-            <p className="text-white text-xs opacity-90">Design Thinking Excellence</p>
+            <p className="text-white text-xs opacity-90">
+              Design Thinking Excellence
+            </p>
           </div>
         </div>
 
@@ -37,31 +41,31 @@ const Header = () => {
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <button
-            onClick={() => handleNavigation("/")}
+            onClick={() => handleSmoothScroll("home")}
             className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
           >
             Home
           </button>
           <button
-            onClick={() => handleNavigation("/programs")}
+            onClick={() => handleSmoothScroll("programs")}
             className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
           >
             Programs
           </button>
           <button
-            onClick={() => handleNavigation("/innovation")}
+            onClick={() => handleSmoothScroll("innovation")}
             className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
           >
             Innovation
           </button>
           <button
-            onClick={() => handleNavigation("/placements")}
+            onClick={() => handleSmoothScroll("placements")}
             className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
           >
             Placements
           </button>
           <button
-            onClick={() => handleNavigation("/campus-life")}
+            onClick={() => handleSmoothScroll("campus-life")}
             className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
           >
             Campus Life
@@ -70,7 +74,7 @@ const Header = () => {
 
         {/* Apply Now Button */}
         <button
-          onClick={() => handleNavigation("/apply")}
+          onClick={() => handleSmoothScroll("apply")}
           className="bg-gradient-to-l from-yellow-400 to-orange-400 text-black font-semibold px-6 py-2 rounded-full hover:from-yellow-500 hover:to-orange-500 transition-all"
         >
           Apply Now 2025
@@ -80,14 +84,15 @@ const Header = () => {
       {/* Custom CSS for smooth zoom animation */}
       <style jsx>{`
         @keyframes pulse-zoom {
-          0%, 100% {
+          0%,
+          100% {
             transform: scale(1);
           }
           50% {
             transform: scale(1.05);
           }
         }
-        
+
         .animate-pulse-zoom {
           animation: pulse-zoom 2s ease-in-out infinite;
         }
@@ -105,7 +110,7 @@ const Header = () => {
         }
       `}</style>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
