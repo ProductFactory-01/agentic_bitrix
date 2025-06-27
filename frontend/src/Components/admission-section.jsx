@@ -1,6 +1,16 @@
+import admission from '../assets/admission.jpg';
+
 const AdmissionSection = () => {
   return (
     <section className="bg-red-500 py-16 px-6 relative overflow-hidden">
+      {/* Background Image Overlay */}
+      <img
+        src={admission}
+        alt="Admission"
+        className="absolute inset-0 w-full h-full object-cover opacity-30 z-0 pointer-events-none"
+        style={{ mixBlendMode: 'multiply' }}
+      />
+
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-red-400 rounded-full opacity-20 -translate-x-32 -translate-y-32"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-600 rounded-full opacity-20 translate-x-48 translate-y-48"></div>

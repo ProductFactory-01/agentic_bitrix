@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 
 const AcademicPrograms = () => {
-  const [programType, setProgramType] = useState('UG');
+  // Add state for UG program visibility
+  const [showAllUG, setShowAllUG] = useState(false);
+  // Change filter: no default selection
+  const [programType, setProgramType] = useState(null);
 
   const ugPrograms = [
     {
@@ -204,6 +207,10 @@ const AcademicPrograms = () => {
     </div>
   )
 
+  // Split UG programs for initial/extra display
+  const initialUGPrograms = ugPrograms.slice(0, 9);
+  const extraUGPrograms = ugPrograms.slice(9);
+
   return (
     <section className="bg-gray-900 py-20 px-6">
       <div className="max-w-7xl mx-auto">
@@ -218,27 +225,27 @@ const AcademicPrograms = () => {
         {/* Program Type Buttons */}
         <div className="flex justify-center space-x-4 mb-12">
           <button
-            className={`px-6 py-2 rounded-full font-semibold ${programType === 'UG' ? 'bg-red-500 text-white' : 'bg-gray-700 text-white hover:bg-red-500 transition-colors'}`}
-            onClick={() => setProgramType('UG')}
+            className={`px-6 py-2 rounded-full cursor-pointer font-semibold ${programType === 'UG' ? 'bg-red-500 text-white' : 'bg-gray-700 text-white hover:bg-red-500 transition-colors'}`}
+            onClick={() => setProgramType(programType === 'UG' ? null : 'UG')}
           >
             UG Programs
           </button>
           <button
-            className={`px-6 py-2 rounded-full font-semibold ${programType === 'PG' ? 'bg-red-500 text-white' : 'bg-gray-700 text-white hover:bg-red-500 transition-colors'}`}
-            onClick={() => setProgramType('PG')}
+            className={`px-6 py-2 rounded-full cursor-pointer font-semibold ${programType === 'PG' ? 'bg-red-500 text-white' : 'bg-gray-700 text-white hover:bg-red-500 transition-colors'}`}
+            onClick={() => setProgramType(programType === 'PG' ? null : 'PG')}
           >
             PG Programs
           </button>
           <button
-            className={`px-6 py-2 rounded-full font-semibold ${programType === 'PhD' ? 'bg-red-500 text-white' : 'bg-gray-700 text-white hover:bg-red-500 transition-colors'}`}
-            onClick={() => setProgramType('PhD')}
+            className={`px-6 py-2 rounded-full cursor-pointer font-semibold ${programType === 'PhD' ? 'bg-red-500 text-white' : 'bg-gray-700 text-white hover:bg-red-500 transition-colors'}`}
+            onClick={() => setProgramType(programType === 'PhD' ? null : 'PhD')}
           >
             PhD Programs
           </button>
         </div>
 
-        {/* Undergraduate Programs */}
-        {programType === 'UG' && (
+        {/* UG Programs: show if filter is UG or no filter */}
+        {(programType === 'UG' || programType === null) && (
           <div className="mb-16">
             <div className="flex items-center mb-8">
               <span className="text-red-400 text-2xl mr-3">🎓</span>
@@ -247,20 +254,30 @@ const AcademicPrograms = () => {
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {ugPrograms.map((program, index) => (
+              {(showAllUG ? ugPrograms : initialUGPrograms).map((program, index) => (
                 <ProgramCard key={index} program={program} />
               ))}
             </div>
-            {/* <div className="text-center mt-8">
-              <button className="border border-gray-600 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors">
-                📋 View All UG Programs
-              </button>
-            </div> */}
+            {/* +9 More Specialized Engineering Programs */}
+            {!showAllUG && (
+              <div className="text-center mt-6 mb-2">
+                <span className="text-gray-400 font-semibold text-lg">+ 9 More Specialized Engineering Programs</span>
+              </div>
+            )}
+            {/* View All UG Programs Button */}
+            {!showAllUG && (
+              <div className="text-center mt-2">
+                <button className="border border-gray-600 cursor-pointer text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors"
+                  onClick={() => setShowAllUG(true)}>
+                  View All UG Programs
+                </button>
+              </div>
+            )}
           </div>
         )}
 
-        {/* Postgraduate Programs */}
-        {programType === 'PG' && (
+        {/* PG Programs: show if filter is PG or no filter */}
+        {(programType === 'PG' || programType === null) && (
           <div className="mb-16">
             <div className="flex items-center mb-8">
               <span className="text-red-400 text-2xl mr-3">🎯</span>
@@ -273,16 +290,11 @@ const AcademicPrograms = () => {
                 <ProgramCard key={index} program={program} />
               ))}
             </div>
-            <div className="text-center mt-8">
-              <button className="border border-gray-600 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors">
-                📋 View All PG Programs
-              </button>
-            </div>
           </div>
         )}
 
-        {/* PhD Programs */}
-        {programType === 'PhD' && (
+        {/* PhD Programs: show if filter is PhD or no filter */}
+        {(programType === 'PhD' || programType === null) && (
           <div>
             <div className="flex items-center mb-8">
               <span className="text-red-400 text-2xl mr-3">🔬</span>

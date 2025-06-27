@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className=" px-6 py-4 fixed top-0 w-full shadow-lg z-50 backdrop-blur-md bg-transparent">
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
+      <div className="flex items-center justify-between max-w-full mx-28">
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
           <div className="">
@@ -27,7 +27,7 @@ const Header = () => {
             </div>
           </div>
           <div>
-            <h1 className="text-white font-bold text-lg">SNSCT</h1>
+            <h1 className="text-white font-bold text-lg">SNS College of Technology</h1>
             <p className="text-white text-xs opacity-90">
               Design Thinking Excellence
             </p>
