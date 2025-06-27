@@ -6,7 +6,7 @@ const AdmissionSection = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-600 rounded-full opacity-20 translate-x-48 translate-y-48"></div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <h2 className="text-white text-5xl font-bold mb-6">
+        <h2 className="text-white text-5xl font-semibold mb-6">
           Admission <span className="text-yellow-300">2025</span>
         </h2>
 
@@ -29,7 +29,7 @@ const AdmissionSection = () => {
         </div>
 
         {/* Scholarship Banner */}
-        <div className="bg-yellow-400 rounded-lg p-6 max-w-2xl mx-auto">
+        <div className="bg-transparent rounded-lg p-6 max-w-2xl mx-auto">
           <div className="flex items-center justify-center mb-2">
             <span className="text-2xl mr-3">🎓</span>
             <h3 className="text-black text-xl font-bold">₹70+ Lakh Scholarships Available</h3>
