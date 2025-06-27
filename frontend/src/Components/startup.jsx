@@ -1,7 +1,9 @@
+import startups from "../assets/startups.webp";
+
 const StartupSection = () => {
   return (
     <section className="bg-red-500 py-16 px-6">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-full mx-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
@@ -46,7 +48,7 @@ const StartupSection = () => {
           <div className="relative">
             <div className="rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mP3EmSUO98o5WurSgkAC2SDAQ1p5jE.png"
+                src={startups}
                 alt="Students working on AI startup projects"
                 className="w-full h-auto object-cover"
               />
