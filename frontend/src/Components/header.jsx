@@ -1,12 +1,23 @@
+
+"use client"
+import { useNavigate } from "react-router-dom"
+import Logo from "../../src/assets/sns-DxCft4QP 1.png"
+
 const Header = () => {
+  const navigate = useNavigate()
+
+  const handleNavigation = (path) => {
+    navigate(path)
+  }
+
   return (
     <header className=" px-6 py-4 fixed top-0 w-full shadow-lg z-50 backdrop-blur-md bg-transparent">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo Section */}
-        <div className="flex items-center space-x-4">
-          <div className="bg-white rounded-full p-2">
-            <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-bold">⚙</span>
+        <div className="flex items-center space-x-2">
+          <div className="">
+            <div className="w-15 h-15 bg-red-500 rounded-full flex items-center justify-center">
+              <img src={Logo || "/placeholder.svg"} alt="" />
             </div>
           </div>
           <div>
@@ -15,35 +26,84 @@ const Header = () => {
           </div>
         </div>
 
-        {/* TNEA Code */}
-        <div className="bg-yellow-100 px-4 py-2 rounded-full">
-          <span className="text-brown-800 font-semibold text-sm">⚙ TNEA Code: 2726</span>
+        {/* TNEA Code with Animation */}
+        <div className="bg-gradient-to-l from-amber-50 via-yellow-50 to-amber-100 px-4 py-2 rounded-full animate-pulse-zoom shadow-md">
+          <span className="text-amber-900 font-semibold text-sm flex items-center">
+            <span className="mr-2 text-amber-800">⚙</span>
+            TNEA Code: 2726
+          </span>
         </div>
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-white hover:text-yellow-200 transition-colors">
+          <button
+            onClick={() => handleNavigation("/")}
+            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
+          >
             Home
-          </a>
-          <a href="#" className="text-white hover:text-yellow-200 transition-colors">
+          </button>
+          <button
+            onClick={() => handleNavigation("/programs")}
+            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
+          >
             Programs
-          </a>
-          <a href="#" className="text-white hover:text-yellow-200 transition-colors">
+          </button>
+          <button
+            onClick={() => handleNavigation("/innovation")}
+            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
+          >
             Innovation
-          </a>
-          <a href="#" className="text-white hover:text-yellow-200 transition-colors">
+          </button>
+          <button
+            onClick={() => handleNavigation("/placements")}
+            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
+          >
             Placements
-          </a>
-          <a href="#" className="text-white hover:text-yellow-200 transition-colors">
+          </button>
+          <button
+            onClick={() => handleNavigation("/campus-life")}
+            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
+          >
             Campus Life
-          </a>
+          </button>
         </nav>
 
         {/* Apply Now Button */}
-        <button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-semibold px-6 py-2 rounded-full hover:from-yellow-500 hover:to-orange-500 transition-all">
+        <button
+          onClick={() => handleNavigation("/apply")}
+          className="bg-gradient-to-l from-yellow-400 to-orange-400 text-black font-semibold px-6 py-2 rounded-full hover:from-yellow-500 hover:to-orange-500 transition-all"
+        >
           Apply Now 2025
         </button>
       </div>
+
+      {/* Custom CSS for smooth zoom animation */}
+      <style jsx>{`
+        @keyframes pulse-zoom {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.05);
+          }
+        }
+        
+        .animate-pulse-zoom {
+          animation: pulse-zoom 2s ease-in-out infinite;
+        }
+
+        nav button {
+          font-size: inherit;
+          font-family: inherit;
+          outline: none;
+        }
+
+        nav button:focus {
+          outline: 2px solid rgba(255, 255, 255, 0.3);
+          outline-offset: 2px;
+          border-radius: 4px;
+        }
+      `}</style>
     </header>
   )
 }

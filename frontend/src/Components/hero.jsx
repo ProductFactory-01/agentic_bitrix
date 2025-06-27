@@ -3,8 +3,18 @@ const HeroSection = () => {
     <section className="bg-red-500 py-20 px-6">
       <div className="max-w-6xl mx-auto text-center">
         {/* Main Heading */}
-        <h1 className="text-white text-6xl md:text-7xl font-bold mb-6 leading-tight">
-          Redesigning
+        <h1 className="text-white text-4xl md:text-7xl mb-3 mt-16 leading-tight">
+          <span 
+            className="font-bold"
+            style={{
+              background: 'var(--Golden, linear-gradient(135deg, #FEF3C7 0%, #F59E0B 84.62%))',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
+            Redesigning
+          </span>
           <br />
           Common Minds
         </h1>
