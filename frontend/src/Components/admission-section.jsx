@@ -2,6 +2,11 @@ import admission from "../assets/admission.jpg";
 import Call from "../assets/svg.png";
 import Write from "../assets/svg (1).png";
 import Mark from "../assets/cvm.png";
+
+const handleApplyNow = () => {
+  window.open("https://main.snsgroups.com/EnquiryNow/", "_blank");
+};
+
 const AdmissionSection = () => {
   return (
     <section className="bg-red-500 py-30 px-6 relative overflow-hidden">
@@ -35,7 +40,10 @@ const AdmissionSection = () => {
           <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-red-500 transition-colors flex items-center justify-center">
             <img src={Call} alt="" className="w-4 h-4 mr-2" /> Call: 9003665865
           </button>
-          <button className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center">
+          <button
+            onClick={handleApplyNow}
+            className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center"
+          >
             <img src={Write} alt="" className="w-4 h-4 mr-2" />
             Apply Online Now
           </button>
