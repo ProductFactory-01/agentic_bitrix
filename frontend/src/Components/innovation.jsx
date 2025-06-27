@@ -1,3 +1,5 @@
+import ARVR from "../assets/arvrlab.jpg";
+
 const InnovationEcosystem = () => {
   return (
     <section className="bg-gray-800 py-20 px-6">
@@ -7,8 +9,8 @@ const InnovationEcosystem = () => {
             Innovation <span className="text-red-400">Ecosystem</span>
           </h2>
           <p className="text-gray-300 max-w-3xl mx-auto">
-            Experience cutting-edge technology labs where tomorrow's innovators build solutions for real-world
-            challenges
+            Experience cutting-edge technology labs where tomorrow's innovators
+            build solutions for real-world challenges
           </p>
         </div>
 
@@ -19,20 +21,35 @@ const InnovationEcosystem = () => {
               <div className="bg-red-500 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <span className="text-white text-xl">🤖</span>
               </div>
-              <h3 className="text-white text-xl font-bold mb-3">AI/ML Innovation Lab</h3>
-              <p className="text-gray-300 text-sm mb-4">
-                State-of-the-art artificial intelligence and machine learning lab with GPU clusters, MLOps
-                infrastructure, and cutting-edge research facilities.
+              <h3 className="text-white text-xl font-bold mb-3">
+                AI/ML Innovation Lab
+              </h3>
+              <p className="text-gray-300 text-sm mb-4 ">
+                I-TECH LABS (AR /VR, AI, DS, AM) The ‘iTech Labs’ are an
+                inter-disciplinary research space dedicated for ideating and
+                developing innovative solutions for pressing problems. The iHub
+                team supports incubates with technological access to those who
+                are passionate towards problem solving and commercializing their
+                ideas. The iHub team works incessantly under the five dedicated
+                innovation labs, viz., AR/VR, Internet of Things, Artificial
+                Intelligence, Machine Learning, Robotics and Automation and
+                Additive manufacturing.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">Deep Learning</span>
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">Computer Vision</span>
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">NLP</span>
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
+                  AR & VR
+                </span>
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
+                  Internet of Things
+                </span>
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
+                  AIML
+                </span>
               </div>
             </div>
             <div className="h-48 bg-gray-700">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DtDebi2FgxCP1jfqU58xJZ0yptN8zG.png"
+                src={ARVR}
                 alt="AI/ML Innovation Lab"
                 className="w-full h-full object-cover"
               />
@@ -45,15 +62,23 @@ const InnovationEcosystem = () => {
               <div className="bg-red-500 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <span className="text-white text-xl">🦾</span>
               </div>
-              <h3 className="text-white text-xl font-bold mb-3">Advanced Robotics Lab</h3>
+              <h3 className="text-white text-xl font-bold mb-3">
+                Advanced Robotics Lab
+              </h3>
               <p className="text-gray-300 text-sm mb-4">
-                Build autonomous robots, drones, and IoT systems with industry-grade equipment and mentorship from
-                robotics experts.
+                Build autonomous robots, drones, and IoT systems with
+                industry-grade equipment and mentorship from robotics experts.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">Autonomous Systems</span>
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">IoT</span>
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">Drones</span>
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
+                  Autonomous Systems
+                </span>
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
+                  IoT
+                </span>
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
+                  Drones
+                </span>
               </div>
             </div>
             <div className="h-48 bg-gray-700">
@@ -71,15 +96,24 @@ const InnovationEcosystem = () => {
               <div className="bg-red-500 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <span className="text-white text-xl">💡</span>
               </div>
-              <h3 className="text-white text-xl font-bold mb-3">Design Thinking Studio</h3>
+              <h3 className="text-white text-xl font-bold mb-3">
+                Design Thinking Studio
+              </h3>
               <p className="text-gray-300 text-sm mb-4">
-                Revolutionary design thinking lab where students ideate, prototype, and iterate solutions using
-                human-centered design principles.
+                Revolutionary design thinking lab where students ideate,
+                prototype, and iterate solutions using human-centered design
+                principles.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">UI/UX Design</span>
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">Prototyping</span>
-                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">Innovation</span>
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
+                  UI/UX Design
+                </span>
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
+                  Prototyping
+                </span>
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs">
+                  Innovation
+                </span>
               </div>
             </div>
             <div className="h-48 bg-gray-700">
@@ -93,7 +127,7 @@ const InnovationEcosystem = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default InnovationEcosystem
+export default InnovationEcosystem;
