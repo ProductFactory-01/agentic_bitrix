@@ -146,9 +146,9 @@ const AcademicPrograms = () => {
   )
 
   return (
-    <section className="bg-gray-900 py-16 px-6">
+    <section className="bg-gray-900 py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-5">
           <h2 className="text-white text-4xl font-bold mb-4">Academic Programs</h2>
           <p className="text-gray-300 max-w-3xl mx-auto">
             Choose from <span className="text-red-400">18 comprehensive programs</span> designed to shape future

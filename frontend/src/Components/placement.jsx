@@ -32,7 +32,7 @@ const PlacementSection = () => {
   ]
 
   return (
-    <section className="bg-gray-900 py-16 px-6">
+    <section className="bg-gray-900 py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-white text-4xl font-bold mb-4">
