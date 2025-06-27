@@ -12,6 +12,10 @@ const Header = () => {
     }
   };
 
+   const handleApplyNow = () => {
+    window.open("https://main.snsgroups.com/EnquiryNow/", "_blank")
+  }
+
   return (
     <header className=" px-6 py-4 fixed top-0 w-full shadow-lg z-50 backdrop-blur-md bg-transparent">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
@@ -31,7 +35,7 @@ const Header = () => {
         </div>
 
         {/* TNEA Code with Animation */}
-        <div className="bg-gradient-to-l from-amber-50 via-yellow-50 to-amber-100 px-4 py-2 rounded-full animate-pulse-zoom shadow-md">
+        <div className="bg-gradient-to-r from-[#FEF3C7] via-yellow-10 to-[#F59E0B] px-4 py-2 rounded-full animate-pulse-zoom shadow-md">
           <span className="text-amber-900 font-semibold text-sm flex items-center">
             <span className="mr-2 text-amber-800">⚙</span>
             TNEA Code: 2726
@@ -74,8 +78,8 @@ const Header = () => {
 
         {/* Apply Now Button */}
         <button
-          onClick={() => handleSmoothScroll("apply")}
-          className="bg-gradient-to-l from-yellow-400 to-orange-400 text-black font-semibold px-6 py-2 rounded-full hover:from-yellow-500 hover:to-orange-500 transition-all"
+           onClick={handleApplyNow}
+          className="bg-gradient-to-l from-yellow-400 to-orange-400 text-black font-semibold px-6 py-2 rounded-full hover:from-yellow-500 hover:to-orange-500 transition-all cursor-pointer"
         >
           Apply Now 2025
         </button>
