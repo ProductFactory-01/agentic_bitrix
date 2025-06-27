@@ -3,12 +3,14 @@ import Facebook from "../assets/Link [w-10].png";
 import Twitter from "../assets/Link [w-10] (1).png";
 import LinkedIn from "../assets/Link [w-10] (2).png";
 import YouTube from "../assets/Link [w-10] (3).png";
-
+import Call from "../assets/call.png";
+import CallTele from "../assets/call-tele.png";
+import Email from "../assets/email.png";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 py-12 px-5">
       <div className="max-full mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-5 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8">
           {/* Logo and Contact */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
@@ -91,96 +93,93 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
           {/* Resources */}
           <div>
-            <h4 className="text-red-600 font-semibold mb-4">COLLEGES</h4>
+            <h4 className="text-red-600 font-semibold mb-4">DIFFERENTIATORS</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  SNS ACADEMY - A Fingerprint International CBSE School
+                <a
+                  href="https://main.snsgroups.com/##"
+                  className="hover:text-white transition-colors"
+                >
+                  Design Thinking Based Curriculum
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  DR. SNS RAJALAKSHMI COLLEGE OF ARTS AND SCIENCE
+                <a
+                  href="https://main.snsgroups.com/##"
+                  className="hover:text-white transition-colors"
+                >
+                  Center for Learning and Teaching
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  SNS COLLEGE OF TECHNOLOGY
+                <a
+                  href="https://main.snsgroups.com/##"
+                  className="hover:text-white transition-colors"
+                >
+                  Skill and Career Development
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  SNS COLLEGE OF ENGINEERING
+                <a
+                  href="https://main.snsgroups.com/##"
+                  className="hover:text-white transition-colors"
+                >
+                  Industry Institute Partnership Cell
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  SNS COLLEGE OF PHARMACY AND HEALTH SCIENCES
+                <a
+                  href="https://main.snsgroups.com/##"
+                  className="hover:text-white transition-colors"
+                >
+                  Centre for Creativity
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  SNS COLLEGE OF ALLIED HEALTH SCIENCES
+                <a
+                  href="https://main.snsgroups.com/##"
+                  className="hover:text-white transition-colors"
+                >
+                  Social Responsibility Initiative
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  SNS COLLEGE OF PHYSIOTHERAPY
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  SNS COLLEGE OF NURSING
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  SNS B-SPINE - AN EXPERIENTIAL B SCHOOL
+                <a
+                  href="https://snsspine.in/"
+                  className="hover:text-white transition-colors"
+                >
+                  SNS SPINE
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Resources */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">RESOURCES</h4>
-            <ul className="space-y-2 text-gray-300 text-sm">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  AI/ML Labs
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Robotics Lab
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Design Studio
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Startup Incubation
-                </a>
-              </li>
-            </ul>
-          </div>
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-4">CONTACT</h4>
+            <h4 className="text-red-600 font-semibold mb-4">CONTACT</h4>
             <div className="space-y-3 text-gray-300 text-sm">
-              <div className="flex items-start">
-                <span className="text-red-400 mr-2">🏢</span>
-                <span>SNS College of Technology, Coimbatore, Tamil Nadu</span>
+              <div className="flex items-start ">
+                <img src={Call} alt="Call Icon" className="w-4 h-full mr-2" />
+                <span>
+                  SNS Kalvi Nagar, Sathy Main Road (NH-209), Vazhiyampalayam,
+                  Saravanampatti Post, 
+                  <br />
+                  Coimbatore - 641 035, Tamil Nadu.
+                </span>
               </div>
               <div className="flex items-center">
-                <span className="text-red-400 mr-2">📞</span>
-                <span>[email protected]</span>
+                <img
+                  src={CallTele}
+                  alt="Calltele Icon"
+                  className="w-4 h-full mr-2"
+                />
+                <span>+91 75503 16701</span>
+              </div>
+              <div className="flex items-center">
+                <img src={Email} alt="email Icon" className="w-4 h-full mr-2" />
+                <span>snsct@snsgroups.com</span>
               </div>
             </div>
           </div>
@@ -190,7 +189,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-gray-400 text-sm">
             © 2025 SNS College of Technology. All rights reserved. | Redesigning
-            Common Minds Through Knowledge
+            Common Minds Through Innovation
           </p>
         </div>
       </div>

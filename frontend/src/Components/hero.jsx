@@ -78,7 +78,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="bg-red-500 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center">
+    <section className="bg-red-600 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center">
       {/* Background image */}
       <img
         src={herobg || "/placeholder.svg"}
