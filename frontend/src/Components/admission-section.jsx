@@ -10,10 +10,10 @@ const AdmissionSection = () => {
           Admission <span className="text-yellow-300">2025</span>
         </h2>
 
-        <p className="text-white text-lg mb-8 leading-relaxed">
+        <p className="text-white opacity-90 text-lg mb-8 leading-relaxed">
           Join India's most innovative engineering college. Limited seats available for{" "}
           <span className="font-semibold">18 UG Programs</span>, <span className="font-semibold">10 PG Programs</span>,
-          and <span className="font-semibold">5 PhD Programs</span>
+          <span className="text-white opacity-90"> and </span><span className="font-semibold">5 PhD Programs</span>
         </p>
 
         {/* CTA Buttons */}
