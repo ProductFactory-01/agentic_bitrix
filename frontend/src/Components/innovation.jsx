@@ -4,6 +4,7 @@ import ibiliquidstudio from "../assets/ibiliquidstudio.jpg";
 import ihub from "../assets/ihub.jpg";
 import pistonfactory from "../assets/pistonfactory.jpeg";
 import productdesign from "../assets/productdesign.jpg";
+import Innovate from "../assets/Div [w-16]inovate.png"
 
 const innovationCards = [
   {
@@ -76,7 +77,7 @@ const InnovationEcosystem = () => {
                   <div className="p-6 flex flex-col flex-1">
                     <div className=" mb-4">
                       <div className="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center">
-                        <span className="text-white text-lg font-bold">🏢</span>
+                        <img src={Innovate} alt="" className="w-full h-full" />
                       </div>
                     </div>
                     <h3 className=" text-lg font-bold mb-3">

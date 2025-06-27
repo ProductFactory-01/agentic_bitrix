@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-
+import Grauvate from "../assets/graduvate.png";
+import Aerospace from "../assets/aerospace.png";
+import Artificial from "../assets/artificial.png";
+import Computer from "../assets/computer.png";
+import IOT from "../assets/iot.png";
+import Additive from "../assets/Additive manu.png";
+import Agricultural from "../assets/Agri.png";
 const AcademicPrograms = () => {
   // Add state for UG program visibility
   const [showAllUG, setShowAllUG] = useState(false);
@@ -165,37 +171,37 @@ const AcademicPrograms = () => {
     },
   ]
 
-  const programIcons = {
-    'AeroSpace Engineering': '✈️',
-    'Artificial Intelligence & Data Science': '🤖',
-    'Computer Science and Technology': '💻',
-    'IoT with Cyber Security & Blockchain': '🔗',
-    'Additive Manufacturing': '🖨️',
-    'Agricultural Engineering': '🌾',
-    'Food Technology': '🍎',
-    'Bio-Medical Engineering': '🧬',
-    'Computer Science and Design': '🎨',
-    'Artificial Intelligence & Machine Learning': '🧠',
-    'Automobile Engineering': '🚗',
-    'Computer Science and Engineering': '🖥️',
-    'Civil Engineering': '🏗️',
-    'Electronics and Communication Engineering': '📡',
-    'Electrical and Electronics Engineering': '⚡',
-    'Information Technology': '🌐',
-    'Mechanical Engineering': '⚙️',
-    'Mechatronics Engineering': '🤖',
-    'Embedded System Technologies': '🔌',
-    'Manufacturing Engineering': '🏭',
-    'Power System and Engineering': '🔋',
-    'Structural Engineering': '🏢',
-    'Thermal Engineering': '🔥',
-    'VLSI Design': '💾',
-  };
+const programIcons = {
+  'AeroSpace Engineering': <img src={Aerospace || "/placeholder.svg"} alt="Aerospace Icon" className="w-10 h-10 mr-0" />,
+  'Artificial Intelligence & Data Science': <img src={Artificial || "/placeholder.svg"} alt="Aerospace Icon" className="w-10 h-10 mr-0" />,
+  'Computer Science and Technology': <img src={Computer || "/placeholder.svg"} alt="Aerospace Icon" className="w-10 h-10 mr-0" />,
+  'IoT with Cyber Security & Blockchain': <img src={IOT || "/placeholder.svg"} alt="Aerospace Icon" className="w-10 h-10 mr-0" />,
+  'Additive Manufacturing': <img src={Additive || "/placeholder.svg"} alt="Aerospace Icon" className="w-10 h-10 mr-0" />,
+  'Agricultural Engineering': <img src={Agricultural || "/placeholder.svg"} alt="Aerospace Icon" className="w-10 h-10 mr-0" />,
+  'Food Technology': '🍎',
+  'Bio-Medical Engineering': '🧬',
+  'Computer Science and Design': '🎨',
+  'Artificial Intelligence & Machine Learning': '🧠',
+  'Automobile Engineering': '🚗',
+  'Computer Science and Engineering': '🖥️',
+  'Civil Engineering': '🏗️',
+  'Electronics and Communication Engineering': '📡',
+  'Electrical and Electronics Engineering': '⚡',
+  'Information Technology': '🌐',
+  'Mechanical Engineering': '⚙️',
+  'Mechatronics Engineering': '🤖',
+  'Embedded System Technologies': '🔌',
+  'Manufacturing Engineering': '🏭',
+  'Power System and Engineering': '🔋',
+  'Structural Engineering': '🏢',
+  'Thermal Engineering': '🔥',
+  'VLSI Design': '💾',
+};
 
   const ProgramCard = ({ program }) => (
     <div className="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors">
       <div className="flex items-center mb-4">
-        <div className="bg-red-500 rounded-full p-2 mr-3">
+        <div className=" rounded-full p-2 mr-1">
           <span className="text-white text-sm">{programIcons[program.title] || '🎓'}</span>
         </div>
         <h3 className="text-white font-semibold text-lg mb-0">{program.title}</h3>
@@ -248,8 +254,8 @@ const AcademicPrograms = () => {
         {(programType === 'UG' || programType === null) && (
           <div className="mb-16">
             <div className="flex items-center mb-8">
-              <span className="text-red-400 text-2xl mr-3">🎓</span>
-              <h3 className="text-white text-2xl font-bold">
+              <img src={Grauvate} alt="UG Icon" className="w-8 h-8 mr-3" />
+              <h3 className="text-white text-2xl font-bold ">
                 Undergraduate Programs <span className="text-red-400">(18 Programs)</span>
               </h3>
             </div>
