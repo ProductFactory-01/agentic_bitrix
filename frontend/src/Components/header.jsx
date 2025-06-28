@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Logo from "../../src/assets/sns-DxCft4QP 1.png";
+import Logo from "../../src/assets/snslogo.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -35,7 +35,7 @@ const Header = () => {
               <img
                 src={Logo || "/placeholder.svg"}
                 alt=""
-                className="w-10 h-10 sm:w-full sm:h-full"
+                className="w-full h-full sm:w-full sm:h-full"
               />
             </div>
           </div>
@@ -51,6 +51,12 @@ const Header = () => {
             <p className="text-white text-xs opacity-90  sm:block">
               Autonomous | NAAC A++ | NBA Accreditation
             </p>
+            <div className="lg:hidden bg-gradient-to-r from-[#FEF3C7] via-yellow-100 to-[#F59E0B] px-2 py-1 rounded-full shadow-md mb-0 w-fit ">
+              <span className="text-amber-900 font-semibold text-[10px] flex items-center justify-center">
+                <span className="mr-1 text-amber-800">⚙</span>
+                TNEA Code: 2726
+              </span>
+            </div>
           </div>
         </div>
 
@@ -113,23 +119,20 @@ const Header = () => {
         >
           <div className="w-6 h-6 flex flex-col justify-center items-center">
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
-                isMobileMenuOpen
-                  ? "rotate-45 translate-y-1"
-                  : "-translate-y-0.5"
-              }`}
+              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen
+                ? "rotate-45 translate-y-1"
+                : "-translate-y-0.5"
+                }`}
             ></span>
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${
-                isMobileMenuOpen ? "opacity-0" : "opacity-100"
-              }`}
+              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"
+                }`}
             ></span>
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
-                isMobileMenuOpen
-                  ? "-rotate-45 -translate-y-1"
-                  : "translate-y-0.5"
-              }`}
+              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen
+                ? "-rotate-45 -translate-y-1"
+                : "translate-y-0.5"
+                }`}
             ></span>
           </div>
         </button>
@@ -137,18 +140,12 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`lg:hidden absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-md transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
       >
         <div className="px-4 py-6 space-y-4">
           {/* TNEA Code in Mobile Menu */}
-          <div className="bg-gradient-to-r from-[#FEF3C7] via-yellow-10 to-[#F59E0B] px-4 py-2 rounded-full shadow-md mb-4">
-            <span className="text-amber-900 font-semibold text-sm flex items-center justify-center">
-              <span className="mr-2 text-amber-800">⚙</span>
-              TNEA Code: 2726
-            </span>
-          </div>
+
 
           {/* Mobile Navigation Links */}
           <button
