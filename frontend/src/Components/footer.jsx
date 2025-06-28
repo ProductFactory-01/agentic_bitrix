@@ -36,25 +36,25 @@ const Footer = () => {
             </div>
             <div className="flex space-x-3 py-4">
               <a
-                href="#"
+                href="https://m.facebook.com/snsinstitutions/"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <img src={Facebook} alt="" />
               </a>
               <a
-                href="#"
+                href="https://x.com/snsinstitutions"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <img src={Twitter} alt="" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/school/snsinstitutions/"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <img src={LinkedIn} alt="" />
               </a>
               <a
-                href="#"
+                href="https://youtube.com/@snsinstitutions?si=FAw6gAgnwy3qtnHd"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <img src={YouTube} alt="" />

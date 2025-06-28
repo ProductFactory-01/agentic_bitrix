@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Rocket from "../assets/Vector (1).png";
 import herobg from "../assets/herobg.svg";
+import Playbtn from "../assets/play.png"
 
 const HeroSection = () => {
   // Custom hook for animated counter
@@ -137,8 +138,9 @@ const HeroSection = () => {
             </span>
             Start Your Journey
           </button>
-          <button className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:bg-white hover:text-red-500 transition-colors flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg">
-            <span className="mr-2">▶</span>
+          <button className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:bg-red-300 hover:text-red-500 transition-colors flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg">
+            {/* <span className="mr-2">▶</span> */}
+            <img src={Playbtn} alt="play-btn" className="w-4 h-5 mr-2" />
             Watch Innovation Story
           </button>
         </div>
@@ -198,11 +200,10 @@ const HeroSection = () => {
 
           <div ref={gradeRef} className="text-center">
             <div
-              className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 transition-all duration-1000 ${
-                gradeVisible
+              className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 transition-all duration-1000 ${gradeVisible
                   ? "opacity-100 transform scale-100"
                   : "opacity-0 transform scale-75"
-              }`}
+                }`}
               style={{
                 background: "white",
                 WebkitBackgroundClip: "text",
