@@ -23,7 +23,7 @@ import MCT from "../assets/mct.png";
 import IT from "../assets/IT.png";
 import PG from "../assets/pg.png";
 import PHD from "../assets/phd.png";
-import MENU from "../assets/menu.png"; 
+import MENU from "../assets/menu.png";
 
 const AcademicPrograms = () => {
   // Add state for UG program visibility
@@ -329,7 +329,7 @@ const AcademicPrograms = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-5">
           <h2 className="text-white text-4xl font-bold mb-4">
-            Academic <span className="text-red-600">Programs</span> 
+            Academic <span className="text-red-600">Programs</span>
           </h2>
           <p className="text-white opacity-80 max-w-3xl mx-auto">
             Choose from{" "}
@@ -339,39 +339,35 @@ const AcademicPrograms = () => {
         </div>
 
         {/* Program Type Buttons */}
-        <div className="flex justify-center space-x-4 mb-12">
+        <div className="flex flex-row justify-center items-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4">
           <button
-            className={`px-6 py-2 rounded-full cursor-pointer font-semibold ${
-              programType === "UG"
-                ? "bg-gray-700 text-white"
-                : "bg-red-600 text-white hover:bg-white hover:text-black transition-colors"
-            }`}
+            className={`w-auto sm:w-auto px-3 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 ${programType === "UG"
+              ? "bg-gray-700 text-white shadow-lg"
+              : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+              }`}
             onClick={() => setProgramType(programType === "UG" ? null : "UG")}
           >
             UG Programs
           </button>
           <button
-            className={`px-6 py-2 rounded-full cursor-pointer font-semibold ${
-              programType === "PG"
-                ? "bg-gray-700 text-white"
-                : "bg-red-600 text-white hover:bg-white hover:text-black transition-colors"
-            }`}
+            className={`w-auto sm:w-auto px-3 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 ${programType === "PG"
+              ? "bg-gray-700 text-white shadow-lg"
+              : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+              }`}
             onClick={() => setProgramType(programType === "PG" ? null : "PG")}
           >
             PG Programs
           </button>
           <button
-            className={`px-6 py-2 rounded-full cursor-pointer font-semibold ${
-              programType === "PhD"
-                ? "bg-gray-500 text-white"
-                : "bg-red-600 text-white hover:bg-white hover:text-black transition-colors"
-            }`}
+            className={`w-auto sm:w-auto px-3 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 ${programType === "PhD"
+              ? "bg-gray-700 text-white shadow-lg"
+              : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+              }`}
             onClick={() => setProgramType(programType === "PhD" ? null : "PhD")}
           >
             PhD Programs
           </button>
         </div>
-
         {/* UG Programs: show if filter is UG or no filter */}
         {(programType === "UG" || programType === null) && (
           <div className="mb-16">
@@ -404,7 +400,7 @@ const AcademicPrograms = () => {
                   className="inline-flex items-center border border-gray-600 cursor-pointer text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors"
                   onClick={() => setShowAllUG(true)}
                 >
-                 <img src={MENU} alt="" className="w-3 h-3 mr-2" /> View All UG Programs
+                  <img src={MENU} alt="" className="w-3 h-3 mr-2" /> View All UG Programs
                 </button>
               </div>
             )}
