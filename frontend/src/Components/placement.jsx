@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import High from "../assets/high.svg?react";
+import Highicon from '../assets/students/high.png';
 import Rate from "../assets/rate.svg?react";
 import Comp from "../assets/comp.svg?react";
 import viyash from "../assets/students/viyash.png";
@@ -165,7 +165,7 @@ const PlacementSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {[
               {
-                icon: <High className="h-8 w-8 text-yellow-500" />,
+                icon: <img src={Highicon} className="h-16 w-16 " alt="High package icon" />,
                 title: "21 LPA",
                 subtitle: "Highest Package",
                 desc: "Achieved by our Computer Science students in top tech companies",
@@ -232,19 +232,18 @@ const PlacementSection = () => {
                 src={logo}
                 alt="Company Logo"
                 className={`object-contain
-            ${
-              i === 0
-                ? "h-[70px] sm:h-[80px] md:h-[90px]" // Amazon
-                : i === 1
-                ? "h-[60px] sm:h-[70px] md:h-[80px]" // Google
-                : i === 2
-                ? "h-[70px] sm:h-[80px]" // IBM
-                : i === 3
-                ? "h-[80px] sm:h-[90px]" // Microsoft
-                : i === 4
-                ? "h-[60px] sm:h-[70px]" // Infosys
-                : "h-[70px] sm:h-[80px]"
-            }`}
+            ${i === 0
+                    ? "h-[70px] sm:h-[80px] md:h-[90px]" // Amazon
+                    : i === 1
+                      ? "h-[60px] sm:h-[70px] md:h-[80px]" // Google
+                      : i === 2
+                        ? "h-[70px] sm:h-[80px]" // IBM
+                        : i === 3
+                          ? "h-[80px] sm:h-[90px]" // Microsoft
+                          : i === 4
+                            ? "h-[60px] sm:h-[70px]" // Infosys
+                            : "h-[70px] sm:h-[80px]"
+                  }`}
               />
             ))}
           </div>
