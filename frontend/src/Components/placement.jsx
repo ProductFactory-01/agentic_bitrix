@@ -1,8 +1,3 @@
-import amazon from "../assets/amazon.jpg";
-import google from "../assets/google.svg";
-import ibm from "../assets/IBM.png";
-import microsoft from "../assets/microsoft.png";
-import Infosys from "../assets/Infosys.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -118,7 +113,7 @@ const PlacementSection = () => {
           </div>
 
           {/* Student Placements */}
-          <div className="py-10">
+          {/* <div className="py-10">
             <Swiper
               modules={[Pagination]}
               slidesPerView={1}
@@ -159,7 +154,7 @@ const PlacementSection = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </div> */}
 
           {/* Statistics */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -201,132 +196,6 @@ const PlacementSection = () => {
                 <div className="text-gray-400 text-sm">{stat.desc}</div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Top Recruiters */}
-      <section className="bg-white text-center py-20 px-4 sm:px-6 lg:px-20">
-        <h3 className="text-4xl sm:text-5xl font-bold mb-6">
-          <span className="text-black">Top</span>{" "}
-          <span className="text-red-600">Recruiters</span>
-        </h3>
-        <p className="text-gray-600 mb-12 text-base sm:text-lg max-w-3xl mx-auto">
-          Our students are recruited by top global companies with
-          industry-leading packages
-        </p>
-
-        <div className="relative overflow-hidden">
-          {/* Desktop gradients */}
-          <div className="hidden lg:block absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="hidden lg:block absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-          {/* Mobile gradients */}
-          <div className="block lg:hidden absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="block lg:hidden absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-          {/* Mobile Animation */}
-          <div className="block lg:hidden">
-            <div className="flex animate-scroll-mobile">
-              {/* First set - Mobile */}
-              <div className="flex items-center gap-x-16 min-w-max px-8">
-                {[amazon, google, ibm, microsoft, Infosys].map((logo, i) => (
-                  <img
-                    key={i}
-                    src={logo || "/placeholder.svg"}
-                    alt="Company Logo"
-                    className={`object-contain flex-shrink-0
-                ${i === 0
-                        ? "h-[50px] sm:h-[60px]" // Amazon
-                        : i === 1
-                          ? "h-[45px] sm:h-[55px]" // Google
-                          : i === 2
-                            ? "h-[50px] sm:h-[60px]" // IBM
-                            : i === 3
-                              ? "h-[55px] sm:h-[65px]" // Microsoft
-                              : i === 4
-                                ? "h-[45px] sm:h-[55px]" // Infosys
-                                : "h-[50px] sm:h-[60px]"
-                      }`}
-                  />
-                ))}
-              </div>
-              {/* Duplicate set - Mobile */}
-              <div className="flex items-center gap-x-16 min-w-max px-8">
-                {[amazon, google, ibm, microsoft, Infosys].map((logo, i) => (
-                  <img
-                    key={`mobile-dup-${i}`}
-                    src={logo || "/placeholder.svg"}
-                    alt="Company Logo"
-                    className={`object-contain flex-shrink-0
-                ${i === 0
-                        ? "h-[50px] sm:h-[60px]" // Amazon
-                        : i === 1
-                          ? "h-[45px] sm:h-[55px]" // Google
-                          : i === 2
-                            ? "h-[50px] sm:h-[60px]" // IBM
-                            : i === 3
-                              ? "h-[55px] sm:h-[65px]" // Microsoft
-                              : i === 4
-                                ? "h-[45px] sm:h-[55px]" // Infosys
-                                : "h-[50px] sm:h-[60px]"
-                      }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop Animation */}
-          <div className="hidden lg:block">
-            <div className="flex animate-scroll-desktop">
-              {/* First set - Desktop */}
-              <div className="flex justify-center items-center gap-x-16 xl:gap-x-20 min-w-full px-8">
-                {[amazon, google, ibm, microsoft, Infosys].map((logo, i) => (
-                  <img
-                    key={i}
-                    src={logo || "/placeholder.svg"}
-                    alt="Company Logo"
-                    className={`object-contain flex-shrink-0
-                ${i === 0
-                        ? "h-[70px] xl:h-[90px]" // Amazon
-                        : i === 1
-                          ? "h-[60px] xl:h-[80px]" // Google
-                          : i === 2
-                            ? "h-[70px] xl:h-[80px]" // IBM
-                            : i === 3
-                              ? "h-[80px] xl:h-[90px]" // Microsoft
-                              : i === 4
-                                ? "h-[60px] xl:h-[70px]" // Infosys
-                                : "h-[70px] xl:h-[80px]"
-                      }`}
-                  />
-                ))}
-              </div>
-              {/* Duplicate set - Desktop */}
-              <div className="flex justify-center items-center gap-x-16 xl:gap-x-20 min-w-full px-8">
-                {[amazon, google, ibm, microsoft, Infosys].map((logo, i) => (
-                  <img
-                    key={`desktop-dup-${i}`}
-                    src={logo || "/placeholder.svg"}
-                    alt="Company Logo"
-                    className={`object-contain flex-shrink-0
-                ${i === 0
-                        ? "h-[70px] xl:h-[90px]" // Amazon
-                        : i === 1
-                          ? "h-[60px] xl:h-[80px]" // Google
-                          : i === 2
-                            ? "h-[70px] xl:h-[80px]" // IBM
-                            : i === 3
-                              ? "h-[80px] xl:h-[90px]" // Microsoft
-                              : i === 4
-                                ? "h-[60px] xl:h-[70px]" // Infosys
-                                : "h-[70px] xl:h-[80px]"
-                      }`}
-                  />
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>

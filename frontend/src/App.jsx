@@ -8,6 +8,7 @@ import SpineExperience from "./Components/spine";
 import AdmissionSection from "./Components/admission-section";
 import Footer from "./Components/footer";
 import BitrixForm from "./Components/BitrixForm";
+import Recruiters from "./Components/TopRecruiters";
 
 const App = () => {
   return (
@@ -18,6 +19,10 @@ const App = () => {
       {/* Home Section */}
       <section id="home">
         <HeroSection />
+      </section>
+
+      <section id="top-recruiters">
+        <Recruiters />
       </section>
 
       {/* Programs Section */}
