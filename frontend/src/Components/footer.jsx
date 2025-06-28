@@ -6,6 +6,7 @@ import YouTube from "../assets/Link [w-10] (3).png";
 import Call from "../assets/call.png";
 import CallTele from "../assets/call-tele.png";
 import Email from "../assets/email.png";
+import Instagram from "../assets/insta.png";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 py-12 px-5">
@@ -39,25 +40,31 @@ const Footer = () => {
                 href="https://m.facebook.com/snsinstitutions/"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <img src={Facebook} alt="" />
+                <img src={Facebook} alt="Facebook" />
               </a>
               <a
                 href="https://x.com/snsinstitutions"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <img src={Twitter} alt="" />
+                <img src={Twitter} alt="Twitter" />
               </a>
               <a
                 href="https://www.linkedin.com/school/snsinstitutions/"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <img src={LinkedIn} alt="" />
+                <img src={LinkedIn} alt="Linkedin" />
               </a>
               <a
                 href="https://youtube.com/@snsinstitutions?si=FAw6gAgnwy3qtnHd"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <img src={YouTube} alt="" />
+                <img src={YouTube} alt="Youtube" />
+              </a>
+              <a
+                href="https://www.instagram.com/snsinstitutions/"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <img src={Instagram} alt="Instagram" />
               </a>
             </div>
           </div>

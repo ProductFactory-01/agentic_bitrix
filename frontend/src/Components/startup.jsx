@@ -2,6 +2,15 @@
 
 import startups from "../assets/startups.webp"
 
+const handleLearnMore = () => {
+  window.open("https://snsihub.ai/", "_blank");
+};
+
+const handleApplyNow = () => {
+  window.open("https://main.snsgroups.com/EnquiryNow/", "_blank");
+};
+
+
 const StartupSection = () => {
   return (
     <section className="bg-red-500 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-20">
@@ -71,11 +80,13 @@ const StartupSection = () => {
             <p className="text-white/90 text-sm sm:text-base mb-4">
               Join hundreds of successful entrepreneurs who started their journey with us.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <div onClick={handleApplyNow}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <button className="bg-yellow-400 text-red-500 px-6 py-2.5 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 text-sm sm:text-base">
                 Apply Now
               </button>
-              <button className="border border-white text-white px-6 py-2.5 rounded-full font-semibold hover:bg-white hover:text-red-500 transition-all duration-300 text-sm sm:text-base">
+              <button onClick={handleLearnMore}
+                className="border border-white text-white px-6 py-2.5 rounded-full font-semibold hover:bg-white hover:text-red-500 transition-all duration-300 text-sm sm:text-base">
                 Learn More
               </button>
             </div>

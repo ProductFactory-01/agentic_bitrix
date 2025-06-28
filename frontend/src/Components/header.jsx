@@ -48,7 +48,7 @@ const Header = () => {
                 SNS College of Technology <br />
               </span>
             </h1>
-            <p className="text-white text-xs opacity-90 hidden sm:block">
+            <p className="text-white text-xs opacity-90  sm:block">
               Autonomous | NAAC A++ | NBA Accreditation
             </p>
           </div>
