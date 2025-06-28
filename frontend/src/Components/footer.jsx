@@ -19,7 +19,7 @@ const Footer = () => {
                 <img src={LOGO} alt="" />
               </div>
               <div>
-                <h3 className="text-red-600 font-bold text-lg">SNSCT</h3>
+                <h3 className="text-red-600 font-bold text-sm">SNS College of Technology</h3>
                 <p className="text-gray-400 text-xs">
                   Design Thinking Excellence
                 </p>
