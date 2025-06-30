@@ -79,7 +79,7 @@ const ugPrograms = [
   },
   {
     title: "Agricultural Engineering",
-    degree: "B.E. AGERI",
+    degree: "B.E. AGRI",
     description: "Specialization in farm machinery, soil & water conservation, and food processing.",
     duration: "4 Years",
   },
