@@ -56,6 +56,29 @@ import tringapps from "../assets/tringapps.svg";
 import rice from "../assets/rice.svg";
 import maventic from "../assets/maventic.svg";
 import viewall from "../assets/viewall.svg";
+import cotiviti from "../assets/cotiviti.svg";
+import mallow from "../assets/mallow.svg";
+import icici from "../assets/icici.svg";
+import terv from "../assets/terv.svg";
+import cure from "../assets/cure.svg";
+import global from "../assets/global.svg";
+import elgi from "../assets/elgi.svg";
+import infynd from "../assets/infynd.svg";
+import joyalukkas from "../assets/joyalukkas.svg";
+import esaf  from "../assets/esaf.svg";
+import chegg from "../assets/chegg.svg";
+import faceprep from "../assets/faceprep.svg";
+import milkymist from "../assets/milkymist.svg";
+import artech from "../assets/artech.svg";
+import apex from "../assets/apex.svg";
+import dailee from "../assets/dailee.svg";
+import oodu from "../assets/oodu.svg";
+import technologies from "../assets/technologies.svg";
+import web from "../assets/web.svg";
+import ybs from "../assets/ybs.svg";
+import finan from "../assets/finan.svg";
+import thozhar from "../assets/thozhar.png";
+import accserv from "../assets/accserv.png";
 
 const PlacementSection = () => {
   const topRecruiters = [
@@ -185,7 +208,30 @@ const PlacementSection = () => {
     { name: "IHS", logo: ihs, package: "6 LPA" },
     { name: "Tringapps", logo: tringapps, package: "6 LPA" },
     { name: "Rice", logo: rice, package: "6 LPA" },
-    { name: "Maventic", logo: maventic, package: "6 LPA" }
+    { name: "Maventic", logo: maventic, package: "6 LPA" },
+    { name: "Cotiviti", logo: cotiviti, package: "4 LPA" },
+    { name: "Mallow", logo: mallow, package: "4.2 LPA" },
+    { name: "ICICI", logo: icici, package: "4.5 LPA" },
+    { name: "Terv", logo: terv, package: "4.5 LPA" },
+    { name: "Cure", logo: cure, package: "4 LPA" },
+    { name: "Global", logo: global, package: "4 LPA" },
+    { name: "Elgi", logo: elgi, package: "4.5 LPA" },
+    { name: "Infynd", logo: infynd, package: "4.3 LPA" },
+    { name: "Joyalukkas", logo: joyalukkas, package: "4,9 LPA" },
+    { name: "ESAF", logo: esaf, package: "4.3 LPA" },
+    { name: "Chegg", logo: chegg, package: "4 LPA" },
+    { name: "FacePrep", logo: faceprep, package: "4 LPA" },
+    { name: "MilkyMist", logo: milkymist, package: "4.5 LPA" },
+    { name: "Artech", logo: artech, package: "4 LPA" },
+    { name: "Apex", logo: apex, package: "4 LPA" },
+    { name: "Dailee", logo: dailee, package: "4 LPA" },
+    { name: "Oodu", logo: oodu, package: "4.2 LPA" },
+    { name: "Technologies", logo: technologies, package: "4 LPA" },
+    { name: "Web", logo: web, package: "4 LPA" },
+    { name: "YBS", logo: ybs, package: "4 LPA" },
+    { name: "Finan", logo: finan, package: "4 LPA" },
+    { name: "Thozhar", logo: thozhar, package: "4 LPA" },
+    { name: "AccServ", logo: accserv, package: "4 LPA" }
   ];
 
   // Package filter options without "All Packages"
@@ -228,15 +274,84 @@ const PlacementSection = () => {
   // Determine how many recruiters to show
   const recruitersToShow = showAll ? filteredRecruiters : filteredRecruiters.slice(0, 15);
 
-  // Group recruiters into rows of 5
-  const recruiterRows = [];
-  for (let i = 0; i < recruitersToShow.length; i += 5) {
-    recruiterRows.push(recruitersToShow.slice(i, i + 5));
-  }
-
   return (
     <>
-      <section className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-20">
+      {/* Top Recruiters Section */}
+     <div className="bg-[#111827] py-3 px-0 lg:px-1 xl:px-2">
+  <section className="bg-white text-center py-20 px-4 sm:px-6 lg:px-20 m-4">
+    <h3 className="text-4xl sm:text-5xl font-bold mb-2">
+      <span className="text-black">Top</span> <span className="text-red-600">Recruiters</span>
+    </h3>
+    <p className="text-gray-600 mb-8 text-base sm:text-lg max-w-3xl mx-auto">
+      Our students are recruited by top global companies with industry-leading packages
+    </p>
+
+    {/* Package Filter */}
+    <div className="flex justify-center mb-8 flex-wrap gap-2">
+      {packageFilters.map((filter) => (
+        <button
+          key={filter.value}
+          onClick={() => {
+            setSelectedPackage(filter.value);
+            setShowAll(false);
+          }}
+          className={`px-4 py-2 cursor-pointer rounded-full text-sm font-medium transition-colors ${
+            selectedPackage === filter.value
+              ? 'bg-red-600 text-white'
+              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+          }`}
+        >
+          {filter.label}
+        </button>
+      ))}
+    </div>
+
+    {/* Recruiter Grid - Single responsive grid without manual row grouping */}
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-full mx-auto">
+      {recruitersToShow.map((recruiter, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-lg border border-[#111827] overflow-hidden hover:shadow-lg transition-shadow"
+        >
+          {/* Logo and Company Name Section */}
+          <div className="px-6 pt-1 text-center">
+            <div className="w-20 h-16 flex items-center justify-center mx-auto mb-3">
+              <img
+                src={recruiter.logo || "/placeholder.svg"}
+                alt={`${recruiter.name} logo`}
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Package Footer */}
+          <div className="bg-[#111827] text-center py-2">
+            <p className="text-white font-bold text-lg">{recruiter.package}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* View All Button */}
+    {filteredRecruiters.length > 15 && (
+      <div className="mt-8">
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="text-red-600 border border-red-600 cursor-pointer font-medium py-2 px-6 rounded-full flex items-center justify-center mx-auto"
+        >
+          <img
+            src={viewall}
+            alt={showAll ? "View less" : "View all"}
+            className="w-5 h-5 mr-2 inline-block"
+          />
+          <span>{showAll ? "View Less Companies" : "View All Companies"}</span>
+        </button>
+      </div>
+    )}
+  </section>
+</div>
+
+      <section className="bg-gray-900 pb-10 pt-4 px-4 sm:px-6 lg:px-20">
         <div className="mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-white text-4xl sm:text-5xl font-bold mb-4">
@@ -248,52 +363,8 @@ const PlacementSection = () => {
             </p>
           </div>
 
-          {/* Student Placements */}
-          <div className="py-10">
-            <Swiper
-              modules={[Pagination]}
-              slidesPerView={1}
-              breakpoints={{
-                640: { slidesPerView: 2 },
-                1024: { slidesPerView: 4 },
-              }}
-              spaceBetween={30}
-              pagination={{ clickable: true }}
-              className="!pb-16"
-            >
-              {studentPlacements.map((student, index) => (
-                <SwiperSlide key={index}>
-                  <div className="bg-gray-800 relative flex justify-center border border-gray-700 rounded-[1.5rem] text-center p-2 pt-8 pb-3 z-10 shadow-lg h-full">
-                    <div className="bg-red-500 w-full h-16 rounded-[1.5rem] absolute bottom-0 z-0" />
-                    <div className="bg-gray-800 w-[98%] min-h-[25rem] rounded-[1.5rem] text-center p-6 pt-5 relative z-10">
-                      <div className="flex justify-center mb-10">
-                        <img
-                          src={student.image}
-                          alt={student.name}
-                          className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border-2 border-white"
-                        />
-                      </div>
-                      <h3 className="text-white text-xl sm:text-2xl font-semibold mb-4">
-                        {student.name}
-                      </h3>
-                      <p className="text-3xl sm:text-5xl font-bold mb-4">
-                        <span className="text-red-500">
-                          {student.package.split(" ")[0]}
-                        </span>
-                        <span className="text-white"> LPA</span>
-                      </p>
-                      <p className="text-gray-300 text-base sm:text-lg">
-                        {student.company}
-                      </p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-
           {/* Statistics */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
             {[
               {
                 icon: <img src={Highicon} className="h-16 w-16" alt="High package icon" />,
@@ -336,81 +407,10 @@ const PlacementSection = () => {
         </div>
       </section>
 
-      {/* Top Recruiters Section */}
-      <section className="bg-white text-center py-20 px-4 sm:px-6 lg:px-20">
-        <h3 className="text-4xl sm:text-5xl font-bold mb-2">
-          <span className="text-black">Top</span> <span className="text-red-600">Recruiters</span>
-        </h3>
-        <p className="text-gray-600 mb-8 text-base sm:text-lg max-w-3xl mx-auto">
-          Our students are recruited by top global companies with industry-leading packages
-        </p>
-
-        {/* Package Filter */}
-        <div className="flex justify-center mb-8 flex-wrap gap-2">
-          {packageFilters.map((filter) => (
-            <button
-              key={filter.value}
-              onClick={() => {
-                setSelectedPackage(filter.value);
-                setShowAll(false);
-              }}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                selectedPackage === filter.value
-                  ? 'bg-red-600 text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              {filter.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Recruiter Rows */}
-        <div className="grid grid-cols-1 gap-6 max-w-full mx-auto">
-          {recruiterRows.map((row, rowIndex) => (
-            <div key={rowIndex} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {row.map((recruiter, recruiterIndex) => (
-                <div
-                  key={recruiterIndex}
-                  className="bg-white rounded-lg border border-[#111827] overflow-hidden hover:shadow-lg transition-shadow"
-                >
-                  {/* Logo and Company Name Section */}
-                  <div className="px-6 pt-1 text-center">
-                    <div className="w-20 h-16 flex items-center justify-center mx-auto mb-3">
-                      <img
-                        src={recruiter.logo || "/placeholder.svg"}
-                        alt={`${recruiter.name} logo`}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Package Footer */}
-                  <div className="bg-[#111827] text-center py-2">
-                    <p className="text-white font-bold text-lg">{recruiter.package}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-
-        {/* View All Button */}
-        {filteredRecruiters.length > 15 && !showAll && (
-          <div className="mt-8">
-            <button
-              onClick={() => setShowAll(true)}
-              className="text-red-600 border border-red-600 cursor-pointer font-medium py-2 px-6 rounded-full flex items-center justify-center mx-auto"
-            >
-              <img src={viewall} alt="View all" className="w-5 h-5 mr-2 inline-block" />
-              <span>View All Companies</span>
-            </button>
-          </div>
-        )}
-      </section>
+      
 
       {/* Testimonials */}
-      <section className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-20">
+      <section className="bg-gray-900 px-4 sm:px-6 lg:px-20">
         <div className="text-center mb-12">
           <h2 className="text-white text-4xl sm:text-5xl font-bold mb-4">
             Student <span className="text-red-400">Testimonials</span>

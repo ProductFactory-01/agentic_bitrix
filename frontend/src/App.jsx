@@ -19,6 +19,11 @@ const App = () => {
       <section id="home">
         <HeroSection />
       </section>
+      
+      {/* Placements Section */}
+      <section id="placements">
+        <PlacementSection />
+      </section>
 
       {/* Programs Section */}
       <section id="programs">
@@ -33,11 +38,6 @@ const App = () => {
       {/* Startups Section */}
       <section id="startups">
         <Startup />
-      </section>
-
-      {/* Placements Section */}
-      <section id="placements">
-        <PlacementSection />
       </section>
 
       {/* Campus Life Section */}
