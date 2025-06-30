@@ -367,7 +367,7 @@ const AcademicPrograms = () => {
         </div>
 
         {/* Program Type Buttons */}
-        <div className="flex flex-row justify-center items-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4">
+        <div className="flex flex-row justify-center items-center gap-2 sm:gap-2 mb-8 sm:mb-12 px-4">
           <button
             className={`w-auto sm:w-auto px-3 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 ${programType === "UG"
               ? "bg-gray-700 text-white shadow-lg"
@@ -375,7 +375,7 @@ const AcademicPrograms = () => {
               }`}
             onClick={() => setProgramType(programType === "UG" ? null : "UG")}
           >
-            Trending / Unique
+            Trending/Unique
           </button>
           <button
             className={`w-auto sm:w-auto px-3 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 ${programType === "PG"
