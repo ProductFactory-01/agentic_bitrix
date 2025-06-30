@@ -8,6 +8,10 @@ import Playbtn from "../assets/play.png"
 const HeroSection = () => {
   // State for parallax background effect
   const [scrollY, setScrollY] = useState(0);
+  // State to track cursor position
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  // Ref to access the hero section element
+  const heroRef = useRef(null);
 
   // Handle scroll for hero background parallax with throttling
   useEffect(() => {
@@ -24,6 +28,27 @@ const HeroSection = () => {
     
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Effect to handle mouse movement
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (heroRef.current) {
+        const rect = heroRef.current.getBoundingClientRect();
+        // Calculate cursor position relative to the hero section
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        setCursorPosition({ x, y });
+      }
+    };
+
+    // Add event listener for mouse movement
+    window.addEventListener("mousemove", handleMouseMove);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   // Custom hook for animated counter
@@ -99,7 +124,15 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="hero-sticky bg-red-600 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center">
+    <section ref={heroRef} className="hero-sticky bg-red-600 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center">
+      {/* Background Decorative Bubble Following Cursor */}
+      <div
+        className="absolute w-48 h-48 bg-white rounded-full opacity-5 transition-transform duration-300 ease-out pointer-events-none"
+        style={{
+          transform: `translate(${cursorPosition.x - 100}px, ${cursorPosition.y - 400}px)`,
+        }}
+      ></div>
+      
       {/* Background image with parallax */}
       <img
         src={herobg || "/placeholder.svg"}
