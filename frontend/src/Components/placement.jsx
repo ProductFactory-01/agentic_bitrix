@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import amazon from "../assets/amazon.jpg";
 import Highicon from '../assets/students/high.png';
 import Rate from "../assets/rate.svg?react";
@@ -80,9 +80,114 @@ import finan from "../assets/finan.svg";
 import thozhar from "../assets/thozh.png";
 import accserv from "../assets/accserv.png";
 
+// Animated Stat Card Component
+const StatCard = ({ icon, value, suffix, subtitle, desc, isVisible, delay }) => {
+  const [hasAnimated, setHasAnimated] = useState(false);
+  
+  // Parse the value to handle decimals
+  const numericValue = parseFloat(value);
+  
+  // Custom hook for counting animation
+  const useCountUp = (end, duration = 2000, shouldStart = false) => {
+    const [count, setCount] = useState(0);
+    
+    useEffect(() => {
+      if (!shouldStart || hasAnimated) return;
+      
+      setHasAnimated(true);
+      let startTime;
+      let animationFrame;
+      
+      const animate = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const currentValue = end * easeOutQuart;
+        
+        // Handle decimal values
+        if (end % 1 !== 0) {
+          setCount(Number(currentValue.toFixed(1)));
+        } else {
+          setCount(Math.floor(currentValue));
+        }
+        
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(animate);
+        }
+      };
+      
+      animationFrame = requestAnimationFrame(animate);
+      
+      return () => {
+        if (animationFrame) {
+          cancelAnimationFrame(animationFrame);
+        }
+      };
+    }, [end, duration, shouldStart]);
+    
+    return count;
+  };
+  
+  const animatedValue = useCountUp(numericValue, 2000, isVisible);
+  
+  return (
+    <div className="bg-gray-800 rounded-xl border border-gray-700 p-6 sm:p-14 text-center hover:scale-105 hover:shadow-lg transition-all duration-300">
+      {/* Icon */}
+      <div className="bg-red-500 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-4">
+        <span className="text-white text-xl sm:text-2xl">
+          {icon}
+        </span>
+      </div>
+      
+      {/* Animated counter */}
+      <div className="text-3xl sm:text-4xl font-bold text-white mb-2">
+        {isVisible ? animatedValue : 0}{suffix}
+      </div>
+      
+      {/* Subtitle */}
+      <div className="text-gray-300 font-semibold mb-2">
+        {subtitle}
+      </div>
+      
+      {/* Description */}
+      <div className="text-gray-400 text-sm">
+        {desc}
+      </div>
+    </div>
+  );
+};
+
 const PlacementSection = () => {
   // State for parallax effect
   const [scrollY, setScrollY] = useState(0);
+  
+  // State for animations
+  const [isStatsVisible, setIsStatsVisible] = useState(false);
+  const statsRef = useRef(null);
+
+  // Intersection Observer for stats animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsStatsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, []);
 
   // Handle scroll for parallax effect with throttling
   useEffect(() => {
@@ -296,13 +401,11 @@ const PlacementSection = () => {
 
 
   return (
-    <div 
-      className="placement-overlap parallax-element"
-    
+    <div
     >
       {/* Top Recruiters Section with overlap effect */}
      <div className="bg-[#111827] py-3 px-0 lg:px-1 xl:px-2">
-  <section className="bg-white text-center py-10 px-4 sm:px-6 lg:px-20 m-4">
+  <section className="bg-white text-center py-10 px-4 sm:px-6 lg:px-20 m-4 rounded-2xl">
     <h3 className="text-4xl sm:text-5xl font-bold mb-2">
       <span className="text-black">Top</span> <span className="text-red-600">Recruiters</span>
     </h3>
@@ -388,45 +491,31 @@ const PlacementSection = () => {
           </div>
 
           {/* Statistics */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
-            {[
-              {
-                icon: <img src={Highicon} className="h-16 w-16" alt="High package icon" />,
-                title: "21 LPA",
-                subtitle: "Highest Package",
-                desc: "Achieved by our Computer Science students in top tech companies",
-              },
-              {
-                icon: <Rate className="h-8 w-8 text-yellow-500" />,
-                title: "96.5%",
-                subtitle: "Placement Rate",
-                desc: "Industry-leading placement rate across all branches",
-              },
-              {
-                icon: <Comp className="h-8 w-8 text-yellow-500" />,
-                title: "454",
-                subtitle: "Company Partners",
-                desc: "Global tech giants and startups visit our college",
-              },
-            ].map((stat, idx) => (
-              <div
-                key={idx}
-                className="bg-gray-800 rounded-xl border border-gray-700 p-6 sm:p-14 text-center"
-              >
-                <div className="bg-red-500 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-xl sm:text-2xl">
-                    {stat.icon}
-                  </span>
-                </div>
-                <div className="text-3xl sm:text-4xl font-bold text-white mb-2">
-                  {stat.title}
-                </div>
-                <div className="text-gray-300 font-semibold mb-2">
-                  {stat.subtitle}
-                </div>
-                <div className="text-gray-400 text-sm">{stat.desc}</div>
-              </div>
-            ))}
+          <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+            <StatCard
+              icon={<img src={Highicon} className="h-16 w-16" alt="High package icon" />}
+              value="21"
+              suffix=" LPA"
+              subtitle="Highest Package"
+              desc="Achieved by our Computer Science students in top tech companies"
+              isVisible={isStatsVisible}
+            />
+            <StatCard
+              icon={<Rate className="h-8 w-8 text-yellow-500" />}
+              value="96.5"
+              suffix="%"
+              subtitle="Placement Rate"
+              desc="Industry-leading placement rate across all branches"
+              isVisible={isStatsVisible}
+            />
+            <StatCard
+              icon={<Comp className="h-8 w-8 text-yellow-500" />}
+              value="454"
+              suffix=""
+              subtitle="Company Partners"
+              desc="Global tech giants and startups visit our college"
+              isVisible={isStatsVisible}
+            />
           </div>
         </div>
       </section>

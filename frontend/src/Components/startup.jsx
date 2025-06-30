@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect, useRef } from "react"
 import startups from "../assets/startups.webp"
 
 const handleLearnMore = () => {
@@ -12,14 +13,61 @@ const handleApplyNow = () => {
 
 
 const StartupSection = () => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const duration = 2000; // 2 seconds
+      const steps = 60; // Number of animation steps
+      const increment = 1000 / steps;
+      const stepDuration = duration / steps;
+
+      let currentCount = 0;
+      const timer = setInterval(() => {
+        currentCount += increment;
+        if (currentCount >= 1000) {
+          setCount(1000);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(currentCount));
+        }
+      }, stepDuration);
+
+      return () => clearInterval(timer);
+    }
+  }, [isVisible]);
+
   return (
-    <section className="bg-red-500 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-20">
+    <section ref={sectionRef} className="bg-red-500 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-20">
       <div className="max-w-full mx-4 sm:mx-8 lg:mx-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left order-2 lg:order-1">
             <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-              Building <span className="text-yellow-300">1000</span>
+              Building <span className="text-yellow-300">{count}</span>
               <br />
               AI Startups
             </h2>
@@ -30,19 +78,25 @@ const StartupSection = () => {
 
             {/* Features List */}
             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 max-w-md mx-auto lg:mx-0">
-              <div className="flex items-center justify-center lg:justify-start">
+              <div className={`flex items-center justify-center lg:justify-start transform transition-all duration-200 ${
+                isVisible ? 'translate-x-0 opacity-100' : 'translate-x-[-50px] opacity-0'
+              }`} style={{ transitionDelay: '0.8s' }}>
                 <div className="bg-yellow-400 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
                   <span className="text-black text-xs sm:text-sm font-bold">✓</span>
                 </div>
                 <span className="text-white text-sm sm:text-base lg:text-lg">₹10L+ Seed Funding Available</span>
               </div>
-              <div className="flex items-center justify-center lg:justify-start">
+              <div className={`flex items-center justify-center lg:justify-start transform transition-all duration-700 ${
+                isVisible ? 'translate-x-0 opacity-100' : 'translate-x-[-50px] opacity-0'
+              }`} style={{ transitionDelay: '1.2s' }}>
                 <div className="bg-yellow-400 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
                   <span className="text-black text-xs sm:text-sm font-bold">✓</span>
                 </div>
                 <span className="text-white text-sm sm:text-base lg:text-lg">Industry Mentor Network</span>
               </div>
-              <div className="flex items-center justify-center lg:justify-start">
+              <div className={`flex items-center justify-center lg:justify-start transform transition-all duration-700 ${
+                isVisible ? 'translate-x-0 opacity-100' : 'translate-x-[-50px] opacity-0'
+              }`} style={{ transitionDelay: '1.6s' }}>
                 <div className="bg-yellow-400 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
                   <span className="text-black text-xs sm:text-sm font-bold">✓</span>
                 </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-
+import { motion } from "framer-motion"
 import Grauvate from "../assets/graduvate.png";
 import Aerospace from "../assets/aerospace.png";
 import Artificial from "../assets/artificial.png";
@@ -34,83 +34,83 @@ import EEE from "../assets/eee.png";
 const AcademicPrograms = () => {
   const [programType, setProgramType] = useState(null)
 
-const ugPrograms = [
-  {
-    title: "Artificial Intelligence & Data Science",
-    degree: "B.Tech. AIDS",
-    description: "Focus on Machine Learning, Deep Learning, and Big Data Analytics.",
-    duration: "4 Years",
-  },
-  {
-    title: "Artificial Intelligence & Machine Learning",
-    degree: "B.Tech. AIML",
-    description: "Covers AI fundamentals, Deep Learning, and Natural Language Processing.",
-    duration: "4 Years",
-  },
-  {
-    title: "Computer Science and Engineering IoT with Cyber Security & Blockchain",
-    degree: "B.E. CSE IoT/CS/Blockchain",
-    description: "Combines core computer science with IoT, cyber security, and blockchain technologies.",
-    duration: "4 Years",
-  },
-  {
-    title: "Computer Science and Design",
-    degree: "B.E. CSD",
-    description: "UI/UX design, human-computer interaction, and creative computing.",
-    duration: "4 Years",
-  },
-  {
-    title: "AeroSpace Engineering",
-    degree: "B.E. AERO",
-    description: "Study of aerodynamics, propulsion, aircraft structures, and avionics.",
-    duration: "4 Years",
-  },
-  {
-    title: "Bio-Medical Engineering",
-    degree: "B.E. BME",
-    description: "Focus on medical devices, biomedical signal processing, and imaging technologies.",
-    duration: "4 Years",
-  },
-  {
-    title: "Food Technology",
-    degree: "B.Tech. FT",
-    description: "Emphasis on food processing, quality control, and food safety management.",
-    duration: "4 Years",
-  },
-  {
-    title: "Agricultural Engineering",
-    degree: "B.E. AGERI",
-    description: "Specialization in farm machinery, soil & water conservation, and food processing.",
-    duration: "4 Years",
-  },
-  {
-    title: "Mechanical and Mechatronics ( Additive Manufacturing)",
-    degree: "B.E. MECH/MCT/AM",
-    description: "Combines thermal engineering, robotics, automation, and additive manufacturing.",
-    duration: "4 Years",
-  },
-];
+  const ugPrograms = [
+    {
+      title: "Artificial Intelligence & Data Science",
+      degree: "B.Tech. AIDS",
+      description: "Focus on Machine Learning, Deep Learning, and Big Data Analytics.",
+      duration: "4 Years",
+    },
+    {
+      title: "Artificial Intelligence & Machine Learning",
+      degree: "B.Tech. AIML",
+      description: "Covers AI fundamentals, Deep Learning, and Natural Language Processing.",
+      duration: "4 Years",
+    },
+    {
+      title: "Computer Science and Engineering IoT with Cyber Security & Blockchain",
+      degree: "B.E. CSE IoT/CS/Blockchain",
+      description: "Combines core computer science with IoT, cyber security, and blockchain technologies.",
+      duration: "4 Years",
+    },
+    {
+      title: "Computer Science and Design",
+      degree: "B.E. CSD",
+      description: "UI/UX design, human-computer interaction, and creative computing.",
+      duration: "4 Years",
+    },
+    {
+      title: "AeroSpace Engineering",
+      degree: "B.E. AERO",
+      description: "Study of aerodynamics, propulsion, aircraft structures, and avionics.",
+      duration: "4 Years",
+    },
+    {
+      title: "Bio-Medical Engineering",
+      degree: "B.E. BME",
+      description: "Focus on medical devices, biomedical signal processing, and imaging technologies.",
+      duration: "4 Years",
+    },
+    {
+      title: "Food Technology",
+      degree: "B.Tech. FT",
+      description: "Emphasis on food processing, quality control, and food safety management.",
+      duration: "4 Years",
+    },
+    {
+      title: "Agricultural Engineering",
+      degree: "B.E. AGERI",
+      description: "Specialization in farm machinery, soil & water conservation, and food processing.",
+      duration: "4 Years",
+    },
+    {
+      title: "Mechanical and Mechatronics ( Additive Manufacturing)",
+      degree: "B.E. MECH/MCT/AM",
+      description: "Combines thermal engineering, robotics, automation, and additive manufacturing.",
+      duration: "4 Years",
+    },
+  ];
 
-const pgPrograms = [
-  {
-    title: "Computer Science and Engineering",
-    degree: "B.E. CSE",
-    description: "Advanced computer science topics, software engineering, and data structures & algorithms.",
-    duration: "2 Years",
-  },
-  {
-    title: "Information Technology",
-    degree: "B.E. IT",
-    description: "Software development, web technologies, and database management.",
-    duration: "2 Years",
-  },
-  {
-    title: "Computer Science and Technology",
-    degree: "B.E. CST",
-    description: "Core computer science, advanced software engineering, and data analytics.",
-    duration: "2 Years",
-  },
-];
+  const pgPrograms = [
+    {
+      title: "Computer Science and Engineering",
+      degree: "B.E. CSE",
+      description: "Advanced computer science topics, software engineering, and data structures & algorithms.",
+      duration: "2 Years",
+    },
+    {
+      title: "Information Technology",
+      degree: "B.E. IT",
+      description: "Software development, web technologies, and database management.",
+      duration: "2 Years",
+    },
+    {
+      title: "Computer Science and Technology",
+      degree: "B.E. CST",
+      description: "Core computer science, advanced software engineering, and data analytics.",
+      duration: "2 Years",
+    },
+  ];
 
   const phdPrograms = [
     {
@@ -315,24 +315,27 @@ const pgPrograms = [
   }
 
   const ProgramCard = ({ program }) => {
-    // Determine if title is likely to fit on one line (rough estimation based on character count)
     const titleFitsOnOneLine = program.title.length <= 25;
 
     return (
-      <div className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors">
+      <motion.div
+        className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
         <div className="flex items-start mb-4">
           <div className="rounded-full p-2 mr-3 flex-shrink-0">
             <span className="text-white text-sm object-cover">{programIcons[program.title] || "🎓"}</span>
           </div>
           <div className="flex-1 min-w-0">
             {titleFitsOnOneLine ? (
-              // Title fits on one line - degree goes below
               <div>
                 <h3 className="text-white font-semibold text-lg leading-tight mb-1">{program.title}</h3>
                 <span className="text-red-400 font-medium text-sm">{program.degree}</span>
               </div>
             ) : (
-              // Title wraps - degree goes next to title
               <div className="flex flex-wrap items-center gap-2">
                 <h3 className="text-white font-semibold text-lg leading-tight">{program.title}</h3>
                 <span className="text-red-400 font-medium text-sm whitespace-nowrap">{program.degree}</span>
@@ -344,7 +347,7 @@ const pgPrograms = [
         <div className="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg">
           <span>{program.duration}</span>
         </div>
-      </div>
+      </motion.div>
     )
   }
 
@@ -367,7 +370,7 @@ const pgPrograms = [
             <div className="flex items-center justify-center mb-8">
               <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
               <h3 className="text-white text-2xl font-bold ">
-               9 Undergraduate Programs <span className="text-red-400">(Trending/Unique)</span>
+                9 Undergraduate Programs <span className="text-red-400">(Trending/Unique)</span>
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -381,29 +384,27 @@ const pgPrograms = [
         {/* PG Programs */}
         {(programType === "PG" || programType === null) && (
           <div className="mb-16">
-      {/* Mobile View - Stacked Layout */}
-      <div className="flex flex-col items-center justify-center mb-8 md:hidden">
-        <div className="flex items-center mb-2">
-          <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
-          <h3 className="text-white text-2xl font-bold">3 Undergraduate Programs</h3>
-        </div>
-        <span className="text-red-400 text-2xl font-bold">(Hot & Fast Moving)</span>
-      </div>
+            <div className="flex flex-col items-center justify-center mb-8 md:hidden">
+              <div className="flex items-center mb-2">
+                <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
+                <h3 className="text-white text-2xl font-bold">3 Undergraduate Programs</h3>
+              </div>
+              <span className="text-red-400 text-2xl font-bold">(Hot & Fast Moving)</span>
+            </div>
 
-      {/* Desktop View - Original Layout */}
-      <div className="hidden md:flex items-center justify-center mb-8">
-        <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
-        <h3 className="text-white text-2xl font-bold">
-          3 Undergraduate Programs <span className="text-red-400">(Hot & Fast Moving)</span>
-        </h3>
-      </div>
+            <div className="hidden md:flex items-center justify-center mb-8">
+              <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
+              <h3 className="text-white text-2xl font-bold">
+                3 Undergraduate Programs <span className="text-red-400">(Hot & Fast Moving)</span>
+              </h3>
+            </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {pgPrograms.map((program, index) => (
-          <ProgramCard key={index} program={program} />
-        ))}
-      </div>
-    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {pgPrograms.map((program, index) => (
+                <ProgramCard key={index} program={program} />
+              ))}
+            </div>
+          </div>
         )}
 
         {/* PhD Programs */}
@@ -412,7 +413,7 @@ const pgPrograms = [
             <div className="flex items-center justify-center mb-8">
               <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
               <h3 className="text-white text-2xl font-bold">
-               6 Undergraduate Programs <span className="text-red-400">(Evergreen)</span>
+                6 Undergraduate Programs <span className="text-red-400">(Evergreen)</span>
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -426,57 +427,53 @@ const pgPrograms = [
         {/* Postgraduate Programs */}
         {(programType === "Pgfl" || programType === null) && (
           <div className="mb-16">
-      {/* Mobile View - Stacked Layout */}
-      <div className="flex flex-col items-center justify-center mb-8 md:hidden">
-        <div className="flex items-center mb-2">
-          <img src={PG || "/placeholder.svg"} alt="PG Icon" className="w-8 h-8 mr-3" />
-          <h3 className="text-white text-2xl font-bold">Postgraduate Programs</h3>
-        </div>
-        <span className="text-red-400 text-2xl font-bold">(9 Programs)</span>
-      </div>
+            <div className="flex flex-col items-center justify-center mb-8 md:hidden">
+              <div className="flex items-center mb-2">
+                <img src={PG || "/placeholder.svg"} alt="PG Icon" className="w-8 h-8 mr-3" />
+                <h3 className="text-white text-2xl font-bold">Postgraduate Programs</h3>
+              </div>
+              <span className="text-red-400 text-2xl font-bold">(9 Programs)</span>
+            </div>
 
-      {/* Desktop View - Original Layout */}
-      <div className="hidden md:flex items-center justify-center mb-8">
-        <img src={PG || "/placeholder.svg"} alt="PG Icon" className="w-8 h-8 mr-3" />
-        <h3 className="text-white text-2xl font-bold">
-          Postgraduate Programs <span className="text-red-400">(9 Programs)</span>
-        </h3>
-      </div>
+            <div className="hidden md:flex items-center justify-center mb-8">
+              <img src={PG || "/placeholder.svg"} alt="PG Icon" className="w-8 h-8 mr-3" />
+              <h3 className="text-white text-2xl font-bold">
+                Postgraduate Programs <span className="text-red-400">(9 Programs)</span>
+              </h3>
+            </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {PgflPrograms.map((program, index) => (
-          <ProgramCard key={index} program={program} />
-        ))}
-      </div>
-    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {PgflPrograms.map((program, index) => (
+                <ProgramCard key={index} program={program} />
+              ))}
+            </div>
+          </div>
         )}
 
         {/* Research Programs */}
         {(programType === "Phdfl" || programType === null) && (
-             <div>
-      {/* Mobile View - Stacked Layout */}
-      <div className="flex flex-col items-center justify-center mb-8 md:hidden">
-        <div className="flex items-center mb-2">
-          <img src={PHD || "/placeholder.svg"} alt="PHD Icon" className="w-8 h-8 mr-3" />
-          <h3 className="text-white text-2xl font-bold">Research Programs</h3>
-        </div>
-        <span className="text-red-400 text-2xl font-bold">(5 Programs)</span>
-      </div>
+          <div>
+            <div className="flex flex-col items-center justify-center mb-8 md:hidden">
+              <div className="flex items-center mb-2">
+                <img src={PHD || "/placeholder.svg"} alt="PHD Icon" className="w-8 h-8 mr-3" />
+                <h3 className="text-white text-2xl font-bold">Research Programs</h3>
+              </div>
+              <span className="text-red-400 text-2xl font-bold">(5 Programs)</span>
+            </div>
 
-      {/* Desktop View - Original Layout */}
-      <div className="hidden md:flex items-center justify-center mb-8">
-        <img src={PHD || "/placeholder.svg"} alt="PHD Icon" className="w-8 h-8 mr-3" />
-        <h3 className="text-white text-2xl font-bold">
-          Research Programs <span className="text-red-400">(5 Programs)</span>
-        </h3>
-      </div>
+            <div className="hidden md:flex items-center justify-center mb-8">
+              <img src={PHD || "/placeholder.svg"} alt="PHD Icon" className="w-8 h-8 mr-3" />
+              <h3 className="text-white text-2xl font-bold">
+                Research Programs <span className="text-red-400">(5 Programs)</span>
+              </h3>
+            </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {PhdflPrograms.map((program, index) => (
-          <ProgramCard key={index} program={program} />
-        ))}
-      </div>
-    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {PhdflPrograms.map((program, index) => (
+                <ProgramCard key={index} program={program} />
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </section>

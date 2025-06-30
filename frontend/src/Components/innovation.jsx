@@ -165,7 +165,7 @@ const InnovationEcosystem = () => {
             {canScrollLeft && (
               <button
                 onClick={() => scrollToDirection("left")}
-                className="absolute cursor-pointer left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                className="absolute cursor-pointer -left-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
                 aria-label="Scroll left"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,7 +177,7 @@ const InnovationEcosystem = () => {
             {canScrollRight && (
               <button
                 onClick={() => scrollToDirection("right")}
-                className="absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                className="absolute cursor-pointer -right-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
                 aria-label="Scroll right"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,8 +208,8 @@ const InnovationEcosystem = () => {
               {innovationCards.map((card, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 
-                    w-[290px] sm:w-[320px] lg:min-w-[390px] lg:max-w-sm 
+                  className="bg-white rounded-lg overflow-hidden
+                    w-[290px] sm:w-[320px] lg:max-w-sm 
                     flex-shrink-0 shadow-lg flex flex-col justify-between 
                     h-[380px] sm:h-[410px] lg:h-[460px] 
                     scroll-snap-align-start border border-gray-700"
@@ -225,7 +225,7 @@ const InnovationEcosystem = () => {
                     </h3>
                     <div
                       className="relative flex-1 mb-3 sm:mb-4 overflow-y-auto hide-vertical-scrollbar"
-                      style={{ maxHeight: "115px" }}
+                      style={{ maxHeight: "70px" }}
                     >
                       <p className="text-xs sm:text-sm leading-relaxed text-justify">{card.description}</p>
                     </div>

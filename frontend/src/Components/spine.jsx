@@ -187,7 +187,7 @@ const SpineExperience = () => {
             {canScrollLeft && (
               <button
                 onClick={() => scrollToDirection("left")}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                className="absolute cursor-pointer -left-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
                 aria-label="Scroll left"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,7 +199,7 @@ const SpineExperience = () => {
             {canScrollRight && (
               <button
                 onClick={() => scrollToDirection("right")}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                className="absolute cursor-pointer -right-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
                 aria-label="Scroll right"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -231,10 +231,10 @@ const SpineExperience = () => {
               {facilities.map((facility, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 w-[280px] sm:w-[320px] lg:w-[370px] flex-shrink-0 shadow-lg flex flex-col justify-between h-[350px] sm:h-[370px] border border-gray-700"
+                  className="bg-white rounded-lg overflow-hidden w-[280px] sm:w-[320px] flex-shrink-0 shadow-lg flex flex-col justify-between h-[350px] sm:h-[370px] border border-gray-700"
                   style={{ scrollSnapAlign: "start" }}
                 >
-                  <div className="p-4 sm:p-6 flex flex-col flex-1">
+                  <div className="p-4 sm:p-6  flex flex-col flex-1">
                     <div className="flex items-center mb-3">
                       <div className="rounded-full w-10 h-10 flex items-center justify-center mr-3">
                         <span className="text-white text-lg font-bold">{facility.icon}</span>
