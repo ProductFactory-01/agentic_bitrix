@@ -257,13 +257,13 @@ const SpineExperience = () => {
           </div>
 
           {/* Fixed right-side gradient */}
-          <div className="pointer-events-none absolute top-0 right-0 h-full w-12 sm:w-16 lg:w-24 bg-gradient-to-l from-gray-800/95 via-gray-800/60 to-transparent z-10" />
+          {/* <div className="pointer-events-none absolute top-0 right-0 h-full w-12 sm:w-16 lg:w-24 bg-gradient-to-l from-gray-800/95 via-gray-800/60 to-transparent z-10" /> */}
 
           {/* Fixed left-side gradient */}
-          <div className="pointer-events-none absolute top-0 left-0 h-full w-12 sm:w-16 lg:w-24 bg-gradient-to-r from-gray-800/95 via-gray-800/60 to-transparent z-10" />
+          {/* <div className="pointer-events-none absolute top-0 left-0 h-full w-12 sm:w-16 lg:w-24 bg-gradient-to-r from-gray-800/95 via-gray-800/60 to-transparent z-10" /> */}
 
           {/* Bottom shadow */}
-          <div className="pointer-events-none absolute bottom-0 left-0 w-full h-4 bg-gradient-to-t from-gray-900/60 to-transparent z-10" />
+          {/* <div className="pointer-events-none absolute bottom-0 left-0 w-full h-4 bg-gradient-to-t from-gray-900/60 to-transparent z-10" /> */}
         </div>
 
         {/* Mobile scroll indicator */}
