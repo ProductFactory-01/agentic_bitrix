@@ -1,9 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Logo from "../../src/assets/snslogo.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // State to track cursor position
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  // Ref to access the header element
+  const headerRef = useRef(null);
 
   const handleSmoothScroll = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -25,9 +29,35 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Effect to handle mouse movement
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (headerRef.current) {
+        const rect = headerRef.current.getBoundingClientRect();
+        // Calculate cursor position relative to the header
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        setCursorPosition({ x, y });
+      }
+    };
+
+    // Add event listener for mouse movement
+    window.addEventListener("mousemove", handleMouseMove);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
-    <header className="px-4 sm:px-6 py-4 fixed top-0 w-full shadow-lg z-50 backdrop-blur-md bg-transparent">
-      <div className="flex items-center justify-between max-w-full mx-4 sm:mx-8 lg:mx-12 xl:mx-28 header-container">
+    <header ref={headerRef} className="px-4 sm:px-6 py-4 fixed top-0 w-full shadow-lg z-50 backdrop-blur-md bg-transparent overflow-hidden">
+      {/* Background Decorative Bubble Following Cursor */}
+      {/* <div
+        className="absolute w-32 h-32 bg-yellow-200 rounded-full opacity-10 transition-transform duration-300 ease-out pointer-events-none"
+      ></div>
+       */}
+      <div className="flex items-center justify-between max-w-full mx-4 sm:mx-8 lg:mx-12 xl:mx-28 header-container relative z-10">
         {/* Logo Section */}
         <div className="flex items-center space-x-2 lg:space-x-2 xl:space-x-3 logo-section">
           <div className="">

@@ -20,6 +20,8 @@ const StartupSection = () => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  // State to track cursor position
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,6 +41,27 @@ const StartupSection = () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
+    };
+  }, []);
+
+  // Effect to handle mouse movement
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        // Calculate cursor position relative to the section
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        setCursorPosition({ x, y });
+      }
+    };
+
+    // Add event listener for mouse movement
+    window.addEventListener("mousemove", handleMouseMove);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -65,8 +88,16 @@ const StartupSection = () => {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="bg-red-500 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-20">
-      <div className="max-w-full mx-4 sm:mx-8 lg:mx-20">
+    <section ref={sectionRef} className="bg-red-600 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-20 relative overflow-hidden">
+      {/* Background Decorative Bubble Following Cursor */}
+      <div
+        className="absolute w-40 h-40 bg-white rounded-full opacity-15 transition-transform duration-300 ease-out pointer-events-none"
+        style={{
+          transform: `translate(${cursorPosition.x - 80}px, ${cursorPosition.y - 80}px)`,
+        }}
+      ></div>
+      
+      <div className="max-w-full mx-4 sm:mx-8 lg:mx-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left order-2 lg:order-1">
