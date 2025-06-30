@@ -22,7 +22,7 @@ import joshtech from "../assets/joshtech.svg";
 import juspay from "../assets/juspay.svg";
 import microfocus from "../assets/microfocus.svg";
 import multicoreware from "../assets/multicoreware.svg";
-import Servicenow from "../assets/servicenow.svg";
+import Servicenow from "../assets/Servicenow.svg";
 import sobha from "../assets/sobha.svg";
 import trilogy from "../assets/trilogy.svg";
 import aai from "../assets/aai.svg";
