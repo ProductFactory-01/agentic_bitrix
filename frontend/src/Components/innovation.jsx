@@ -233,7 +233,7 @@ const InnovationEcosystem = () => {
                       {card.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-[10px] whitespace-nowrap flex-shrink-0"
+                          className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-[10px] whitespace-nowrap flex-shrink-0  transition-all duration-200 hover:bg-red-600"
                         >
                           {tag}
                         </span>
