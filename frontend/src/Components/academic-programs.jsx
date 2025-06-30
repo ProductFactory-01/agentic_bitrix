@@ -30,6 +30,7 @@ import PHD from "../assets/phd.png";
 import MBA from "../assets/mba.png";
 import MCA from "../assets/mca.png";
 import MECS from "../assets/mecs.png";
+import EEE from "../assets/eee.png";
 
 const AcademicPrograms = () => {
   // Remove the showAllUG state since we don't need it anymore
@@ -153,27 +154,27 @@ const AcademicPrograms = () => {
     {
       title: "Computer Science and Engineering",
       description: "AI/ML Research, Advanced Algorithms, Quantum Computing",
-      duration: "3-5 Years",
+      duration: "4 Years",
     },
     {
       title: "Civil Engineering",
       description: "Structural Engineering, Smart Cities, Environmental Engineering",
-      duration: "3-5 Years",
+      duration: "4 Years",
     },
     {
       title: "Electronics and Communication Engineering",
       description: "VLSI Design, Nanotechnology, Communication Systems",
-      duration: "3-5 Years",
+      duration: "4 Years",
     },
     {
       title: "Electrical and Electronics Engineering",
       description: "Renewable Energy, Smart Grids, Power Electronics",
-      duration: "3-5 Years",
+      duration: "4 Years",
     },
     {
       title: "Mechanical Engineering",
       description: "Advanced Materials, Robotics, Energy Systems",
-      duration: "3-5 Years",
+      duration: "4 Years",
     },
   ]
 
@@ -228,28 +229,28 @@ const AcademicPrograms = () => {
 
   const PhdflPrograms = [
     {
-      title: "Computer Science and Engineering",
+      title: "PhD in Computer Science",
       description: "AI/ML Research, Advanced Algorithms, Quantum Computing",
       duration: "3-5 Years",
     },
     {
-      title: "Civil Engineering",
+      title: "PhD in Civil Engineering",
       description:
         "Structural Engineering, Smart Cities, Environmental Engineering",
       duration: "3-5 Years",
     },
     {
-      title: "Electronics and Communication Engineering",
+      title: "PhD in Electronics",
       description: "VLSI Design, Nanotechnology, Communication Systems",
       duration: "3-5 Years",
     },
     {
-      title: "Electrical and Electronics Engineering",
+      title: "PhD in Electrical",
       description: "Renewable Energy, Smart Grids, Power Electronics",
       duration: "3-5 Years",
     },
     {
-      title: "Mechanical Engineering",
+      title: "PhD in Mechanical",
       description: "Advanced Materials, Robotics, Energy Systems",
       duration: "3-5 Years",
     },
@@ -322,6 +323,12 @@ const AcademicPrograms = () => {
     "Master of Business Administration": <img src={MBA || "/placeholder.svg"} alt="computer Icon" className="w-10 h-10 mr-0" />,
     "Master of Computer Applications": <img src={MCA || "/placeholder.svg"} alt="computer Icon" className="w-10 h-10 mr-0" />,
     "M.E. Computer Science": <img src={MECS || "/placeholder.svg"} alt="computer Icon" className="w-10 h-10 mr-0" />,
+    "PhD in Computer Science": <img src={ComputerIcon || "/placeholder.svg"} alt="computer Icon" className="w-10 h-10 mr-0" />,
+    "PhD in Civil Engineering": <img src={Civil || "/placeholder.svg"} alt="civil Icon" className="w-10 h-10 mr-0" />,
+    "PhD in Electronics": <img src={ECE || "/placeholder.svg"} alt="ece Icon" className="w-10 h-10 mr-0" />,
+    "PhD in Electrical": <img src={EEE || "/placeholder.svg"} alt="ece Icon" className="w-10 h-10 mr-0" />,
+    "PhD in Mechanical": <img src={Manufacturing || "/placeholder.svg"} alt="Manu Icon" className="w-10 h-10 mr-0" />,
+
 
 
 
