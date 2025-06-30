@@ -202,7 +202,7 @@ const AcademicPrograms = () => {
     },
     {
       title: "Thermal Engineering",
-      degree: "M.E. THE",
+      degree: "M.E. THERMAL",
       description: "Heat Transfer, Thermodynamics, Energy Systems",
       duration: "2 Years",
     },
