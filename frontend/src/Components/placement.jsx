@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import amazon from "../assets/amazon.jpg";
 import Highicon from '../assets/students/high.png';
 import Rate from "../assets/rate.svg?react";
@@ -81,6 +81,26 @@ import thozhar from "../assets/thozh.png";
 import accserv from "../assets/accserv.png";
 
 const PlacementSection = () => {
+  // State for parallax effect
+  const [scrollY, setScrollY] = useState(0);
+
+  // Handle scroll for parallax effect with throttling
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const topRecruiters = [
     "Google",
     "Microsoft",
@@ -274,9 +294,13 @@ const PlacementSection = () => {
   // Determine how many recruiters to show
   const recruitersToShow = showAll ? filteredRecruiters : filteredRecruiters.slice(0, 15);
 
+
   return (
-    <>
-      {/* Top Recruiters Section */}
+    <div 
+      className="placement-overlap parallax-element"
+    
+    >
+      {/* Top Recruiters Section with overlap effect */}
      <div className="bg-[#111827] py-3 px-0 lg:px-1 xl:px-2">
   <section className="bg-white text-center py-10 px-4 sm:px-6 lg:px-20 m-4">
     <h3 className="text-4xl sm:text-5xl font-bold mb-2">
@@ -452,7 +476,7 @@ const PlacementSection = () => {
           ))}
         </div>
       </section> */}
-    </>
+    </div>
   );
 };
 

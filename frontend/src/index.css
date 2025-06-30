@@ -27,3 +27,33 @@ body {
   background: #ef4444 !important;
   transform: scale(1.2) !important;
 }
+
+/* Parallax and smooth scroll effects */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero section sticky positioning with enhanced depth */
+.hero-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 100vh;
+  will-change: transform;
+}
+
+/* Placement section overlap effect with smooth transition */
+.placement-overlap {
+  position: relative;
+  z-index: 20;
+  margin-top: -120px;
+  padding-top: 140px;
+  
+  will-change: transform;
+}
+
+
+/* Smooth transitions for all parallax elements */
+.parallax-element {
+  transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

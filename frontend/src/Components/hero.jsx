@@ -6,6 +6,26 @@ import herobg from "../assets/herobg.svg";
 import Playbtn from "../assets/play.png"
 
 const HeroSection = () => {
+  // State for parallax background effect
+  const [scrollY, setScrollY] = useState(0);
+
+  // Handle scroll for hero background parallax with throttling
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Custom hook for animated counter
   const useAnimatedCounter = (end, duration = 2000, start = 0) => {
     const [count, setCount] = useState(start);
@@ -79,12 +99,16 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="bg-red-600 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center">
-      {/* Background image */}
+    <section className="hero-sticky bg-red-600 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center">
+      {/* Background image with parallax */}
       <img
         src={herobg || "/placeholder.svg"}
         alt="Hero Background"
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none"
+        style={{
+          transform: `translateY(${scrollY * 0.3}px)`,
+          transition: 'transform 0.1s ease-out'
+        }}
         aria-hidden="true"
       />
 
