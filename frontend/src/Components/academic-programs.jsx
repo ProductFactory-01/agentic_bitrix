@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useState } from "react"
@@ -33,70 +32,78 @@ import MECS from "../assets/mecs.png";
 import EEE from "../assets/eee.png";
 
 const AcademicPrograms = () => {
-  // Remove the showAllUG state since we don't need it anymore
-  // const [showAllUG, setShowAllUG] = useState(false); // REMOVE THIS LINE
-
-  // Change filter: no default selection
   const [programType, setProgramType] = useState(null)
 
   const ugPrograms = [
     {
       title: "Artificial Intelligence & Data Science",
+      degree: "B.E. AIDS",
       description: "Machine Learning, Deep Learning, Big Data Analytics",
       duration: "4 Years",
     },
     {
       title: "Artificial Intelligence & Machine Learning",
+      degree: "B.E. AIML",
       description: "AI Fundamentals, Deep Learning, Natural Language Processing",
       duration: "4 Years",
     },
     {
       title: "Computer Science and Engineering",
+      degree: "B.E. CSE",
       description: "Core Computer Science, Software Engineering, Data Structures & Algorithms",
       duration: "4 Years",
     },
     {
       title: "IoT with Cyber Security & Blockchain",
+      degree: "B.E. IoT",
       description: "Internet of Things, Cyber Security, Blockchain Technologies",
       duration: "4 Years",
     },
     {
       title: "Computer Science and Design",
+      degree: "B.E. CSD",
       description: "UI/UX Design, Human-Computer Interaction, Creative Computing",
       duration: "4 Years",
     },
     {
       title: "AeroSpace Engineering",
+      degree: "B.E. AERO",
       description: "Aerodynamics, Propulsion, Aircraft Structures, Avionics",
       duration: "4 Years",
     },
     {
       title: "Bio-Medical Engineering",
+      degree: "B.E. BME",
       description: "Medical Devices, Biomedical Signal Processing, Imaging",
       duration: "4 Years",
     },
     {
       title: "Food Technology",
+      degree: "B.Tech. FT",
       description: "Food Processing, Quality Control, Food Safety",
       duration: "4 Years",
     },
     {
       title: "Agricultural Engineering",
+      degree: "B.E. AGE",
       description: "Farm Machinery, Soil & Water Conservation, Food Processing",
       duration: "4 Years",
     },
     {
       title: "Mechanical Engineering",
+      degree: "B.E. MECH",
       description: "Thermal Engineering, Manufacturing, CAD/CAM Design",
       duration: "4 Years",
     },
     {
       title: "Mechatronics Engineering",
+      degree: "B.E. MCT",
       description: "Robotics, Automation, Intelligent Systems",
       duration: "4 Years",
     },
     {
       title: "Additive Manufacturing",
+      degree: "B.E. AM",
       description: "3D Printing, Advanced Manufacturing, CAD/CAM Design",
       duration: "4 Years",
     },
@@ -105,16 +112,19 @@ const AcademicPrograms = () => {
   const pgPrograms = [
     {
       title: "Computer Science and Engineering",
+      degree: "B.E. CSE",
       description: "Core Computer Science, Software Engineering, Data Structures & Algorithms",
       duration: "4 Years",
     },
     {
       title: "Information Technology",
+      degree: "B.E. IT",
       description: "Software Development, Web Technologies, Database Management",
       duration: "4 Years",
     },
     {
       title: "Computer Science and Technology",
+      degree: "B.E. CST",
       description: "Core Computer Science, Software Engineering, Data Structures & Algorithms",
       duration: "4 Years",
     },
@@ -123,57 +133,38 @@ const AcademicPrograms = () => {
   const phdPrograms = [
     {
       title: "Automobile Engineering",
+      degree: "B.E. AUTO",
       description: "Vehicle Design, Automotive Systems Design",
       duration: "4 Years",
     },
     {
       title: "Civil Engineering",
+      degree: "B.E. CIVIL",
       description: "Structural Engineering, Environmental Engineering",
       duration: "4 Years",
     },
     {
       title: "Electronics and Communication Engineering",
+      degree: "B.E. ECE",
       description: "VLSI Design, Embedded Systems, Signal Processing",
       duration: "4 Years",
     },
     {
       title: "Electrical and Electronics Engineering",
+      degree: "B.E. EEE",
       description: "Power Systems, Control Systems, Electronics Design",
       duration: "4 Years",
     },
     {
       title: "Mechatronics Engineering",
+      degree: "B.E. MCT",
       description: "Robotics, Automation, Intelligent Systems",
       duration: "4 Years",
     },
     {
       title: "Mechanical Engineering",
+      degree: "B.E. MECH",
       description: "Thermal Engineering, Manufacturing, CAD/CAM Design",
-      duration: "4 Years",
-    },
-    {
-      title: "Computer Science and Engineering",
-      description: "AI/ML Research, Advanced Algorithms, Quantum Computing",
-      duration: "4 Years",
-    },
-    {
-      title: "Civil Engineering",
-      description: "Structural Engineering, Smart Cities, Environmental Engineering",
-      duration: "4 Years",
-    },
-    {
-      title: "Electronics and Communication Engineering",
-      description: "VLSI Design, Nanotechnology, Communication Systems",
-      duration: "4 Years",
-    },
-    {
-      title: "Electrical and Electronics Engineering",
-      description: "Renewable Energy, Smart Grids, Power Electronics",
-      duration: "4 Years",
-    },
-    {
-      title: "Mechanical Engineering",
-      description: "Advanced Materials, Robotics, Energy Systems",
       duration: "4 Years",
     },
   ]
@@ -181,83 +172,92 @@ const AcademicPrograms = () => {
   const PgflPrograms = [
     {
       title: "Master of Computer Applications",
+      degree: "MCA",
       description: "Advanced Programming, Software Engineering, AI/ML Applications",
       duration: " 2 Years",
     },
     {
       title: "Master of Business Administration",
+      degree: "MBA",
       description: "Leadership, Strategy, Digital Business, Entrepreneurship",
       duration: " 2 Years",
     },
     {
       title: "M.E. Computer Science",
+      degree: "M.E. CSE",
       description: "Advanced Algorithms, Research, Machine Learning",
       duration: " 2 Years",
     },
     {
       title: "Power System and Engineering",
+      degree: "M.E. PSE",
       description: "Power Systems, Smart Grids, Renewable Energy",
       duration: "2 Years",
     },
     {
       title: "Structural Engineering",
+      degree: "M.E. SE",
       description: "Advanced Structural Design, Earthquake Engineering",
       duration: "2 Years",
     },
     {
       title: "Thermal Engineering",
+      degree: "M.E. THE",
       description: "Heat Transfer, Thermodynamics, Energy Systems",
       duration: "2 Years",
     },
     {
       title: "VLSI Design",
+      degree: "M.E. VLSI",
       description: "VLSI Design, Embedded Systems, Signal Processing",
       duration: "2 Years",
     },
     {
       title: "Embedded System Technologies",
+      degree: "M.E. EST",
       description: "Embedded Systems, IoT, Real-Time Systems",
       duration: "2 Years",
     },
     {
       title: "Manufacturing Engineering",
+      degree: "M.E. MFG",
       description: "Advanced Manufacturing, Automation, Quality Engineering",
       duration: "2 Years",
     },
   ]
 
-
   const PhdflPrograms = [
     {
       title: "PhD in Computer Science",
+      degree: "Ph.D. CSE",
       description: "AI/ML Research, Advanced Algorithms, Quantum Computing",
       duration: "3-5 Years",
     },
     {
       title: "PhD in Civil Engineering",
-      description:
-        "Structural Engineering, Smart Cities, Environmental Engineering",
+      degree: "Ph.D. CIVIL",
+      description: "Structural Engineering, Smart Cities, Environmental Engineering",
       duration: "3-5 Years",
     },
     {
       title: "PhD in Electronics",
+      degree: "Ph.D. ECE",
       description: "VLSI Design, Nanotechnology, Communication Systems",
       duration: "3-5 Years",
     },
     {
       title: "PhD in Electrical",
+      degree: "Ph.D. EEE",
       description: "Renewable Energy, Smart Grids, Power Electronics",
       duration: "3-5 Years",
     },
     {
       title: "PhD in Mechanical",
+      degree: "Ph.D. MECH",
       description: "Advanced Materials, Robotics, Energy Systems",
       duration: "3-5 Years",
     },
   ]
-
-
-
 
   const programIcons = {
     "AeroSpace Engineering": (
@@ -328,30 +328,41 @@ const AcademicPrograms = () => {
     "PhD in Electronics": <img src={ECE || "/placeholder.svg"} alt="ece Icon" className="w-10 h-10 mr-0" />,
     "PhD in Electrical": <img src={EEE || "/placeholder.svg"} alt="ece Icon" className="w-10 h-10 mr-0" />,
     "PhD in Mechanical": <img src={Manufacturing || "/placeholder.svg"} alt="Manu Icon" className="w-10 h-10 mr-0" />,
-
-
-
-
   }
 
-  const ProgramCard = ({ program }) => (
-    <div className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors">
-      <div className="flex items-center mb-4">
-        <div className=" rounded-full p-2 mr-1">
-          <span className="text-white text-sm">{programIcons[program.title] || "🎓"}</span>
+  const ProgramCard = ({ program }) => {
+    // Determine if title is likely to fit on one line (rough estimation based on character count)
+    const titleFitsOnOneLine = program.title.length <= 25;
+    
+    return (
+      <div className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors">
+        <div className="flex items-start mb-4">
+          <div className="rounded-full p-2 mr-3 flex-shrink-0">
+            <span className="text-white text-sm">{programIcons[program.title] || "🎓"}</span>
+          </div>
+          <div className="flex-1 min-w-0">
+            {titleFitsOnOneLine ? (
+              // Title fits on one line - degree goes below
+              <div>
+                <h3 className="text-white font-semibold text-lg leading-tight mb-1">{program.title}</h3>
+                <span className="text-red-400 font-medium text-sm">{program.degree}</span>
+              </div>
+            ) : (
+              // Title wraps - degree goes next to title
+              <div className="flex flex-wrap items-center gap-2">
+                <h3 className="text-white font-semibold text-lg leading-tight">{program.title}</h3>
+                <span className="text-red-400 font-medium text-sm whitespace-nowrap">{program.degree}</span>
+              </div>
+            )}
+          </div>
         </div>
-        <h3 className="text-white font-semibold text-lg mb-0">{program.title}</h3>
+        <p className="text-gray-300 text-sm mb-4">{program.description}</p>
+        <div className="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg">
+          <span>{program.duration}</span>
+        </div>
       </div>
-      <p className="text-gray-300 text-sm mb-4">{program.description}</p>
-      <div className="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg">
-        <span>{program.duration}</span>
-      </div>
-    </div>
-  )
-
-  // Remove these lines - no need to split programs anymore
-  // const initialUGPrograms = ugPrograms.slice(0, 9);
-  // const extraUGPrograms = ugPrograms.slice(9);
+    )
+  }
 
   return (
     <section className="bg-gray-900 py-20 px-6">
@@ -401,7 +412,7 @@ const AcademicPrograms = () => {
           </button>
         </div>
 
-        {/* UG Programs: show if filter is UG or no filter */}
+        {/* UG Programs */}
         {(programType === "UG" || programType === null) && (
           <div className="mb-16">
             <div className="flex items-center justify-center mb-8">
@@ -411,35 +422,14 @@ const AcademicPrograms = () => {
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Changed: Now shows all ugPrograms instead of conditional display */}
               {ugPrograms.map((program, index) => (
                 <ProgramCard key={index} program={program} />
               ))}
             </div>
-            {/* REMOVE THESE SECTIONS - No more "View All" functionality */}
-            {/* 
-            {!showAllUG && (
-              <div className="text-center mt-6 mb-2">
-                <span className="text-gray-400 font-medium text-sm">
-                  + 9 More Specialized Engineering Programs
-                </span>
-              </div>
-            )}
-            {!showAllUG && (
-              <div className="text-center mt-2">
-                <button
-                  className="inline-flex items-center border border-gray-600 cursor-pointer text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors"
-                  onClick={() => setShowAllUG(true)}
-                >
-                  <img src={MENU || "/placeholder.svg"} alt="" className="w-3 h-3 mr-2" /> View All UG Programs
-                </button>
-              </div>
-            )}
-            */}
           </div>
         )}
 
-        {/* PG Programs: show if filter is PG or no filter */}
+        {/* PG Programs */}
         {(programType === "PG" || programType === null) && (
           <div className="mb-16">
             <div className="flex items-center justify-center mb-8">
@@ -456,7 +446,7 @@ const AcademicPrograms = () => {
           </div>
         )}
 
-        {/* PhD Programs: show if filter is PhD or no filter */}
+        {/* PhD Programs */}
         {(programType === "PhD" || programType === null) && (
           <div className="mb-16">
             <div className="flex items-center justify-center mb-8">
@@ -473,13 +463,13 @@ const AcademicPrograms = () => {
           </div>
         )}
 
-        {/* PG Programs: show if filter is PhD or no filter */}
+        {/* Postgraduate Programs */}
         {(programType === "Pgfl" || programType === null) && (
           <div className="mb-16">
             <div className="flex items-center justify-center mb-8">
               <img src={PG} alt="PG Icon" className="w-8 h-8 mr-3" />
               <h3 className="text-white text-2xl font-bold">
-                Postgraduate  Programs <span className="text-red-400">(9 Programs )</span>
+                Postgraduate Programs <span className="text-red-400">(9 Programs )</span>
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -489,7 +479,8 @@ const AcademicPrograms = () => {
             </div>
           </div>
         )}
-        {/* PHD Programs: show if filter is PhD or no filter */}
+
+        {/* Research Programs */}
         {(programType === "Phdfl" || programType === null) && (
           <div>
             <div className="flex items-center justify-center mb-8">
@@ -505,7 +496,6 @@ const AcademicPrograms = () => {
             </div>
           </div>
         )}
-
       </div>
     </section>
   )
