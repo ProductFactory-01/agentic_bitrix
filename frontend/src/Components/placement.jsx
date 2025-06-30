@@ -77,7 +77,7 @@ import technologies from "../assets/technologies.svg";
 import web from "../assets/web.svg";
 import ybs from "../assets/ybs.svg";
 import finan from "../assets/finan.svg";
-import thozhar from "../assets/thozha.png";
+import thozhar from "../assets/thozh.png";
 import accserv from "../assets/accserv.png";
 
 const PlacementSection = () => {
