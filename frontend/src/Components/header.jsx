@@ -53,13 +53,10 @@ const Header = () => {
   return (
     <header ref={headerRef} className="px-4 sm:px-6 py-4 fixed top-0 w-full shadow-lg z-50 backdrop-blur-md bg-transparent overflow-hidden">
       {/* Background Decorative Bubble Following Cursor */}
-      <div
+      {/* <div
         className="absolute w-32 h-32 bg-yellow-200 rounded-full opacity-10 transition-transform duration-300 ease-out pointer-events-none"
-        style={{
-          transform: `translate(${cursorPosition.x - 64}px, ${cursorPosition.y - 64}px)`,
-        }}
       ></div>
-      
+       */}
       <div className="flex items-center justify-between max-w-full mx-4 sm:mx-8 lg:mx-12 xl:mx-28 header-container relative z-10">
         {/* Logo Section */}
         <div className="flex items-center space-x-2 lg:space-x-2 xl:space-x-3 logo-section">
