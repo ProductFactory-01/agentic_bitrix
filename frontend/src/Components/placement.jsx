@@ -22,7 +22,7 @@ import joshtech from "../assets/joshtech.svg";
 import juspay from "../assets/juspay.svg";
 import microfocus from "../assets/microfocus.svg";
 import multicoreware from "../assets/multicoreware.svg";
-import Servicenow from "../assets/servicenow.svg";
+import servicenow from "../assets/servicenow.svg";
 import sobha from "../assets/sobha.svg";
 import trilogy from "../assets/trilogy.svg";
 import aai from "../assets/aai.svg";
@@ -175,7 +175,7 @@ const PlacementSection = () => {
     { name: "Juspay", logo: juspay, package: "27 LPA" },
     { name: "Micro Focus", logo: microfocus, package: "11 LPA" },
     { name: "Multicoreware", logo: multicoreware, package: "11 LPA" },
-    { name: "ServiceNow", logo: Servicenow, package: "45 LPA" },
+    { name: "serviceNow", logo: servicenow, package: "45 LPA" },
     { name: "Sobha", logo: sobha, package: "13.5 LPA" },
     { name: "Trilogy", logo: trilogy, package: "36 LPA" },
     { name: "Amazon", logo: amazon, package: "22 LPA" },

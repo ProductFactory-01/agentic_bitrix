@@ -35,7 +35,7 @@ const Header = () => {
               <img
                 src={Logo || "/placeholder.svg"}
                 alt=""
-                className="w-full h-full sm:w-full sm:h-full lg:w-11 lg:h-11 xl:w-12 xl:h-12"
+                className=" object-cover w-full h-full sm:w-full sm:h-full lg:w-full lg:h-full xl:w-full xl:h-full"
               />
             </div>
           </div>

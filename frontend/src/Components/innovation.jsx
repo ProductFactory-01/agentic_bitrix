@@ -209,9 +209,9 @@ const InnovationEcosystem = () => {
                 <div
                   key={idx}
                   className="bg-white rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 
-                    w-[280px] sm:w-[320px] lg:min-w-[370px] lg:max-w-sm 
+                    w-[290px] sm:w-[320px] lg:min-w-[390px] lg:max-w-sm 
                     flex-shrink-0 shadow-lg flex flex-col justify-between 
-                    h-[380px] sm:h-[410px] lg:h-[430px] 
+                    h-[380px] sm:h-[410px] lg:h-[460px] 
                     scroll-snap-align-start border border-gray-700"
                 >
                   <div className="p-4 sm:p-5 lg:p-6 flex flex-col flex-1">
@@ -225,15 +225,15 @@ const InnovationEcosystem = () => {
                     </h3>
                     <div
                       className="relative flex-1 mb-3 sm:mb-4 overflow-y-auto hide-vertical-scrollbar"
-                      style={{ maxHeight: "50px" }}
+                      style={{ maxHeight: "115px" }}
                     >
-                      <p className="text-xs sm:text-sm leading-relaxed">{card.description}</p>
+                      <p className="text-xs sm:text-sm leading-relaxed text-justify">{card.description}</p>
                     </div>
                     <div className="flex gap-1 sm:gap-2 mt-auto overflow-x-auto hide-vertical-scrollbar">
                       {card.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs whitespace-nowrap flex-shrink-0"
+                          className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-[10px] whitespace-nowrap flex-shrink-0"
                         >
                           {tag}
                         </span>
@@ -244,7 +244,7 @@ const InnovationEcosystem = () => {
                     <img
                       src={card.image || "/placeholder.svg"}
                       alt={card.title}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-[90%] sm:h-[90%] object-cover rounded-lg -mt-8 sm:-mt-10"
                       draggable={false}
                     />
                   </div>
@@ -255,13 +255,13 @@ const InnovationEcosystem = () => {
 
           {/* Responsive gradients */}
           {/* Right gradient */}
-          <div className="pointer-events-none absolute top-0 right-0 h-full w-12 sm:w-16 lg:w-24 bg-gradient-to-l from-gray-800/95 via-gray-800/60 to-transparent z-10" />
+          {/* <div className="pointer-events-none absolute top-0 right-0 h-full w-12 sm:w-16 lg:w-24 bg-gradient-to-l from-gray-800/95 via-gray-800/60 to-transparent z-10" /> */}
 
           {/* Left gradient */}
-          <div className="pointer-events-none absolute top-0 left-0 h-full w-12 sm:w-16 lg:w-24 bg-gradient-to-r from-gray-800/95 via-gray-800/60 to-transparent z-10" />
+          {/* <div className="pointer-events-none absolute top-0 left-0 h-full w-12 sm:w-16 lg:w-24 bg-gradient-to-r from-gray-800/95 via-gray-800/60 to-transparent z-10" /> */}
 
           {/* Bottom shadow */}
-          <div className="pointer-events-none absolute bottom-0 left-0 w-full h-4 bg-gradient-to-t from-gray-900/60 to-transparent z-10" />
+          {/* <div className="pointer-events-none absolute bottom-0 left-0 w-full h-4 bg-gradient-to-t from-gray-900/60 to-transparent z-10" /> */}
         </div>
 
         {/* Mobile scroll indicator */}

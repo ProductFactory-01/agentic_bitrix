@@ -367,29 +367,33 @@ const AcademicPrograms = () => {
         </div>
 
         {/* Program Type Buttons */}
-        <div className="flex flex-row justify-center items-center gap-2 sm:gap-2 mb-8 sm:mb-12 px-4">
+        <div className="flex flex-row justify-center items-center gap-1 sm:gap-4 mb-8 sm:mb-12 px-2 sm:px-4">
           <button
-            className={`w-auto sm:w-auto px-3 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 ${programType === "UG"
-              ? "bg-gray-700 text-white shadow-lg"
-              : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+            className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "UG"
+                ? "bg-gray-700 text-white shadow-lg"
+                : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
               }`}
             onClick={() => setProgramType(programType === "UG" ? null : "UG")}
           >
-            Trending/Unique
+            <span className="hidden sm:inline">Trending/Unique</span>
+            <span className="sm:hidden">Trending</span>
           </button>
+
           <button
-            className={`w-auto sm:w-auto px-3 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 ${programType === "PG"
-              ? "bg-gray-700 text-white shadow-lg"
-              : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+            className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "PG"
+                ? "bg-gray-700 text-white shadow-lg"
+                : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
               }`}
             onClick={() => setProgramType(programType === "PG" ? null : "PG")}
           >
-            Hot & Fast Moving
+            <span className="hidden sm:inline">Hot & Fast Moving</span>
+            <span className="sm:hidden">Hot & Fast Moving</span>
           </button>
+
           <button
-            className={`w-auto sm:w-auto px-3 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 ${programType === "PhD"
-              ? "bg-gray-700 text-white shadow-lg"
-              : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+            className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "PhD"
+                ? "bg-gray-700 text-white shadow-lg"
+                : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
               }`}
             onClick={() => setProgramType(programType === "PhD" ? null : "PhD")}
           >
