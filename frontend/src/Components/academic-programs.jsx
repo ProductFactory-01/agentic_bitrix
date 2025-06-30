@@ -79,7 +79,7 @@ const ugPrograms = [
   },
   {
     title: "Agricultural Engineering",
-    degree: "B.E. AGRI",
+    degree: "B.Tech. AGRI",
     description: "Specialization in farm machinery, soil & water conservation, and food processing.",
     duration: "4 Years",
   },
@@ -100,7 +100,7 @@ const ugPrograms = [
     },
     {
       title: "Information Technology",
-      degree: "B.E. IT",
+      degree: "B.Tech. IT",
       description: "Software development, web technologies, and database management.",
       duration: "4 Years",
     },
