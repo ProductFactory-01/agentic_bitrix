@@ -64,6 +64,7 @@ const InnovationEcosystem = () => {
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
   const [activeCard, setActiveCard] = useState(0)
+  const [scrollY, setScrollY] = useState(0)
 
   // Update active card based on scroll position
   const updateActiveCard = () => {
@@ -107,6 +108,29 @@ const InnovationEcosystem = () => {
     }
   }, [])
 
+  // Handle scroll for parallax blur effect
+  useEffect(() => {
+    let ticking = false
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrollY(window.scrollY)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Calculate blur intensity based on scroll position
+  const calculateBlurIntensity = () => {
+    const blurFactor = Math.min(scrollY / 500, 1) // Adjust 500 to control when blur reaches maximum
+    return blurFactor * 3 // Maximum blur of 3px
+  }
+
   // Mouse drag functionality for desktop
   const handleMouseDown = (e) => {
     setIsDragging(true)
@@ -147,6 +171,16 @@ const InnovationEcosystem = () => {
 
   return (
     <section className="bg-gray-900 py-10 px-4 sm:px-6 lg:px-20 relative">
+      {/* Parallax blur overlay at the top */}
+      <div 
+        className="absolute top-0 left-0 w-full h-24 sm:h-32 lg:h-40 bg-gray-900/20 pointer-events-none z-10"
+        style={{
+          filter: `blur(${calculateBlurIntensity()}px)`,
+          background: `linear-gradient(to bottom, rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.3), transparent)`,
+          transition: 'filter 0.1s ease-out'
+        }}
+      />
+      
       <div className="max-w-full mx-auto lg:mx-20">
         <div className="text-center mb-6">
           <h2 className="text-white text-4xl sm:text-5xl font-bold mb-4">
@@ -165,7 +199,7 @@ const InnovationEcosystem = () => {
             {canScrollLeft && (
               <button
                 onClick={() => scrollToDirection("left")}
-                className="absolute cursor-pointer -left-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                className="absolute cursor-pointer left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
                 aria-label="Scroll left"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,7 +211,7 @@ const InnovationEcosystem = () => {
             {canScrollRight && (
               <button
                 onClick={() => scrollToDirection("right")}
-                className="absolute cursor-pointer -right-8 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                className="absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
                 aria-label="Scroll right"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -209,7 +243,7 @@ const InnovationEcosystem = () => {
                 <div
                   key={idx}
                   className="bg-white rounded-lg overflow-hidden
-                    w-[290px] sm:w-[320px] lg:max-w-sm 
+                    w-[290px] sm:w-[320px] lg:min-w-[390px] lg:max-w-sm 
                     flex-shrink-0 shadow-lg flex flex-col justify-between 
                     h-[380px] sm:h-[410px] lg:h-[460px] 
                     scroll-snap-align-start border border-gray-700"
@@ -225,7 +259,7 @@ const InnovationEcosystem = () => {
                     </h3>
                     <div
                       className="relative flex-1 mb-3 sm:mb-4 overflow-y-auto hide-vertical-scrollbar"
-                      style={{ maxHeight: "70px" }}
+                      style={{ maxHeight: "115px" }}
                     >
                       <p className="text-xs sm:text-sm leading-relaxed text-justify">{card.description}</p>
                     </div>
