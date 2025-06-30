@@ -169,7 +169,7 @@ const SpineExperience = () => {
   }
 
   return (
-    <section className="bg-gray-800 py-10 px-4 sm:px-6 relative">
+    <section className="bg-gray-900 py-10 px-4 sm:px-6 relative">
       <div className="max-w-full mx-4 sm:mx-8 lg:mx-20">
         <div className="text-center mb-6">
           <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">

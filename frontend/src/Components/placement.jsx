@@ -325,7 +325,7 @@ const PlacementSection = () => {
           </div>
 
           {/* Package Footer */}
-          <div className="bg-[#111827] text-center py-2">
+          <div className="bg-gray-900 text-center py-2">
             <p className="text-white font-bold text-lg">{recruiter.package}</p>
           </div>
         </div>
