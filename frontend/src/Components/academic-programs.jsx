@@ -361,48 +361,13 @@ const pgPrograms = [
           </p>
         </div>
 
-        {/* Program Type Buttons */}
-        <div className="flex flex-row justify-center items-center gap-1 sm:gap-4 mb-8 sm:mb-12 px-2 sm:px-4">
-          <button
-            className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "UG"
-              ? "bg-red-600 text-white shadow-lg"
-              : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
-              }`}
-            onClick={() => setProgramType(programType === "UG" ? null : "UG")}
-          >
-            <span className="hidden sm:inline">Trending/Unique</span>
-            <span className="sm:hidden">Trending</span>
-          </button>
-
-          <button
-            className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "PG"
-              ? "bg-red-600 text-white shadow-lg"
-              : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
-              }`}
-            onClick={() => setProgramType(programType === "PG" ? null : "PG")}
-          >
-            <span className="hidden sm:inline">Hot & Fast Moving</span>
-            <span className="sm:hidden">Hot & Fast Moving</span>
-          </button>
-
-          <button
-            className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "PhD"
-              ? "bg-red-600 text-white shadow-lg"
-              : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
-              }`}
-            onClick={() => setProgramType(programType === "PhD" ? null : "PhD")}
-          >
-            Evergreen
-          </button>
-        </div>
-
         {/* UG Programs */}
         {(programType === "UG" || programType === null) && (
           <div className="mb-16">
             <div className="flex items-center justify-center mb-8">
               <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
               <h3 className="text-white text-2xl font-bold ">
-                Undergraduate Programs <span className="text-red-400">(9 Programs)</span>
+               9 Undergraduate Programs <span className="text-red-400">(Trending/Unique)</span>
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -419,7 +384,7 @@ const pgPrograms = [
             <div className="flex items-center justify-center mb-8">
               <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
               <h3 className="text-white text-2xl font-bold">
-                Undergraduate Programs <span className="text-red-400">(3 Programs)</span>
+               3 Undergraduate Programs <span className="text-red-400">(Hot & Fast Moving)</span>
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -436,7 +401,7 @@ const pgPrograms = [
             <div className="flex items-center justify-center mb-8">
               <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
               <h3 className="text-white text-2xl font-bold">
-                Undergraduate Programs <span className="text-red-400">(6 Programs )</span>
+               6 Undergraduate Programs <span className="text-red-400">(Evergreen)</span>
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
