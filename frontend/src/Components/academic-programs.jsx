@@ -96,19 +96,19 @@ const ugPrograms = [
       title: "Computer Science and Engineering",
       degree: "B.E. CSE",
       description: "Advanced computer science topics, software engineering, and data structures & algorithms.",
-      duration: "2 Years",
+      duration: "4 Years",
     },
     {
       title: "Information Technology",
       degree: "B.E. IT",
       description: "Software development, web technologies, and database management.",
-      duration: "2 Years",
+      duration: "4 Years",
     },
     {
       title: "Computer Science and Technology",
       degree: "B.E. CST",
       description: "Core computer science, advanced software engineering, and data analytics.",
-      duration: "2 Years",
+      duration: "4 Years",
     },
   ];
 

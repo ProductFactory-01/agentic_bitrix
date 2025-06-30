@@ -1,4 +1,4 @@
-import LOGO from "../assets/snslogo.png";
+import LOGO from "../assets/sns-new.png";
 import Facebook from "../assets/Link [w-10].png";
 import Twitter from "../assets/Link [w-10] (1).png";
 import LinkedIn from "../assets/Link [w-10] (2).png";
@@ -16,7 +16,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <div className="p-2">
-                <img src={LOGO} alt="" />
+                <img src={LOGO} alt="" className="w-auto h-16"/>
               </div>
               <div>
                 <h3 className="text-red-600 font-bold text-sm">SNS College of Technology</h3>
