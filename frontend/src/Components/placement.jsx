@@ -29,7 +29,7 @@ import aai from "../assets/aai.svg";
 import aliens from "../assets/aliens.svg";
 import bosch from "../assets/bosch.svg";
 import cognizant from "../assets/cognizant.svg";
-import infosys from "../assets/infosys.svg";
+import infosys from "../assets/infosys.jpg";
 import tcs from "../assets/tcs.svg";
 import presidio from "../assets/presidio.svg";
 import intellipaat from "../assets/intellipaat.svg";
