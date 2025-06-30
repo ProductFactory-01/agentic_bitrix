@@ -34,101 +34,83 @@ import EEE from "../assets/eee.png";
 const AcademicPrograms = () => {
   const [programType, setProgramType] = useState(null)
 
-  const ugPrograms = [
-    {
-      title: "Artificial Intelligence & Data Science",
-      degree: "B.E. AIDS",
-      description: "Machine Learning, Deep Learning, Big Data Analytics",
-      duration: "4 Years",
-    },
-    {
-      title: "Artificial Intelligence & Machine Learning",
-      degree: "B.E. AIML",
-      description: "AI Fundamentals, Deep Learning, Natural Language Processing",
-      duration: "4 Years",
-    },
-    {
-      title: "Computer Science and Engineering",
-      degree: "B.E. CSE",
-      description: "Core Computer Science, Software Engineering, Data Structures & Algorithms",
-      duration: "4 Years",
-    },
-    {
-      title: "IoT with Cyber Security & Blockchain",
-      degree: "B.E. IoT",
-      description: "Internet of Things, Cyber Security, Blockchain Technologies",
-      duration: "4 Years",
-    },
-    {
-      title: "Computer Science and Design",
-      degree: "B.E. CSD",
-      description: "UI/UX Design, Human-Computer Interaction, Creative Computing",
-      duration: "4 Years",
-    },
-    {
-      title: "AeroSpace Engineering",
-      degree: "B.E. AERO",
-      description: "Aerodynamics, Propulsion, Aircraft Structures, Avionics",
-      duration: "4 Years",
-    },
-    {
-      title: "Bio-Medical Engineering",
-      degree: "B.E. BME",
-      description: "Medical Devices, Biomedical Signal Processing, Imaging",
-      duration: "4 Years",
-    },
-    {
-      title: "Food Technology",
-      degree: "B.Tech. FT",
-      description: "Food Processing, Quality Control, Food Safety",
-      duration: "4 Years",
-    },
-    {
-      title: "Agricultural Engineering",
-      degree: "B.E. AGE",
-      description: "Farm Machinery, Soil & Water Conservation, Food Processing",
-      duration: "4 Years",
-    },
-    {
-      title: "Mechanical Engineering",
-      degree: "B.E. MECH",
-      description: "Thermal Engineering, Manufacturing, CAD/CAM Design",
-      duration: "4 Years",
-    },
-    {
-      title: "Mechatronics Engineering",
-      degree: "B.E. MCT",
-      description: "Robotics, Automation, Intelligent Systems",
-      duration: "4 Years",
-    },
-    {
-      title: "Additive Manufacturing",
-      degree: "B.E. AM",
-      description: "3D Printing, Advanced Manufacturing, CAD/CAM Design",
-      duration: "4 Years",
-    },
-  ]
+const ugPrograms = [
+  {
+    title: "Artificial Intelligence & Data Science",
+    degree: "B.Tech. AIDS",
+    description: "Focus on Machine Learning, Deep Learning, and Big Data Analytics.",
+    duration: "4 Years",
+  },
+  {
+    title: "Artificial Intelligence & Machine Learning",
+    degree: "B.Tech. AIML",
+    description: "Covers AI fundamentals, Deep Learning, and Natural Language Processing.",
+    duration: "4 Years",
+  },
+  {
+    title: "Computer Science and Engineering IoT with Cyber Security & Blockchain",
+    degree: "B.E. CSE IoT/CS/Blockchain",
+    description: "Combines core computer science with IoT, cyber security, and blockchain technologies.",
+    duration: "4 Years",
+  },
+  {
+    title: "Computer Science and Design",
+    degree: "B.E. CSD",
+    description: "UI/UX design, human-computer interaction, and creative computing.",
+    duration: "4 Years",
+  },
+  {
+    title: "AeroSpace Engineering",
+    degree: "B.E. AERO",
+    description: "Study of aerodynamics, propulsion, aircraft structures, and avionics.",
+    duration: "4 Years",
+  },
+  {
+    title: "Bio-Medical Engineering",
+    degree: "B.E. BME",
+    description: "Focus on medical devices, biomedical signal processing, and imaging technologies.",
+    duration: "4 Years",
+  },
+  {
+    title: "Food Technology",
+    degree: "B.Tech. FT",
+    description: "Emphasis on food processing, quality control, and food safety management.",
+    duration: "4 Years",
+  },
+  {
+    title: "Agricultural Engineering",
+    degree: "B.E. AGERI",
+    description: "Specialization in farm machinery, soil & water conservation, and food processing.",
+    duration: "4 Years",
+  },
+  {
+    title: "Mechanical and Mechatronics ( Additive Manufacturing)",
+    degree: "B.E. MECH/MCT/AM",
+    description: "Combines thermal engineering, robotics, automation, and additive manufacturing.",
+    duration: "4 Years",
+  },
+];
 
-  const pgPrograms = [
-    {
-      title: "Computer Science and Engineering",
-      degree: "B.E. CSE",
-      description: "Core Computer Science, Software Engineering, Data Structures & Algorithms",
-      duration: "4 Years",
-    },
-    {
-      title: "Information Technology",
-      degree: "B.E. IT",
-      description: "Software Development, Web Technologies, Database Management",
-      duration: "4 Years",
-    },
-    {
-      title: "Computer Science and Technology",
-      degree: "B.E. CST",
-      description: "Core Computer Science, Software Engineering, Data Structures & Algorithms",
-      duration: "4 Years",
-    },
-  ]
+const pgPrograms = [
+  {
+    title: "Computer Science and Engineering",
+    degree: "M.E. CSE",
+    description: "Advanced computer science topics, software engineering, and data structures & algorithms.",
+    duration: "2 Years",
+  },
+  {
+    title: "Information Technology",
+    degree: "M.E. IT",
+    description: "Software development, web technologies, and database management.",
+    duration: "2 Years",
+  },
+  {
+    title: "Computer Science and Technology",
+    degree: "M.E. CST",
+    description: "Core computer science, advanced software engineering, and data analytics.",
+    duration: "2 Years",
+  },
+];
 
   const phdPrograms = [
     {
@@ -291,7 +273,7 @@ const AcademicPrograms = () => {
     "Automobile Engineering": (
       <img src={Automobile || "/placeholder.svg"} alt="automobile Icon" className="w-10 h-10 mr-0" />
     ),
-    "Computer Science and Engineering": (
+    "Computer Science and Engineering IoT with Cyber Security & Blockchain": (
       <img src={Compen || "/placeholder.svg"} alt="computer science Icon" className="w-10 h-10 mr-0" />
     ),
     "Civil Engineering": <img src={Civil || "/placeholder.svg"} alt="civil Icon" className="w-10 h-10 mr-0" />,
@@ -302,7 +284,7 @@ const AcademicPrograms = () => {
       <img src={ECE || "/placeholder.svg"} alt="ece Icon" className="w-10 h-10 mr-0" />
     ),
     "Information Technology": <img src={IT || "/placeholder.svg"} alt="it Icon" className="w-10 h-10 mr-0" />,
-    "Mechanical Engineering": (
+    "Mechanical and Mechatronics ( Additive Manufacturing)": (
       <img src={Manufacturing || "/placeholder.svg"} alt="Manu Icon" className="w-10 h-10 mr-0" />
     ),
     "Mechatronics Engineering": <img src={MCT || "/placeholder.svg"} alt="MCT Icon" className="w-10 h-10 mr-0" />,
@@ -318,6 +300,7 @@ const AcademicPrograms = () => {
     "Structural Engineering": (
       <img src={Structre || "/placeholder.svg"} alt="structural Icon" className="w-10 h-10 mr-0" />
     ),
+    "Computer Science and Engineering": <img src={MCA || "/placeholder.svg"} alt="mca Icon" className="w-10 h-10 mr-0" />,
     "Thermal Engineering": <img src={VLSI || "/placeholder.svg"} alt="vlsi Icon" className="w-10 h-10 mr-0" />,
     "VLSI Design": <img src={ComputerIcon || "/placeholder.svg"} alt="computer Icon" className="w-10 h-10 mr-0" />,
     "Master of Business Administration": <img src={MBA || "/placeholder.svg"} alt="computer Icon" className="w-10 h-10 mr-0" />,
@@ -328,17 +311,18 @@ const AcademicPrograms = () => {
     "PhD in Electronics": <img src={ECE || "/placeholder.svg"} alt="ece Icon" className="w-10 h-10 mr-0" />,
     "PhD in Electrical": <img src={EEE || "/placeholder.svg"} alt="ece Icon" className="w-10 h-10 mr-0" />,
     "PhD in Mechanical": <img src={Manufacturing || "/placeholder.svg"} alt="Manu Icon" className="w-10 h-10 mr-0" />,
+    "Mechanical Engineering": <img src={Manufacturing || "/placeholder.svg"} alt="computer Icon" className="w-10 h-10 mr-0" />,
   }
 
   const ProgramCard = ({ program }) => {
     // Determine if title is likely to fit on one line (rough estimation based on character count)
     const titleFitsOnOneLine = program.title.length <= 25;
-    
+
     return (
       <div className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors">
         <div className="flex items-start mb-4">
           <div className="rounded-full p-2 mr-3 flex-shrink-0">
-            <span className="text-white text-sm">{programIcons[program.title] || "🎓"}</span>
+            <span className="text-white text-sm object-cover">{programIcons[program.title] || "🎓"}</span>
           </div>
           <div className="flex-1 min-w-0">
             {titleFitsOnOneLine ? (
@@ -381,8 +365,8 @@ const AcademicPrograms = () => {
         <div className="flex flex-row justify-center items-center gap-1 sm:gap-4 mb-8 sm:mb-12 px-2 sm:px-4">
           <button
             className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "UG"
-                ? "bg-red-600 text-white shadow-lg"
-                : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+              ? "bg-red-600 text-white shadow-lg"
+              : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
               }`}
             onClick={() => setProgramType(programType === "UG" ? null : "UG")}
           >
@@ -392,8 +376,8 @@ const AcademicPrograms = () => {
 
           <button
             className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "PG"
-                ? "bg-red-600 text-white shadow-lg"
-                : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+              ? "bg-red-600 text-white shadow-lg"
+              : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
               }`}
             onClick={() => setProgramType(programType === "PG" ? null : "PG")}
           >
@@ -403,8 +387,8 @@ const AcademicPrograms = () => {
 
           <button
             className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "PhD"
-                ? "bg-red-600 text-white shadow-lg"
-                : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+              ? "bg-red-600 text-white shadow-lg"
+              : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
               }`}
             onClick={() => setProgramType(programType === "PhD" ? null : "PhD")}
           >
@@ -418,7 +402,7 @@ const AcademicPrograms = () => {
             <div className="flex items-center justify-center mb-8">
               <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
               <h3 className="text-white text-2xl font-bold ">
-                Undergraduate Programs <span className="text-red-400">(12 Programs)</span>
+                Undergraduate Programs <span className="text-red-400">(9 Programs)</span>
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
