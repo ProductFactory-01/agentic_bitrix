@@ -1,4 +1,4 @@
-import LOGO from "../assets/sns-DxCft4QP 1.png";
+import LOGO from "../assets/snslogo.png";
 import Facebook from "../assets/Link [w-10].png";
 import Twitter from "../assets/Link [w-10] (1).png";
 import LinkedIn from "../assets/Link [w-10] (2).png";

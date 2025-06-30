@@ -34,62 +34,62 @@ import EEE from "../assets/eee.png";
 const AcademicPrograms = () => {
   const [programType, setProgramType] = useState(null)
 
-  const ugPrograms = [
-    {
-      title: "Artificial Intelligence & Data Science",
-      degree: "B.Tech. AIDS",
-      description: "Focus on Machine Learning, Deep Learning, and Big Data Analytics.",
-      duration: "4 Years",
-    },
-    {
-      title: "Artificial Intelligence & Machine Learning",
-      degree: "B.Tech. AIML",
-      description: "Covers AI fundamentals, Deep Learning, and Natural Language Processing.",
-      duration: "4 Years",
-    },
-    {
-      title: "Computer Science and Engineering IoT with Cyber Security & Blockchain",
-      degree: "B.E. CSE IoT/CS/Blockchain",
-      description: "Combines core computer science with IoT, cyber security, and blockchain technologies.",
-      duration: "4 Years",
-    },
-    {
-      title: "Computer Science and Design",
-      degree: "B.E. CSD",
-      description: "UI/UX design, human-computer interaction, and creative computing.",
-      duration: "4 Years",
-    },
-    {
-      title: "AeroSpace Engineering",
-      degree: "B.E. AERO",
-      description: "Study of aerodynamics, propulsion, aircraft structures, and avionics.",
-      duration: "4 Years",
-    },
-    {
-      title: "Bio-Medical Engineering",
-      degree: "B.E. BME",
-      description: "Focus on medical devices, biomedical signal processing, and imaging technologies.",
-      duration: "4 Years",
-    },
-    {
-      title: "Food Technology",
-      degree: "B.Tech. FT",
-      description: "Emphasis on food processing, quality control, and food safety management.",
-      duration: "4 Years",
-    },
-    {
-      title: "Agricultural Engineering",
-      degree: "B.E. AGERI",
-      description: "Specialization in farm machinery, soil & water conservation, and food processing.",
-      duration: "4 Years",
-    },
-    {
-      title: "Mechanical and Mechatronics ( Additive Manufacturing)",
-      degree: "B.E. MECH/MCT/AM",
-      description: "Combines thermal engineering, robotics, automation, and additive manufacturing.",
-      duration: "4 Years",
-    },
-  ];
+const ugPrograms = [
+  {
+    title: "Artificial Intelligence & Data Science",
+    degree: "B.Tech. AIDS",
+    description: "Focus on Machine Learning, Deep Learning, and Big Data Analytics.",
+    duration: "4 Years",
+  },
+  {
+    title: "Artificial Intelligence & Machine Learning",
+    degree: "B.Tech. AIML",
+    description: "Covers AI fundamentals, Deep Learning, and Natural Language Processing.",
+    duration: "4 Years",
+  },
+  {
+    title: "Computer Science and Engineering IoT with Cyber Security & Blockchain",
+    degree: "B.E. CSE IoT/CS/Blockchain",
+    description: "Combines core computer science with IoT, cyber security, and blockchain technologies.",
+    duration: "4 Years",
+  },
+  {
+    title: "Computer Science and Design",
+    degree: "B.E. CSD",
+    description: "UI/UX design, human-computer interaction, and creative computing.",
+    duration: "4 Years",
+  },
+  {
+    title: "AeroSpace Engineering",
+    degree: "B.E. AERO",
+    description: "Study of aerodynamics, propulsion, aircraft structures, and avionics.",
+    duration: "4 Years",
+  },
+  {
+    title: "Bio-Medical Engineering",
+    degree: "B.E. BME",
+    description: "Focus on medical devices, biomedical signal processing, and imaging technologies.",
+    duration: "4 Years",
+  },
+  {
+    title: "Food Technology",
+    degree: "B.Tech. FT",
+    description: "Emphasis on food processing, quality control, and food safety management.",
+    duration: "4 Years",
+  },
+  {
+    title: "Agricultural Engineering",
+    degree: "B.E. AGRI",
+    description: "Specialization in farm machinery, soil & water conservation, and food processing.",
+    duration: "4 Years",
+  },
+  {
+    title: "Mechanical and Mechatronics ( Additive Manufacturing)",
+    degree: "B.E. MECH/MCT/AM",
+    description: "Combines thermal engineering, robotics, automation, and additive manufacturing.",
+    duration: "4 Years",
+  },
+];
 
   const pgPrograms = [
     {

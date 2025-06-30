@@ -11,6 +11,10 @@ const handleApplyNow = () => {
   window.open("https://main.snsgroups.com/EnquiryNow/", "_blank");
 };
 
+const handleLaunchNow = () => {
+  window.open("https://blog.snsihub.ai/", "_blank");
+};
+
 
 const StartupSection = () => {
   const [count, setCount] = useState(0);
@@ -104,7 +108,8 @@ const StartupSection = () => {
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-start">
+            <div onClick={handleLaunchNow}
+              className="flex justify-center lg:justify-start">
               <button className="border-2 border-white text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold hover:bg-white hover:text-red-500 transition-all duration-300 text-sm sm:text-base lg:text-lg hover:scale-105 active:scale-95 cursor-pointer">
                 Launch Your Startup
               </button>
