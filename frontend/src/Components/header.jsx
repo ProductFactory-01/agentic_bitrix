@@ -27,20 +27,20 @@ const Header = () => {
 
   return (
     <header className="px-4 sm:px-6 py-4 fixed top-0 w-full shadow-lg z-50 backdrop-blur-md bg-transparent">
-      <div className="flex items-center justify-between max-w-full mx-4 sm:mx-8 lg:mx-28">
+      <div className="flex items-center justify-between max-w-full mx-4 sm:mx-8 lg:mx-12 xl:mx-28 header-container">
         {/* Logo Section */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 lg:space-x-2 xl:space-x-3 logo-section">
           <div className="">
-            <div className="flex items-center justify-center ">
+            <div className="flex items-center justify-center">
               <img
                 src={Logo || "/placeholder.svg"}
                 alt=""
-                className="w-full h-full sm:w-full sm:h-full"
+                className="w-full h-full sm:w-full sm:h-full lg:w-11 lg:h-11 xl:w-12 xl:h-12"
               />
             </div>
           </div>
-          <div>
-            <h1 className="text-white font-bold text-sm sm:text-lg">
+          <div className="logo-text-section">
+            <h1 className="text-white font-bold text-sm sm:text-lg lg:text-sm xl:text-lg">
               <span className="hidden sm:inline">
                 SNS College of Technology
               </span>
@@ -48,11 +48,18 @@ const Header = () => {
                 SNS College of Technology <br />
               </span>
             </h1>
-            <p className="text-white text-xs opacity-90  sm:block">
+            <p className="text-white text-xs lg:text-[10px] xl:text-sm opacity-90 sm:block">
               Autonomous | NAAC A++ | NBA Accreditation
             </p>
-            <div className="lg:hidden bg-gradient-to-r from-[#FEF3C7] via-yellow-100 to-[#F59E0B] px-2 py-1 rounded-full shadow-md mb-0 w-fit ">
+            <div className="lg:hidden bg-gradient-to-r from-[#FEF3C7] via-yellow-100 to-[#F59E0B] px-2 py-1 rounded-full shadow-md mb-0 w-fit">
               <span className="text-amber-900 font-semibold text-[10px] flex items-center justify-center">
+                <span className="mr-1 text-amber-800">⚙</span>
+                TNEA Code: 2726
+              </span>
+            </div>
+            {/* TNEA Code for laptop view - positioned under logo */}
+            <div className="hidden bg-gradient-to-r from-[#FEF3C7] via-yellow-100 to-[#F59E0B] px-2 py-1 rounded-full animate-pulse-zoom shadow-md mt-1 w-fit tnea-badge-under-logo">
+              <span className="text-amber-900 font-semibold text-[10px] flex items-center">
                 <span className="mr-1 text-amber-800">⚙</span>
                 TNEA Code: 2726
               </span>
@@ -60,56 +67,58 @@ const Header = () => {
           </div>
         </div>
 
-        {/* TNEA Code with Animation - Hidden on mobile */}
-        <div className="hidden lg:block bg-gradient-to-r from-[#FEF3C7] via-yellow-10 to-[#F59E0B] px-4 py-2 rounded-full animate-pulse-zoom shadow-md">
-          <span className="text-amber-900 font-semibold text-sm flex items-center">
-            <span className="mr-2 text-amber-800">⚙</span>
+        {/* TNEA Code with Animation - Hidden on mobile, optimized for laptop */}
+        <div className="hidden lg:block bg-gradient-to-r from-[#FEF3C7] via-yellow-100 to-[#F59E0B] px-2 lg:px-2 xl:px-4 py-1 lg:py-1 xl:py-2 rounded-full animate-pulse-zoom shadow-md tnea-badge">
+          <span className="text-amber-900 font-semibold text-sm lg:text-[10px] xl:text-sm flex items-center">
+            <span className="mr-2 lg:mr-1 xl:mr-2 text-amber-800">⚙</span>
             TNEA Code: 2726
           </span>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8">
+        {/* Right Section - Navigation and Apply Button */}
+        <div className="flex items-center space-x-6 lg:space-x-4 xl:space-x-6 right-section">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8 lg:space-x-2 xl:space-x-8 desktop-nav">
           <button
             onClick={() => handleSmoothScroll("home")}
-            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
+            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
           >
             Home
           </button>
           <button
             onClick={() => handleSmoothScroll("programs")}
-            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
+            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
           >
             Programs
           </button>
           <button
             onClick={() => handleSmoothScroll("innovation")}
-            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
+            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
           >
             Innovation
           </button>
           <button
             onClick={() => handleSmoothScroll("placements")}
-            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
+            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
           >
             Placements
           </button>
           <button
             onClick={() => handleSmoothScroll("campus-life")}
-            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none"
+            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
           >
             Campus Life
-          </button>
-        </nav>
+          </button>          </nav>
 
-        {/* Desktop Apply Now Button */}
-        <button
-          onClick={handleApplyNow}
-          className="hidden sm:block bg-gradient-to-l from-yellow-400 to-orange-400 text-black font-semibold px-4 lg:px-6 py-2 rounded-full hover:from-yellow-500 hover:to-orange-500 transition-all cursor-pointer text-sm lg:text-base"
-        >
-          <span className="hidden lg:inline">Apply Now 2025</span>
-          <span className="lg:hidden">Apply</span>
-        </button>
+          {/* Desktop Apply Now Button */}
+          <button
+            onClick={handleApplyNow}
+            className="hidden sm:block bg-gradient-to-l from-yellow-400 to-orange-400 text-black font-semibold px-4 lg:px-3 xl:px-6 py-2 rounded-full hover:from-yellow-500 hover:to-orange-500 transition-all cursor-pointer text-sm lg:text-xs xl:text-base apply-button"
+          >
+            <span className="apply-full-text">Apply Now 2025</span>
+            <span className="apply-short-text hidden">Apply</span>
+          </button>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -217,6 +226,88 @@ const Header = () => {
           outline: 2px solid rgba(255, 255, 255, 0.3);
           outline-offset: 2px;
           border-radius: 4px;
+        }
+
+        /* Laptop View Only Styles (1024px - 1279px) */
+        @media (min-width: 1024px) and (max-width: 1505px) {
+          /* Main container adjustments */
+          .header-container {
+            margin-left: 3rem !important; /* lg:mx-12 */
+            margin-right: 3rem !important;
+            gap: 1rem;
+          }
+
+          /* Logo section */
+          .logo-section {
+            max-width: 350px;
+            flex-shrink: 0;
+          }
+
+          .logo-section img {
+            width: 2.75rem !important; /* 44px */
+            height: 2.75rem !important;
+          }
+
+          .logo-section h1 {
+            font-size: 0.875rem !important; /* 14px */
+            line-height: 1.25rem !important;
+          }
+
+          .logo-section p {
+            font-size: 0.625rem !important; /* 10px */
+          }
+
+          /* Hide original TNEA badge for laptop view */
+          .tnea-badge {
+            display: none !important;
+          }
+
+          /* Show TNEA badge under logo for laptop view */
+          .tnea-badge-under-logo {
+            display: block !important;
+            padding-left: 0.5rem !important; /* 8px */
+            padding-right: 1.5rem !important;
+            padding-top: 0.25rem !important; /* 4px */
+            padding-bottom: 0.25rem !important;
+            border-radius: 16px !important;
+            margin-top: 0.25rem !important; /* 4px */
+          }
+
+          .tnea-badge-under-logo span {
+            font-size: 0.625rem !important; /* 10px */
+          }
+
+          /* Navigation */
+          .desktop-nav {
+            gap: 0.75rem !important; /* 12px between items */
+          }
+
+          .desktop-nav button {
+            font-size: 0.875rem !important; /* 14px */
+            font-weight: 500 !important;
+          }
+
+          /* Apply Now Button */
+          .apply-button {
+            padding-left: 1rem !important; /* 16px */
+            padding-right: 1rem !important;
+            font-size: 0.875rem !important; /* 14px */
+          }
+
+          /* Hide "Apply Now 2025" and show "Apply" for laptop view */
+          .apply-button .apply-full-text {
+            display: none !important;
+          }
+
+          .apply-button .apply-short-text {
+            display: inline !important;
+          }
+
+          /* Right section container */
+          .right-section {
+            gap: 1rem !important; /* 16px */
+            flex-shrink: 0;
+          }
         }
       `}</style>
     </header>
