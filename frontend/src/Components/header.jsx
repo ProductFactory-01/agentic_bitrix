@@ -116,7 +116,7 @@ const Header = () => {
             className="hidden sm:block bg-gradient-to-l from-yellow-400 to-orange-400 text-black font-semibold px-4 lg:px-3 xl:px-6 py-2 rounded-full hover:from-yellow-500 hover:to-orange-500 transition-all cursor-pointer text-sm lg:text-xs xl:text-base apply-button"
           >
             <span className="apply-full-text">Apply Now 2025</span>
-            <span className="apply-short-text hidden">Apply</span>
+            <span className="apply-short-text hidden">Apply Now 2025</span>
           </button>
         </div>
 
@@ -229,7 +229,7 @@ const Header = () => {
         }
 
         /* Laptop View Only Styles (1024px - 1279px) */
-        @media (min-width: 1024px) and (max-width: 1505px) {
+        @media (min-width: 1024px) and (max-width: 1540px) {
           /* Main container adjustments */
           .header-container {
             margin-left: 3rem !important; /* lg:mx-12 */
@@ -244,7 +244,7 @@ const Header = () => {
           }
 
           .logo-section img {
-            width: 2.75rem !important; /* 44px */
+            width: 4.5rem !important; /* 44px */
             height: 2.75rem !important;
           }
 
