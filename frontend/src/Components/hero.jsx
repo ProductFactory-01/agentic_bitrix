@@ -127,7 +127,7 @@ const HeroSection = () => {
     <section ref={heroRef} className="hero-sticky bg-red-600 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center">
       {/* Background Decorative Bubble Following Cursor */}
       <div
-        className="absolute w-48 h-48 bg-white rounded-full opacity-5 transition-transform duration-300 ease-out pointer-events-none"
+        className="absolute w-48 h-48 bg-white rounded-full opacity-15 transition-transform duration-300 ease-out pointer-events-none"
         style={{
           transform: `translate(${cursorPosition.x - 100}px, ${cursorPosition.y - 400}px)`,
         }}
