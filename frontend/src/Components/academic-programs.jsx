@@ -94,19 +94,19 @@ const ugPrograms = [
 const pgPrograms = [
   {
     title: "Computer Science and Engineering",
-    degree: "M.E. CSE",
+    degree: "B.E. CSE",
     description: "Advanced computer science topics, software engineering, and data structures & algorithms.",
     duration: "2 Years",
   },
   {
     title: "Information Technology",
-    degree: "M.E. IT",
+    degree: "B.E. IT",
     description: "Software development, web technologies, and database management.",
     duration: "2 Years",
   },
   {
     title: "Computer Science and Technology",
-    degree: "M.E. CST",
+    degree: "B.E. CST",
     description: "Core computer science, advanced software engineering, and data analytics.",
     duration: "2 Years",
   },
@@ -381,18 +381,29 @@ const pgPrograms = [
         {/* PG Programs */}
         {(programType === "PG" || programType === null) && (
           <div className="mb-16">
-            <div className="flex items-center justify-center mb-8">
-              <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
-              <h3 className="text-white text-2xl font-bold">
-               3 Undergraduate Programs <span className="text-red-400">(Hot & Fast Moving)</span>
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pgPrograms.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
-            </div>
-          </div>
+      {/* Mobile View - Stacked Layout */}
+      <div className="flex flex-col items-center justify-center mb-8 md:hidden">
+        <div className="flex items-center mb-2">
+          <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
+          <h3 className="text-white text-2xl font-bold">3 Undergraduate Programs</h3>
+        </div>
+        <span className="text-red-400 text-2xl font-bold">(Hot & Fast Moving)</span>
+      </div>
+
+      {/* Desktop View - Original Layout */}
+      <div className="hidden md:flex items-center justify-center mb-8">
+        <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
+        <h3 className="text-white text-2xl font-bold">
+          3 Undergraduate Programs <span className="text-red-400">(Hot & Fast Moving)</span>
+        </h3>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {pgPrograms.map((program, index) => (
+          <ProgramCard key={index} program={program} />
+        ))}
+      </div>
+    </div>
         )}
 
         {/* PhD Programs */}
@@ -415,35 +426,57 @@ const pgPrograms = [
         {/* Postgraduate Programs */}
         {(programType === "Pgfl" || programType === null) && (
           <div className="mb-16">
-            <div className="flex items-center justify-center mb-8">
-              <img src={PG} alt="PG Icon" className="w-8 h-8 mr-3" />
-              <h3 className="text-white text-2xl font-bold">
-                Postgraduate Programs <span className="text-red-400">(9 Programs )</span>
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PgflPrograms.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
-            </div>
-          </div>
+      {/* Mobile View - Stacked Layout */}
+      <div className="flex flex-col items-center justify-center mb-8 md:hidden">
+        <div className="flex items-center mb-2">
+          <img src={PG || "/placeholder.svg"} alt="PG Icon" className="w-8 h-8 mr-3" />
+          <h3 className="text-white text-2xl font-bold">Postgraduate Programs</h3>
+        </div>
+        <span className="text-red-400 text-2xl font-bold">(9 Programs)</span>
+      </div>
+
+      {/* Desktop View - Original Layout */}
+      <div className="hidden md:flex items-center justify-center mb-8">
+        <img src={PG || "/placeholder.svg"} alt="PG Icon" className="w-8 h-8 mr-3" />
+        <h3 className="text-white text-2xl font-bold">
+          Postgraduate Programs <span className="text-red-400">(9 Programs)</span>
+        </h3>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {PgflPrograms.map((program, index) => (
+          <ProgramCard key={index} program={program} />
+        ))}
+      </div>
+    </div>
         )}
 
         {/* Research Programs */}
         {(programType === "Phdfl" || programType === null) && (
-          <div>
-            <div className="flex items-center justify-center mb-8">
-              <img src={PHD} alt="PHD Icon" className="w-8 h-8 mr-3" />
-              <h3 className="text-white text-2xl font-bold">
-                Research Programs <span className="text-red-400">(5 Programs )</span>
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PhdflPrograms.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
-            </div>
-          </div>
+             <div>
+      {/* Mobile View - Stacked Layout */}
+      <div className="flex flex-col items-center justify-center mb-8 md:hidden">
+        <div className="flex items-center mb-2">
+          <img src={PHD || "/placeholder.svg"} alt="PHD Icon" className="w-8 h-8 mr-3" />
+          <h3 className="text-white text-2xl font-bold">Research Programs</h3>
+        </div>
+        <span className="text-red-400 text-2xl font-bold">(5 Programs)</span>
+      </div>
+
+      {/* Desktop View - Original Layout */}
+      <div className="hidden md:flex items-center justify-center mb-8">
+        <img src={PHD || "/placeholder.svg"} alt="PHD Icon" className="w-8 h-8 mr-3" />
+        <h3 className="text-white text-2xl font-bold">
+          Research Programs <span className="text-red-400">(5 Programs)</span>
+        </h3>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {PhdflPrograms.map((program, index) => (
+          <ProgramCard key={index} program={program} />
+        ))}
+      </div>
+    </div>
         )}
       </div>
     </section>

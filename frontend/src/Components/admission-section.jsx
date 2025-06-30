@@ -38,7 +38,7 @@ const AdmissionSection = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="border-2 border-white/50 text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-red-500 transition-colors flex items-center justify-center">
-            <img src={Call} alt="" className="w-4 h-4 mr-2" /> Call: 9003665865
+            <img src={Call} alt="" className="w-4 h-4 mr-2" /> Call : +91 75503 16701
           </button>
           <button
             onClick={handleApplyNow}

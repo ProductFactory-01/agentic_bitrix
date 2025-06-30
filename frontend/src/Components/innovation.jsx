@@ -146,7 +146,7 @@ const InnovationEcosystem = () => {
   }
 
   return (
-    <section className="bg-gray-800 py-10 px-4 sm:px-6 lg:px-20 relative">
+    <section className="bg-gray-900 py-10 px-4 sm:px-6 lg:px-20 relative">
       <div className="max-w-full mx-auto lg:mx-20">
         <div className="text-center mb-6">
           <h2 className="text-white text-4xl sm:text-5xl font-bold mb-4">
