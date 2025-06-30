@@ -74,27 +74,27 @@ const Footer = () => {
             <h4 className="text-red-600 font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  About Us
+                <a href="#home" className="hover:text-white transition-colors">
+                  Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Admissions
+                <a href="#programs" className="hover:text-white transition-colors">
+                  Programs
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Academics
+                <a href="#innovation" className="hover:text-white transition-colors">
+                  Innovation Ecosystem
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Research
+                <a href="#placements" className="hover:text-white transition-colors">
+                  Placement
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#campus-life" className="hover:text-white transition-colors">
                   Campus Life
                 </a>
               </li>
