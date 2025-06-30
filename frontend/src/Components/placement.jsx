@@ -183,7 +183,7 @@ const PlacementSection = () => {
     { name: "Aliens", logo: aliens, package: "7 LPA" },
     { name: "Bosch", logo: bosch, package: "7 LPA" },
     { name: "Cognizant", logo: cognizant, package: "6.75 LPA" },
-    { name: "Infosys", logo: infosys, package: "9.5 LPA" },
+    { name: "infosys", logo: infosys, package: "9.5 LPA" },
     { name: "TCS", logo: tcs, package: "9 LPA" },
     { name: "Presidio", logo: presidio, package: "9.5 LPA" },
     { name: "Intellipaat", logo: intellipaat, package: "9 LPA" },
