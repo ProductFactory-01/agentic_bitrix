@@ -146,10 +146,10 @@ const InnovationEcosystem = () => {
   }
 
   return (
-    <section className="bg-gray-800 py-20 px-4 sm:px-6 lg:px-20 relative">
+    <section className="bg-gray-800 py-10 px-4 sm:px-6 lg:px-20 relative">
       <div className="max-w-full mx-auto lg:mx-20">
-        <div className="text-center mb-12">
-          <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">
+        <div className="text-center mb-6">
+          <h2 className="text-white text-4xl sm:text-5xl font-bold mb-4">
             Innovation <span className="text-red-400">Ecosystem</span>
           </h2>
           <p className="text-gray-300 max-w-3xl mx-auto text-sm sm:text-base">
@@ -165,7 +165,7 @@ const InnovationEcosystem = () => {
             {canScrollLeft && (
               <button
                 onClick={() => scrollToDirection("left")}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                className="absolute cursor-pointer left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
                 aria-label="Scroll left"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,7 +177,7 @@ const InnovationEcosystem = () => {
             {canScrollRight && (
               <button
                 onClick={() => scrollToDirection("right")}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                className="absolute cursor-pointer right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
                 aria-label="Scroll right"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

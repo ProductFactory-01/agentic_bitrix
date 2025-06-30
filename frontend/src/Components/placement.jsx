@@ -77,7 +77,7 @@ import technologies from "../assets/technologies.svg";
 import web from "../assets/web.svg";
 import ybs from "../assets/ybs.svg";
 import finan from "../assets/finan.svg";
-import thozhar from "../assets/thozhar.png";
+import thozhar from "../assets/thozha.png";
 import accserv from "../assets/accserv.png";
 
 const PlacementSection = () => {
@@ -278,7 +278,7 @@ const PlacementSection = () => {
     <>
       {/* Top Recruiters Section */}
      <div className="bg-[#111827] py-3 px-0 lg:px-1 xl:px-2">
-  <section className="bg-white text-center py-20 px-4 sm:px-6 lg:px-20 m-4">
+  <section className="bg-white text-center py-10 px-4 sm:px-6 lg:px-20 m-4">
     <h3 className="text-4xl sm:text-5xl font-bold mb-2">
       <span className="text-black">Top</span> <span className="text-red-600">Recruiters</span>
     </h3>
@@ -409,7 +409,7 @@ const PlacementSection = () => {
 
       
 
-      {/* Testimonials */}
+      {/* Testimonials
       <section className="bg-gray-900 px-4 sm:px-6 lg:px-20">
         <div className="text-center mb-12">
           <h2 className="text-white text-4xl sm:text-5xl font-bold mb-4">
@@ -451,7 +451,7 @@ const PlacementSection = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

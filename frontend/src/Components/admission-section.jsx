@@ -9,7 +9,7 @@ const handleApplyNow = () => {
 
 const AdmissionSection = () => {
   return (
-    <section className="bg-red-600 py-30 px-6 relative overflow-hidden">
+    <section className="bg-red-600 py-14 px-6 relative overflow-hidden">
       {/* Background Image Overlay */}
       <img
         src={admission}

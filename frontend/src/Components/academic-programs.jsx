@@ -365,10 +365,10 @@ const AcademicPrograms = () => {
   }
 
   return (
-    <section className="bg-gray-900 py-20 px-6">
+    <section className="bg-gray-900 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-5">
-          <h2 className="text-white text-4xl font-bold mb-4">
+          <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
             Academic <span className="text-red-600">Programs</span>
           </h2>
           <p className="text-white opacity-80 max-w-3xl mx-auto">
@@ -381,8 +381,8 @@ const AcademicPrograms = () => {
         <div className="flex flex-row justify-center items-center gap-1 sm:gap-4 mb-8 sm:mb-12 px-2 sm:px-4">
           <button
             className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "UG"
-                ? "bg-gray-700 text-white shadow-lg"
-                : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+                ? "bg-red-600 text-white shadow-lg"
+                : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
               }`}
             onClick={() => setProgramType(programType === "UG" ? null : "UG")}
           >
@@ -392,8 +392,8 @@ const AcademicPrograms = () => {
 
           <button
             className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "PG"
-                ? "bg-gray-700 text-white shadow-lg"
-                : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+                ? "bg-red-600 text-white shadow-lg"
+                : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
               }`}
             onClick={() => setProgramType(programType === "PG" ? null : "PG")}
           >
@@ -403,8 +403,8 @@ const AcademicPrograms = () => {
 
           <button
             className={`flex-1 sm:flex-none sm:w-auto px-2 sm:px-6 py-2 sm:py-2 rounded-full cursor-pointer font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${programType === "PhD"
-                ? "bg-gray-700 text-white shadow-lg"
-                : "bg-red-600 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
+                ? "bg-red-600 text-white shadow-lg"
+                : "bg-gray-700 text-white hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 active:scale-95"
               }`}
             onClick={() => setProgramType(programType === "PhD" ? null : "PhD")}
           >
