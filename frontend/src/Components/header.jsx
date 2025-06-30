@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Logo from "../../src/assets/sns-new.svg";
+import Logo from "../../src/assets/snslogo.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -35,7 +35,7 @@ const Header = () => {
               <img
                 src={Logo || "/placeholder.svg"}
                 alt=""
-                className=" object-cover w-full h-full sm:w-full sm:h-full lg:w-full lg:h-full xl:w-30 xl:h-full"
+                className=" object-cover w-full h-full sm:w-full sm:h-full lg:w-full lg:h-full xl:w-full xl:h-full"
               />
             </div>
           </div>
