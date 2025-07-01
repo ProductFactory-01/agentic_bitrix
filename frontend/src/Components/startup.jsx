@@ -88,7 +88,7 @@ const StartupSection = () => {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="bg-red-600 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-20 relative overflow-hidden">
+    <section ref={sectionRef} className="bg-red-600 py-12 sm:py-16 lg:py-20  relative overflow-hidden">
       {/* Background Decorative Bubble Following Cursor */}
       <div
         className="absolute w-40 h-40 bg-white rounded-full opacity-15 transition-transform duration-300 ease-out pointer-events-none"
