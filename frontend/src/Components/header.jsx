@@ -116,7 +116,7 @@ const Header = () => {
             className="hidden sm:block bg-gradient-to-l from-yellow-400 to-orange-400 text-black font-semibold px-4 lg:px-3 xl:px-6 py-2 rounded-full hover:from-yellow-500 hover:to-orange-500 transition-all cursor-pointer text-sm lg:text-xs xl:text-base apply-button"
           >
             <span className="apply-full-text">Apply Now 2025</span>
-            <span className="apply-short-text hidden">Apply</span>
+            <span className="apply-short-text hidden">Apply Now 2025</span>
           </button>
         </div>
 
@@ -149,7 +149,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-md transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`lg:hidden absolute top-full left-0 w-full bg-gray-800/95 backdrop-blur-md transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
       >
         <div className="px-4 py-6 space-y-4">
@@ -200,116 +200,201 @@ const Header = () => {
 
       {/* Custom CSS for smooth zoom animation */}
       <style jsx>{`
-        @keyframes pulse-zoom {
-          0%,
-          100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.05);
-          }
-        }
+  @keyframes pulse-zoom {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
 
-        .animate-pulse-zoom {
-          animation: pulse-zoom 2s ease-in-out infinite;
-        }
+  .animate-pulse-zoom {
+    animation: pulse-zoom 2s ease-in-out infinite;
+  }
 
-        nav button,
-        .mobile-nav button {
-          font-size: inherit;
-          font-family: inherit;
-          outline: none;
-        }
+  nav button,
+  .mobile-nav button {
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+  }
 
-        nav button:focus,
-        .mobile-nav button:focus {
-          outline: 2px solid rgba(255, 255, 255, 0.3);
-          outline-offset: 2px;
-          border-radius: 4px;
-        }
+  nav button:focus,
+  .mobile-nav button:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.3);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 
-        /* Laptop View Only Styles (1024px - 1279px) */
-        @media (min-width: 1024px) and (max-width: 1505px) {
-          /* Main container adjustments */
-          .header-container {
-            margin-left: 3rem !important; /* lg:mx-12 */
-            margin-right: 3rem !important;
-            gap: 1rem;
-          }
+  /* Laptop View Only Styles (1024px - 1540px) */
+  @media (min-width: 1024px) and (max-width: 1540px) {
+    /* Main container adjustments */
+    .header-container {
+      margin-left: 3rem !important;
+      margin-right: 3rem !important;
+      gap: 1rem;
+    }
 
-          /* Logo section */
-          .logo-section {
-            max-width: 350px;
-            flex-shrink: 0;
-          }
+    /* Logo section */
+    .logo-section {
+      max-width: 350px;
+      flex-shrink: 0;
+    }
 
-          .logo-section img {
-            width: 2.75rem !important; /* 44px */
-            height: 2.75rem !important;
-          }
+    .logo-section img {
+      width: 4.5rem !important;
+      height: 2.75rem !important;
+    }
 
-          .logo-section h1 {
-            font-size: 0.875rem !important; /* 14px */
-            line-height: 1.25rem !important;
-          }
+    .logo-section h1 {
+      font-size: 0.875rem !important;
+      line-height: 1.25rem !important;
+    }
 
-          .logo-section p {
-            font-size: 0.625rem !important; /* 10px */
-          }
+    .logo-section p {
+      font-size: 0.625rem !important;
+    }
 
-          /* Hide original TNEA badge for laptop view */
-          .tnea-badge {
-            display: none !important;
-          }
+    /* Hide original TNEA badge for laptop view */
+    .tnea-badge {
+      display: none !important;
+    }
 
-          /* Show TNEA badge under logo for laptop view */
-          .tnea-badge-under-logo {
-            display: block !important;
-            padding-left: 0.5rem !important; /* 8px */
-            padding-right: 1.5rem !important;
-            padding-top: 0.25rem !important; /* 4px */
-            padding-bottom: 0.25rem !important;
-            border-radius: 16px !important;
-            margin-top: 0.25rem !important; /* 4px */
-          }
+    /* Show TNEA badge under logo for laptop view */
+    .tnea-badge-under-logo {
+      display: block !important;
+      padding-left: 0.5rem !important;
+      padding-right: 1.5rem !important;
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.25rem !important;
+      border-radius: 16px !important;
+      margin-top: 0.25rem !important;
+    }
 
-          .tnea-badge-under-logo span {
-            font-size: 0.625rem !important; /* 10px */
-          }
+    .tnea-badge-under-logo span {
+      font-size: 0.625rem !important;
+    }
 
-          /* Navigation */
-          .desktop-nav {
-            gap: 0.75rem !important; /* 12px between items */
-          }
+    /* Navigation */
+    .desktop-nav {
+      gap: 0.75rem !important;
+    }
 
-          .desktop-nav button {
-            font-size: 0.875rem !important; /* 14px */
-            font-weight: 500 !important;
-          }
+    .desktop-nav button {
+      font-size: 0.875rem !important;
+      font-weight: 500 !important;
+    }
 
-          /* Apply Now Button */
-          .apply-button {
-            padding-left: 1rem !important; /* 16px */
-            padding-right: 1rem !important;
-            font-size: 0.875rem !important; /* 14px */
-          }
+    /* Apply Now Button */
+    .apply-button {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      font-size: 0.875rem !important;
+    }
 
-          /* Hide "Apply Now 2025" and show "Apply" for laptop view */
-          .apply-button .apply-full-text {
-            display: none !important;
-          }
+    /* Hide "Apply Now 2025" and show "Apply" for laptop view */
+    .apply-button .apply-full-text {
+      display: none !important;
+    }
 
-          .apply-button .apply-short-text {
-            display: inline !important;
-          }
+    .apply-button .apply-short-text {
+      display: inline !important;
+    }
 
-          /* Right section container */
-          .right-section {
-            gap: 1rem !important; /* 16px */
-            flex-shrink: 0;
-          }
-        }
-      `}</style>
+    /* Right section container */
+    .right-section {
+      gap: 1rem !important;
+      flex-shrink: 0;
+    }
+  }
+
+  /* Larger Screens (1440px) */
+  @media (min-width: 1440px) {
+    /* Main container adjustments */
+    .header-container {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      max-width: 1440px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    /* Logo section */
+    .logo-section {
+      display: flex;
+      align-items: center;
+      max-width: 400px;
+      flex-shrink: 0;
+    }
+
+    .logo-section img {
+      width: 5rem !important;
+      height: 3rem !important;
+    }
+
+    .logo-text-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .logo-text-section h1 {
+      font-size: 1.125rem !important;
+      line-height: 1.75rem !important;
+    }
+
+    .logo-text-section p {
+      font-size: 0.75rem !important;
+    }
+
+    /* TNEA badge */
+    .tnea-badge {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 1rem;
+    }
+
+    .tnea-badge span {
+      font-size: 0.875rem !important;
+    }
+
+    /* Navigation */
+    .desktop-nav {
+      gap: 1.5rem !important;
+    }
+
+    .desktop-nav button {
+      font-size: 1rem !important;
+      font-weight: 500 !important;
+    }
+
+    /* Apply Now Button */
+    .apply-button {
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+      font-size: 1rem !important;
+    }
+
+    /* Hide "Apply Now 2025" and show "Apply" for larger screens */
+    .apply-button .apply-full-text {
+      display: inline !important;
+    }
+
+    .apply-button .apply-short-text {
+      display: none !important;
+    }
+
+    /* Right section container */
+    .right-section {
+      gap: 2rem !important;
+      flex-shrink: 0;
+    }
+  }
+`}</style>
+
     </header>
   );
 };
