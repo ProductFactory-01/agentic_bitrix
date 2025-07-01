@@ -432,7 +432,7 @@ const ugPrograms = [
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left Column - Postgraduate Programs */}
-            <div className="grid grid-cols-1 gap-6">
+            <div className="space-y-6">
               {/* MCA Card */}
               <motion.div
                 className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors relative"
@@ -446,7 +446,7 @@ const ugPrograms = [
                     <span>2 Years</span>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start mb-2 pr-16 sm:pr-20 md:pr-24">
                   <div className="rounded-full p-2 mr-3 flex-shrink-0">
                     <img src={MCA || "/placeholder.svg"} alt="MCA Icon" className="w-10 h-10" />
@@ -456,10 +456,10 @@ const ugPrograms = [
                     <span className="text-red-400 font-medium text-sm">MCA</span>
                   </div>
                 </div>
-                
+
                 <div className="ml-16">
                   <p className="text-white text-sm font-medium mb-2">Streams we Provide:</p>
-                  <div className="flex flex-wrap gap-2 md:mb-16 lg:mb-16 xl:mb-5">
+                  <div className="flex flex-wrap gap-2 md:mb-10 lg:mb-10 xl:mb-5">
                     {["Advanced Programming", "Software Engineering", "AI/ML"].map((tag, index) => (
                       <span key={index} className="px-3 py-1 border font-light border-gray-400 text-white text-xs rounded-full">
                         {tag}
@@ -468,7 +468,7 @@ const ugPrograms = [
                   </div>
                 </div>
               </motion.div>
-              
+
               {/* M.E/M Tech Card */}
               <motion.div
                 className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors relative"
@@ -482,7 +482,7 @@ const ugPrograms = [
                     <span>2 Years</span>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start mb-2 pr-16 sm:pr-20 md:pr-24">
                   <div className="rounded-full p-2 mr-3 flex-shrink-0">
                     <img src={memtech || "/placeholder.svg"} alt="PG Icon" className="w-10 h-10" />
@@ -492,7 +492,7 @@ const ugPrograms = [
                     <span className="text-red-400 font-medium text-sm">M.E / M Tech</span>
                   </div>
                 </div>
-                
+
                 <div className="ml-16">
                   <p className="text-white text-sm mb-2 font-medium">Streams we Provide:</p>
                   <div className="flex flex-wrap gap-2">
@@ -507,46 +507,8 @@ const ugPrograms = [
             </div>
 
             {/* Right Column - Research Programs */}
-            <div className="grid grid-cols-1 gap-6">
+            <div className="space-y-6">
               {/* MBA Card */}
-                      <motion.div
-                      className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors relative"
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1 }}
-                      viewport={{ once: true }}
-                      >
-                      <div className="absolute top-4 right-4 sm:top-4 sm:right-4 md:top-6 md:right-6">
-                        <div className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-red-600 text-white text-xs font-medium rounded-lg">
-                        <span>2 Years</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start pr-16 sm:pr-20 md:pr-24">
-                        <div className="rounded-full p-2 mr-3 flex-shrink-0">
-                        <img src={MBA || "/placeholder.svg"} alt="MBA Icon" className="w-10 h-10" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                        <h3 className="text-white font-semibold text-lg leading-tight mb-1">Master of Business Administration</h3>
-                        <span className="text-red-400 font-medium text-sm">MBA</span>
-                        </div>
-                      </div>
-                      
-                      <div className="ml-16">
-                        <p className="text-white text-sm font-medium mb-2">Specialization: <span className="font-light">Finance, HR, Marketing, Logistics</span></p>
-                        
-                        <p className="text-white text-sm mb-2 font-medium">Streams we Provide:</p>
-                        <div className="flex flex-wrap gap-2">
-                        {["MBA", "Design Thinking", "Business Analytics"].map((tag, index) => (
-                          <span key={index} className="px-3 py-1 border font-light border-gray-400 text-white text-xs rounded-full">
-                          {tag}
-                          </span>
-                        ))}
-                        </div>
-                      </div>
-                      </motion.div>
-                      
-                      {/* Ph.D. Programmes Card */}
               <motion.div
                 className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors relative"
                 initial={{ opacity: 0, y: 50 }}
@@ -559,7 +521,45 @@ const ugPrograms = [
                     <span>2 Years</span>
                   </div>
                 </div>
-                
+
+                <div className="flex items-start pr-16 sm:pr-20 md:pr-24">
+                  <div className="rounded-full p-2 mr-3 flex-shrink-0">
+                    <img src={MBA || "/placeholder.svg"} alt="MBA Icon" className="w-10 h-10" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-white font-semibold text-lg leading-tight mb-1">Master of Business Administration</h3>
+                    <span className="text-red-400 font-medium text-sm">MBA</span>
+                  </div>
+                </div>
+
+                <div className="ml-16">
+                  <p className="text-white text-sm font-medium mb-2">Specialization: <span className="font-light">Finance, HR, Marketing, Logistics</span></p>
+
+                  <p className="text-white text-sm mb-2 font-medium">Streams we Provide:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["MBA", "Design Thinking", "Business Analytics"].map((tag, index) => (
+                      <span key={index} className="px-3 py-1 border font-light border-gray-400 text-white text-xs rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Ph.D. Programmes Card */}
+              <motion.div
+                className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute top-4 right-4 sm:top-4 sm:right-4 md:top-6 md:right-6">
+                  <div className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-red-600 text-white text-xs font-medium rounded-lg">
+                    <span>2 Years</span>
+                  </div>
+                </div>
+
                 <div className="flex items-start mb-2 pr-16 sm:pr-20 md:pr-24">
                   <div className="rounded-full p-2 mr-3 flex-shrink-0">
                     <img src={PHDICON || "/placeholder.svg"} alt="PhD Icon" className="w-10 h-10" />
@@ -569,10 +569,10 @@ const ugPrograms = [
                     <span className="text-red-400 font-medium text-sm">Ph.D</span>
                   </div>
                 </div>
-                
+
                 <div className="ml-16">
                   <p className="text-white text-sm mb-2 font-medium">Streams we Provide:</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 md:mb-10 xl:mb-0">
                     {["Civil", "CSE", "Mechanical","Electrical & Electronics Engineering" , "Electronics & Communication Engineering"].map((tag, index) => (
                       <span key={index} className="px-3 py-1 border font-light border-gray-400 text-white text-xs rounded-full">
                         {tag}
@@ -584,7 +584,6 @@ const ugPrograms = [
             </div>
           </div>
         </div>
-
       </div>
     </section>
   )
