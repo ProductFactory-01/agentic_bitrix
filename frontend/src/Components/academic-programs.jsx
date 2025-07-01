@@ -25,14 +25,17 @@ import VLSI from "../assets/vlsi.png";
 import MCT from "../assets/mct.png";
 import IT from "../assets/IT.png";
 import PG from "../assets/pg.png";
-import PHD from "../assets/phd.png";
+import PHDICON from "../assets/phdicon.png";
 import MBA from "../assets/mba.png";
 import MCA from "../assets/mca.png";
 import MECS from "../assets/mecs.png";
 import EEE from "../assets/eee.png";
+import memtech from "../assets/memtech.png";
+import pgandphd from "../assets/pgandphd.svg";
 
 const AcademicPrograms = () => {
   const [programType, setProgramType] = useState(null)
+  const [activeFilter, setActiveFilter] = useState("Trending / Unique")
 
 const ugPrograms = [
   {
@@ -338,7 +341,7 @@ const ugPrograms = [
             ) : (
               <div className="flex flex-wrap items-center gap-2">
                 <h3 className="text-white font-semibold text-lg leading-tight">{program.title}</h3>
-                <span className="text-red-400 font-medium text-sm whitespace-nowrap">{program.degree}</span>
+                <span className="text-red-400 font-medium text-sm ">{program.degree}</span>
               </div>
             )}
           </div>
@@ -352,129 +355,236 @@ const ugPrograms = [
   }
 
   return (
-    <section className="bg-gray-900 pb-20 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-gray-900 pb-10 -mb-20 lg:pb-20">
+      <div className="max-w-full mx-4 sm:mx-6 lg:mx-20">
         <div className="text-center mb-5">
           <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
             Academic <span className="text-red-600">Programs</span>
           </h2>
-          <p className="text-white opacity-80 max-w-3xl mx-auto">
+          <p className="text-white opacity-80 max-w-3xl mx-auto mb-8">
             Choose from <span className="text-white font-bold">18 comprehensive programs</span> designed to shape future
             innovators and leaders in various fields.
           </p>
         </div>
 
         {/* UG Programs */}
-        {(programType === "UG" || programType === null) && (
-          <div className="mb-16">
-            <div className="flex items-center justify-center mb-8">
-              <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
-              <h3 className="text-white text-2xl font-bold ">
-                9 Undergraduate Programs <span className="text-red-400">(Trending/Unique)</span>
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {ugPrograms.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
-            </div>
+        <div className="mb-16">
+          <div className="flex items-center justify-center mb-8">
+            <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
+            <h3 className="text-white text-2xl font-bold">
+              9 Undergraduate Programs <span className="text-red-400">(Trending/Unique)</span>
+            </h3>
           </div>
-        )}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ugPrograms.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
+          </div>
+        </div>
 
         {/* PG Programs */}
-        {(programType === "PG" || programType === null) && (
-          <div className="mb-16">
-            <div className="flex flex-col items-center justify-center mb-8 md:hidden">
-              <div className="flex items-center mb-2">
-                <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
-                <h3 className="text-white text-2xl font-bold">3 Undergraduate Programs</h3>
-              </div>
-              <span className="text-red-400 text-2xl font-bold">(Hot & Fast Moving)</span>
-            </div>
-
-            <div className="hidden md:flex items-center justify-center mb-8">
+        <div className="mb-16">
+          <div className="flex flex-col items-center justify-center mb-8 md:hidden">
+            <div className="flex items-center mb-2">
               <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
-              <h3 className="text-white text-2xl font-bold">
-                3 Undergraduate Programs <span className="text-red-400">(Hot & Fast Moving)</span>
-              </h3>
+              <h3 className="text-white text-2xl font-bold">3 Undergraduate Programs</h3>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pgPrograms.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
-            </div>
+            <span className="text-red-400 text-2xl font-bold">(Hot & Fast Moving)</span>
           </div>
-        )}
+
+          <div className="hidden md:flex items-center justify-center mb-8">
+            <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
+            <h3 className="text-white text-2xl font-bold">
+              3 Undergraduate Programs <span className="text-red-400">(Hot & Fast Moving)</span>
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {pgPrograms.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
+          </div>
+        </div>
 
         {/* PhD Programs */}
-        {(programType === "PhD" || programType === null) && (
-          <div className="mb-16">
-            <div className="flex items-center justify-center mb-8">
-              <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
-              <h3 className="text-white text-2xl font-bold">
-                6 Undergraduate Programs <span className="text-red-400">(Evergreen)</span>
-              </h3>
+        <div className="mb-16">
+          <div className="flex items-center justify-center mb-8">
+            <img src={Grauvate || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
+            <h3 className="text-white text-2xl font-bold">
+              6 Undergraduate Programs <span className="text-red-400">(Evergreen)</span>
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {phdPrograms.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
+          </div>
+        </div>
+
+        {/* Postgraduate Programs and Research Programs */}
+        <div className="mb-16">
+          <div className="flex items-center justify-center mb-8">
+            <img src={pgandphd || "/placeholder.svg"} alt="UG Icon" className="w-8 h-8 mr-3" />
+            <h3 className="text-white text-2xl font-bold">
+              Postgraduate Programs <span className="text-red-400">and</span> Research Programs
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Left Column - Postgraduate Programs */}
+            <div className="grid grid-cols-1 gap-6">
+              {/* MCA Card */}
+              <motion.div
+                className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute top-4 right-4 sm:top-4 sm:right-4 md:top-6 md:right-6">
+                  <div className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-red-600 text-white text-xs font-medium rounded-lg">
+                    <span>2 Years</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-start mb-2 pr-16 sm:pr-20 md:pr-24">
+                  <div className="rounded-full p-2 mr-3 flex-shrink-0">
+                    <img src={MCA || "/placeholder.svg"} alt="MCA Icon" className="w-10 h-10" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-white font-semibold text-lg leading-tight mb-1">Master of Computer Applications</h3>
+                    <span className="text-red-400 font-medium text-sm">MCA</span>
+                  </div>
+                </div>
+                
+                <div className="ml-16">
+                  <p className="text-white text-sm font-medium mb-2">Streams we Provide:</p>
+                  <div className="flex flex-wrap gap-2 md:mb-16 lg:mb-16 xl:mb-5">
+                    {["Advanced Programming", "Software Engineering", "AI/ML"].map((tag, index) => (
+                      <span key={index} className="px-3 py-1 border font-light border-gray-400 text-white text-xs rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* M.E/M Tech Card */}
+              <motion.div
+                className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute top-4 right-4 sm:top-4 sm:right-4 md:top-6 md:right-6">
+                  <div className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-red-600 text-white text-xs font-medium rounded-lg">
+                    <span>2 Years</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-start mb-2 pr-16 sm:pr-20 md:pr-24">
+                  <div className="rounded-full p-2 mr-3 flex-shrink-0">
+                    <img src={memtech || "/placeholder.svg"} alt="PG Icon" className="w-10 h-10" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-white font-semibold text-lg leading-tight mb-1">M.E / M Tech</h3>
+                    <span className="text-red-400 font-medium text-sm">M.E / M Tech</span>
+                  </div>
+                </div>
+                
+                <div className="ml-16">
+                  <p className="text-white text-sm mb-2 font-medium">Streams we Provide:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["CSE", "Power System", "Structural", "Thermal", "VLSI Design", "Embedded System Technologies", "Manufacturing Engineering"].map((tag, index) => (
+                      <span key={index} className="px-3 py-1 border font-light border-gray-400 text-white text-xs rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {phdPrograms.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
+
+            {/* Right Column - Research Programs */}
+            <div className="grid grid-cols-1 gap-6">
+              {/* MBA Card */}
+                      <motion.div
+                      className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors relative"
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 1 }}
+                      viewport={{ once: true }}
+                      >
+                      <div className="absolute top-4 right-4 sm:top-4 sm:right-4 md:top-6 md:right-6">
+                        <div className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-red-600 text-white text-xs font-medium rounded-lg">
+                        <span>2 Years</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start pr-16 sm:pr-20 md:pr-24">
+                        <div className="rounded-full p-2 mr-3 flex-shrink-0">
+                        <img src={MBA || "/placeholder.svg"} alt="MBA Icon" className="w-10 h-10" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                        <h3 className="text-white font-semibold text-lg leading-tight mb-1">Master of Business Administration</h3>
+                        <span className="text-red-400 font-medium text-sm">MBA</span>
+                        </div>
+                      </div>
+                      
+                      <div className="ml-16">
+                        <p className="text-white text-sm font-medium mb-2">Specialization: <span className="font-light">Finance, HR, Marketing, Logistics</span></p>
+                        
+                        <p className="text-white text-sm mb-2 font-medium">Streams we Provide:</p>
+                        <div className="flex flex-wrap gap-2">
+                        {["MBA", "Design Thinking", "Business Analytics"].map((tag, index) => (
+                          <span key={index} className="px-3 py-1 border font-light border-gray-400 text-white text-xs rounded-full">
+                          {tag}
+                          </span>
+                        ))}
+                        </div>
+                      </div>
+                      </motion.div>
+                      
+                      {/* Ph.D. Programmes Card */}
+              <motion.div
+                className="bg-gray-800 rounded-3xl p-6 hover:bg-gray-700 transition-colors relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute top-4 right-4 sm:top-4 sm:right-4 md:top-6 md:right-6">
+                  <div className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-red-600 text-white text-xs font-medium rounded-lg">
+                    <span>2 Years</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-start mb-2 pr-16 sm:pr-20 md:pr-24">
+                  <div className="rounded-full p-2 mr-3 flex-shrink-0">
+                    <img src={PHDICON || "/placeholder.svg"} alt="PhD Icon" className="w-10 h-10" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-white font-semibold text-lg leading-tight mb-1">Ph.D. Programmes</h3>
+                    <span className="text-red-400 font-medium text-sm">Ph.D</span>
+                  </div>
+                </div>
+                
+                <div className="ml-16">
+                  <p className="text-white text-sm mb-2 font-medium">Streams we Provide:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Civil", "CSE", "Mechanical","Electrical & Electronics Engineering" , "Electronics & Communication Engineering"].map((tag, index) => (
+                      <span key={index} className="px-3 py-1 border font-light border-gray-400 text-white text-xs rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
-        )}
+        </div>
 
-        {/* Postgraduate Programs */}
-        {(programType === "Pgfl" || programType === null) && (
-          <div className="mb-16">
-            <div className="flex flex-col items-center justify-center mb-8 md:hidden">
-              <div className="flex items-center mb-2">
-                <img src={PG || "/placeholder.svg"} alt="PG Icon" className="w-8 h-8 mr-3" />
-                <h3 className="text-white text-2xl font-bold">Postgraduate Programs</h3>
-              </div>
-              <span className="text-red-400 text-2xl font-bold">(9 Programs)</span>
-            </div>
-
-            <div className="hidden md:flex items-center justify-center mb-8">
-              <img src={PG || "/placeholder.svg"} alt="PG Icon" className="w-8 h-8 mr-3" />
-              <h3 className="text-white text-2xl font-bold">
-                Postgraduate Programs <span className="text-red-400">(9 Programs)</span>
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PgflPrograms.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Research Programs */}
-        {(programType === "Phdfl" || programType === null) && (
-          <div>
-            <div className="flex flex-col items-center justify-center mb-8 md:hidden">
-              <div className="flex items-center mb-2">
-                <img src={PHD || "/placeholder.svg"} alt="PHD Icon" className="w-8 h-8 mr-3" />
-                <h3 className="text-white text-2xl font-bold">Research Programs</h3>
-              </div>
-              <span className="text-red-400 text-2xl font-bold">(5 Programs)</span>
-            </div>
-
-            <div className="hidden md:flex items-center justify-center mb-8">
-              <img src={PHD || "/placeholder.svg"} alt="PHD Icon" className="w-8 h-8 mr-3" />
-              <h3 className="text-white text-2xl font-bold">
-                Research Programs <span className="text-red-400">(5 Programs)</span>
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PhdflPrograms.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </section>
   )

@@ -236,9 +236,7 @@ const Header = () => {
 
   nav button:focus,
   .mobile-nav button:focus {
-    outline: 2px solid rgba(255, 255, 255, 0.3);
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline: none;
   }
 
   /* Laptop View Only Styles (1024px - 1540px) */

@@ -404,13 +404,13 @@ const PlacementSection = () => {
     <div
     >
       {/* Top Recruiters Section with overlap effect */}
-     <div className="bg-[#111827] py-3 px-0 lg:px-1 xl:px-2">
-  <section className="bg-white text-center py-10 px-4 sm:px-6 lg:px-20 m-4 rounded-2xl">
+  
+  <section className="bg-white text-center py-10 px-4 sm:px-6 lg:px-20 ">
     <h3 className="text-4xl sm:text-5xl font-bold mb-2">
       <span className="text-black">Top</span> <span className="text-red-600">Recruiters</span>
     </h3>
     <p className="text-gray-600 mb-8 text-base sm:text-lg max-w-3xl mx-auto">
-      Our students are recruited by top global companies with industry-leading packages
+      Leading global companies hiring our students with top-tier packages across domains.
     </p>
 
     {/* Package Filter */}
@@ -442,7 +442,7 @@ const PlacementSection = () => {
         >
           {/* Logo and Company Name Section */}
           <div className="px-6 pt-1 text-center">
-            <div className="w-20 h-16 flex items-center justify-center mx-auto mb-3">
+            <div className="w-24 h-20 flex items-center justify-center mx-auto mb-3">
               <img
                 src={recruiter.logo || "/placeholder.svg"}
                 alt={`${recruiter.name} logo`}
@@ -476,7 +476,7 @@ const PlacementSection = () => {
       </div>
     )}
   </section>
-</div>
+
 
       <section className="bg-gray-900 pb-10 pt-4 px-4 sm:px-6 lg:px-20">
         <div className="mx-auto">

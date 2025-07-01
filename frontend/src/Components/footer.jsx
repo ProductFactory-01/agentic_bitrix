@@ -7,19 +7,20 @@ import Call from "../assets/call.png";
 import CallTele from "../assets/call-tele.png";
 import Email from "../assets/email.png";
 import Instagram from "../assets/insta.png";
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 py-12 px-5">
-      <div className="max-full mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8">
+      <div className="max-w-screen-xl mx-4 sm:mx-6  lg:mx-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo and Contact */}
-          <div>
+          <div className="flex flex-col items-start">
             <div className="flex items-center space-x-3 mb-4">
               <div className="p-2">
-                <img src={LOGO} alt="" className="w-auto h-16"/>
+                <img src={LOGO} alt="SNS Logo" className="w-36 h-16 logo-img" />
               </div>
               <div>
-                <h3 className="text-red-600 font-bold text-sm">SNS College of Technology</h3>
+                <h3 className="text-red-600 font-bold text-sm whitespace-nowrap">SNS College of Technology</h3>
                 <p className="text-gray-400 text-xs">
                   Autonomous | NAAC A++ | NBA Accreditation
                 </p>
@@ -29,47 +30,47 @@ const Footer = () => {
               Redesigning Common Minds Since 2002. Building Future Innovators
               Through Design Thinking Framework.
             </p>
-            <div className="bg-gradient-to-r from-[#FEF3C7] via-[#FEF3C7] to-[#F59E0B] px-4 py-2 rounded-full shadow-md w-fit mr-8">
+            <div className="bg-gradient-to-r from-[#FEF3C7] via-[#FEF3C7] to-[#F59E0B] px-4 py-2 rounded-full shadow-md w-fit mb-4">
               <span className="text-amber-900 font-semibold text-sm flex items-start whitespace-nowrap">
                 <span className="mr-2 text-amber-800">⚙</span>
                 TNEA Code: 2726
               </span>
             </div>
-            <div className="flex space-x-3 py-4">
+            <div className="flex space-x-3">
               <a
                 href="https://m.facebook.com/snsinstitutions/"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <img src={Facebook} alt="Facebook" />
+                <img src={Facebook} alt="Facebook" className="social-icon" />
               </a>
               <a
                 href="https://x.com/snsinstitutions"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <img src={Twitter} alt="Twitter" />
+                <img src={Twitter} alt="Twitter" className="social-icon" />
               </a>
               <a
                 href="https://www.linkedin.com/school/snsinstitutions/"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <img src={LinkedIn} alt="Linkedin" />
+                <img src={LinkedIn} alt="Linkedin" className="social-icon" />
               </a>
               <a
                 href="https://youtube.com/@snsinstitutions?si=FAw6gAgnwy3qtnHd"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <img src={YouTube} alt="Youtube" />
+                <img src={YouTube} alt="Youtube" className="social-icon" />
               </a>
               <a
                 href="https://www.instagram.com/snsinstitutions/"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <img src={Instagram} alt="Instagram" />
+                <img src={Instagram} alt="Instagram" className="social-icon" />
               </a>
             </div>
           </div>
 
-          {/* Academics */}
+          {/* Quick Links */}
           <div>
             <h4 className="text-red-600 font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
@@ -100,63 +101,43 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          {/* Resources */}
+
+          {/* Differentiators */}
           <div>
             <h4 className="text-red-600 font-semibold mb-4">DIFFERENTIATORS</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
               <li>
-                <a
-                  href="https://main.snsgroups.com/##"
-                  className="hover:text-white transition-colors"
-                >
+                <a href="https://main.snsgroups.com/##" className="hover:text-white transition-colors">
                   Design Thinking Based Curriculum
                 </a>
               </li>
               <li>
-                <a
-                  href="https://main.snsgroups.com/##"
-                  className="hover:text-white transition-colors"
-                >
+                <a href="https://main.snsgroups.com/##" className="hover:text-white transition-colors">
                   Center for Learning and Teaching
                 </a>
               </li>
               <li>
-                <a
-                  href="https://main.snsgroups.com/##"
-                  className="hover:text-white transition-colors"
-                >
+                <a href="https://main.snsgroups.com/##" className="hover:text-white transition-colors">
                   Skill and Career Development
                 </a>
               </li>
               <li>
-                <a
-                  href="https://main.snsgroups.com/##"
-                  className="hover:text-white transition-colors"
-                >
+                <a href="https://main.snsgroups.com/##" className="hover:text-white transition-colors">
                   Industry Institute Partnership Cell
                 </a>
               </li>
               <li>
-                <a
-                  href="https://main.snsgroups.com/##"
-                  className="hover:text-white transition-colors"
-                >
+                <a href="https://main.snsgroups.com/##" className="hover:text-white transition-colors">
                   Centre for Creativity
                 </a>
               </li>
               <li>
-                <a
-                  href="https://main.snsgroups.com/##"
-                  className="hover:text-white transition-colors"
-                >
+                <a href="https://main.snsgroups.com/##" className="hover:text-white transition-colors">
                   Social Responsibility Initiative
                 </a>
               </li>
               <li>
-                <a
-                  href="https://snsspine.in/"
-                  className="hover:text-white transition-colors"
-                >
+                <a href="https://snsspine.in/" className="hover:text-white transition-colors">
                   SNS SPINE
                 </a>
               </li>
@@ -167,25 +148,21 @@ const Footer = () => {
           <div>
             <h4 className="text-red-600 font-semibold mb-4">CONTACT</h4>
             <div className="space-y-3 text-gray-300 text-sm">
-              <div className="flex items-start ">
-                <img src={Call} alt="Call Icon" className="w-4 h-full mr-2" />
+              <div className="flex items-start">
+                <img src={Call} alt="Call Icon" className="w-4 h-4 mr-2 mt-1" />
                 <span>
-                  SNS Kalvi Nagar, Sathy Main Road (NH-209), Vazhiyampalayam,
-                  Saravanampatti Post, 
+                  SNS Kalvi Nagar, Sathy Main Road (NH-209), Vazhiyampalayam,
+                  Saravanampatti Post,
                   <br />
                   Coimbatore - 641 035, Tamil Nadu.
                 </span>
               </div>
               <div className="flex items-center">
-                <img
-                  src={CallTele}
-                  alt="Calltele Icon"
-                  className="w-4 h-full mr-2"
-                />
+                <img src={CallTele} alt="Call Icon" className="w-4 h-4 mr-2" />
                 <span>+91 75503 16701</span>
               </div>
               <div className="flex items-center">
-                <img src={Email} alt="email Icon" className="w-4 h-full mr-2" />
+                <img src={Email} alt="Email Icon" className="w-4 h-4 mr-2" />
                 <span>snsct@snsgroups.com</span>
               </div>
             </div>
@@ -200,6 +177,25 @@ const Footer = () => {
           </p>
         </div>
       </div>
+      <style jsx>{`
+        .max-w-screen-xl {
+          max-width: 1280px;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+          .logo-img {
+            height: auto;
+            max-width: 100px;
+          }
+          .social-icon {
+            width: 24px;
+            height: 24px;
+          }
+          .grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+      `}</style>
     </footer>
   );
 };

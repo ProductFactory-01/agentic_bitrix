@@ -181,7 +181,7 @@ const InnovationEcosystem = () => {
         }}
       />
       
-      <div className="max-w-full mx-auto lg:mx-20">
+      <div className="max-w-full ">
         <div className="text-center mb-6">
           <h2 className="text-white text-4xl sm:text-5xl font-bold mb-4">
             Innovation <span className="text-red-400">Ecosystem</span>
