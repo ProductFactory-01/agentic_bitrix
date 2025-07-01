@@ -8,9 +8,14 @@ const Header = () => {
   const handleSmoothScroll = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+      // Get the header height to offset the scroll position
+      const headerHeight = 80; // Approximate header height
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
       });
     }
     // Close mobile menu after navigation

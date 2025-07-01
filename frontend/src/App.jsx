@@ -15,18 +15,15 @@ const App = () => {
       <BitrixForm />
       <Header />
 
-      {/* Parallax Container for Hero and Placement */}
-      <div className="relative">
-        {/* Sticky Hero Section */}
-        <section id="home" className="sticky top-0 z-10">
-          <HeroSection />
-        </section>
-        
-        {/* Overlapping Placement Section */}
-        <section id="placements" className="relative z-20">
-          <PlacementSection />
-        </section>
-      </div>
+      {/* Hero Section */}
+      <section id="home" className="relative z-10">
+        <HeroSection />
+      </section>
+
+      {/* Placement Section */}
+      <section id="placements" className="relative z-20">
+        <PlacementSection />
+      </section>
 
       {/* Programs Section */}
       <section id="programs">
