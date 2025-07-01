@@ -6,17 +6,25 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleSmoothScroll = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      // Get the header height to offset the scroll position
-      const headerHeight = 80; // Approximate header height
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerHeight;
-
+    // Special handling for home section due to sticky positioning
+    if (sectionId === 'home') {
       window.scrollTo({
-        top: offsetPosition,
+        top: 0,
         behavior: "smooth"
       });
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Get the header height to offset the scroll position
+        const headerHeight = 80; // Approximate header height
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
     }
     // Close mobile menu after navigation
     setIsMobileMenuOpen(false);
