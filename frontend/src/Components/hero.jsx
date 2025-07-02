@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Rocket from "../assets/Vector (1).png";
 import herobg from "../assets/herobg.svg";
 import Playbtn from "../assets/play.png"
+import {PlayCircle,Play} from "lucide-react";
 
 const HeroSection = () => {
   // State for parallax background effect
@@ -163,46 +164,49 @@ const HeroSection = () => {
         </h1>
 
         {/* Description */}
-        <div className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 xl:mb-10 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto text-center px-2 sm:px-4">
-          <p className="mb-2 sm:mb-3 md:mb-4">
-            <span className="text-white opacity-90">
-              India's first institute to implement{" "}
-            </span>
-            <span className="font-bold text-white">
-              Design Thinking Framework
-            </span>
-            <span className="text-white opacity-90"> in education.</span>
-          </p>
-          <p>
-            <span className="text-white opacity-90">Building </span>
-            <span className="font-bold text-white">1000 AI Startups</span>
-            <span className="text-white opacity-90">
-              {" "}
-              through revolutionary SPINE + iHub ecosystem.
-            </span>
-          </p>
-        </div>
+          <div className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 xl:mb-10 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto text-center px-2 sm:px-4">
+            <p className="mb-2 sm:mb-3 md:mb-4">
+              <span className="text-white opacity-90">
+                India's first institute to implement{" "}
+              </span>
+              <span className="font-bold text-white">
+                Design Thinking Framework
+              </span>
+              <span className="text-white opacity-90"> in education.</span>
+            </p>
+            <p>
+              <span className="text-white opacity-90">Building </span>
+              <span className="font-bold text-white">1000 AI Startups</span>
+              <span className="text-white opacity-90">
+                {" "}
+                through revolutionary SPINE + iHub ecosystem.
+              </span>
+            </p>
+          </div>
+
+               
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center mb-8 sm:mb-12 xl:mb-20 px-4 sm:px-0">
-          <button className="text-black bg-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg">
-            <span className="mr-2 flex-shrink-0">
-              <img
-                src={Rocket || "/placeholder.svg"}
-                alt=""
-                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
-              />
-            </span>
-            Start Your Journey
+          <button
+            onClick={() => window.open("https://www.youtube.com/watch?v=Jb5OmhkmR4s", "_blank")}
+            className="text-black bg-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg"
+          >
+            <PlayCircle className="w-6 h-6 mr-2" />
+            Innovation Hub Story
           </button>
-          <button className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:bg-red-300 hover:text-red-500 transition-colors flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg">
-            {/* <span className="mr-2">▶</span> */}
-            <img src={Playbtn} alt="play-btn" className="w-4 h-5 mr-2" />
-            Watch Innovation Story
+
+          <button
+            onClick={() => window.open("https://www.youtube.com/watch?v=Lb3dAhZ5TQI", "_blank")}
+            className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:bg-red-300 hover:text-red-500 transition-colors flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg"
+          >
+            <PlayCircle className="w-6 h-6 mr-2" />
+             Campus Life Tour
           </button>
         </div>
 
-        {/* Statistics with Animation */}
+
+          {/* Statistics with Animation */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 text-white px-2 sm:px-4">
           <div ref={lpaRef} className="text-center">
             <div
