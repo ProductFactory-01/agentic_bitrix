@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import Rocket from "../assets/Vector (1).png";
 import herobg from "../assets/herobg.svg";
 import Playbtn from "../assets/play.png"
-import {PlayCircle,Play} from "lucide-react";
+import {PlayCircle,Play, X} from "lucide-react";
+import YouTube from 'react-youtube';
 
 const HeroSection = () => {
   // State for parallax background effect
@@ -13,6 +14,61 @@ const HeroSection = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   // Ref to access the hero section element
   const heroRef = useRef(null);
+  
+  // State for video modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentVideoId, setCurrentVideoId] = useState("");
+
+  // Function to extract video ID from YouTube URL
+  const getVideoId = (url) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  };
+
+  // Function to open video modal
+  const openVideoModal = (videoUrl) => {
+    const videoId = getVideoId(videoUrl);
+    if (videoId) {
+      setCurrentVideoId(videoId);
+      setIsModalOpen(true);
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  // Function to close video modal
+  const closeVideoModal = () => {
+    setIsModalOpen(false);
+    setCurrentVideoId("");
+    // Restore body scroll
+    document.body.style.overflow = 'unset';
+  };
+
+  // YouTube player options
+  const youtubeOpts = {
+    height: '315',
+    width: '560',
+    playerVars: {
+      autoplay: 1,
+      rel: 0,
+      modestbranding: 1,
+    },
+  };
+
+  // Responsive YouTube player options
+  const getResponsiveOpts = () => {
+    const isMobile = window.innerWidth < 768;
+    return {
+      height: isMobile ? '200' : '315',
+      width: isMobile ? '300' : '560',
+      playerVars: {
+        autoplay: 1,
+        rel: 0,
+        modestbranding: 1,
+      },
+    };
+  };
 
   // Handle scroll for hero background parallax with throttling
   useEffect(() => {
@@ -30,6 +86,25 @@ const HeroSection = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Handle escape key and cleanup
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isModalOpen) {
+        closeVideoModal();
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      // Cleanup body scroll on component unmount
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen]);
 
   // Effect to handle mouse movement
   useEffect(() => {
@@ -189,7 +264,7 @@ const HeroSection = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center mb-8 sm:mb-12 xl:mb-20 px-4 sm:px-0">
           <button
-            onClick={() => window.open("https://www.youtube.com/watch?v=Jb5OmhkmR4s", "_blank")}
+            onClick={() => openVideoModal("https://www.youtube.com/watch?v=Jb5OmhkmR4s")}
             className="text-black bg-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg"
           >
             <PlayCircle className="w-6 h-6 mr-2" />
@@ -197,7 +272,7 @@ const HeroSection = () => {
           </button>
 
           <button
-            onClick={() => window.open("https://www.youtube.com/watch?v=Lb3dAhZ5TQI", "_blank")}
+            onClick={() => openVideoModal("https://www.youtube.com/watch?v=Lb3dAhZ5TQI")}
             className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:bg-red-300 hover:text-red-500 transition-colors flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg"
           >
             <PlayCircle className="w-6 h-6 mr-2" />
@@ -280,6 +355,39 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {isModalOpen && (
+        <div 
+          className="fixed inset-0 backdrop-blur-xs flex items-center justify-center z-50 p-4"
+          onClick={closeVideoModal}
+        >
+          <div 
+            className="relative bg-black rounded-lg overflow-hidden max-w-4xl w-full"
+            onClick={(e) => e.stopPropagation()}
+            style={{ aspectRatio: '16/9' }}
+          >
+            {/* Close button */}
+            <button
+              onClick={closeVideoModal}
+              className="absolute top-4 right-4 z-20 bg-black bg-opacity-70 text-white rounded-full p-2 hover:bg-opacity-90 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            {/* YouTube player container - Full size */}
+            <div className="w-full h-full">
+              <YouTube
+                videoId={currentVideoId}
+                opts={getResponsiveOpts()}
+                onEnd={closeVideoModal}
+                className="w-full h-full"
+                iframeClassName="w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

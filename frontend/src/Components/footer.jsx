@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-4 sm:mx-6  lg:mx-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo and Contact */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start -mt-2">
             <div className="flex items-center space-x-3 mb-4">
               <div className="p-2">
                 <img src={LOGO} alt="SNS Logo" className="w-36 md:w-auto h-16 md:h-auto logo-img" />
@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="ml-0 xl:ml-20">
             <h4 className="text-red-600 font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-300 text-sm">
               <li>
@@ -152,7 +152,7 @@ const Footer = () => {
                 <img src={Call} alt="Call Icon" className="w-4 h-4 mr-2 mt-1" />
                 <span>
                   SNS Kalvi Nagar, Sathy Main Road (NH-209), Vazhiyampalayam,
-                  Saravanampatti Post,
+                  Saravanampatti(Post),
                   <br />
                   Coimbatore - 641 035, Tamil Nadu.
                 </span>
