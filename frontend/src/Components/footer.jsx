@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="flex flex-col items-start">
             <div className="flex items-center space-x-3 mb-4">
               <div className="p-2">
-                <img src={LOGO} alt="SNS Logo" className="w-36 h-16 logo-img" />
+                <img src={LOGO} alt="SNS Logo" className="w-36 md:w-auto h-16 md:h-auto logo-img" />
               </div>
               <div>
                 <h3 className="text-red-600 font-bold text-sm whitespace-nowrap">SNS College of Technology</h3>

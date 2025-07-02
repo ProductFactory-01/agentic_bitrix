@@ -91,7 +91,7 @@ const Header = () => {
         {/* Right Section - Navigation and Apply Button */}
         <div className="flex items-center space-x-6 lg:space-x-4 xl:space-x-6 right-section">
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8 lg:space-x-2 xl:space-x-8 desktop-nav">
+          <nav className="hidden lg:flex items-center space-x-8 lg:space-x-0 xl:space-x-2 desktop-nav">
           <button
             onClick={() => handleSmoothScroll("home")}
             className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
