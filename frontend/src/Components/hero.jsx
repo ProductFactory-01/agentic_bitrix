@@ -147,7 +147,7 @@ const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
         {/* Main Heading */}
-        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl  font-bold mb-4 sm:mb-6 md:mb-8 mt-8 sm:mt-12 md:mt-16 leading-tight">
+        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl  font-bold mb-4 sm:mb-6 xl:mb-8 mt-8 sm:mt-12 md:mt-16 leading-tight">
           <span
             style={{
               background: "white",
@@ -163,7 +163,7 @@ const HeroSection = () => {
         </h1>
 
         {/* Description */}
-        <div className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 md:mb-10 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto text-center px-2 sm:px-4">
+        <div className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 xl:mb-10 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto text-center px-2 sm:px-4">
           <p className="mb-2 sm:mb-3 md:mb-4">
             <span className="text-white opacity-90">
               India's first institute to implement{" "}
@@ -184,7 +184,7 @@ const HeroSection = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 px-4 sm:px-0">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center mb-8 sm:mb-12 xl:mb-20 px-4 sm:px-0">
           <button className="text-black bg-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg">
             <span className="mr-2 flex-shrink-0">
               <img
