@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Rocket from "../assets/Vector (1).png";
+import rocket from "../assets/rocket.svg";
 import herobg from "../assets/herobg.svg";
 import Playbtn from "../assets/play.png"
 import {PlayCircle,Play, X} from "lucide-react";
@@ -267,8 +268,8 @@ const HeroSection = () => {
             onClick={() => openVideoModal("https://www.youtube.com/watch?v=Jb5OmhkmR4s")}
             className="text-black bg-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg"
           >
-            <PlayCircle className="w-6 h-6 mr-2" />
-            Innovation Hub Story
+              <img src={rocket} alt="rocket" className="w-6 h-6 mr-2" />
+               Innovation Hub Story
           </button>
 
           <button
