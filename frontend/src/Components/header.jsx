@@ -214,8 +214,8 @@ const Header = () => {
             Campus Life
           </button>
           <button
-            onClick={() => handleSmoothScroll("campus-life")}
-            className="block w-full text-left text-white hover:text-yellow-200 transition-colors py-3 px-4 rounded-md hover:bg-white/10 bg-transparent border-none"
+              onClick={() => window.open("https://snsct.org/nirf3/", "_blank")}
+              className="block w-full text-left text-white hover:text-yellow-200 transition-colors py-3 px-4 rounded-md hover:bg-white/10 bg-transparent border-none"
           >
             NIRF
           </button>
