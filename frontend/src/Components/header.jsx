@@ -7,22 +7,23 @@ const Header = () => {
 
   const handleSmoothScroll = (sectionId) => {
     // Special handling for home section due to sticky positioning
-    if (sectionId === 'home') {
+    if (sectionId === "home") {
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     } else {
       const element = document.getElementById(sectionId);
       if (element) {
         // Get the header height to offset the scroll position
         const headerHeight = 80; // Approximate header height
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const elementPosition =
+          element.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - headerHeight;
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }
     }
@@ -92,36 +93,45 @@ const Header = () => {
         <div className="flex items-center space-x-6 lg:space-x-4 xl:space-x-6 right-section">
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8 lg:space-x-0 xl:space-x-2 desktop-nav">
-          <button
-            onClick={() => handleSmoothScroll("home")}
-            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => handleSmoothScroll("programs")}
-            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
-          >
-            Programs
-          </button>
-          <button
-            onClick={() => handleSmoothScroll("innovation")}
-            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
-          >
-            Innovation
-          </button>
-          <button
-            onClick={() => handleSmoothScroll("placements")}
-            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
-          >
-            Placements
-          </button>
-          <button
-            onClick={() => handleSmoothScroll("campus-life")}
-            className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
-          >
-            Campus Life
-          </button>          </nav>
+            <button
+              onClick={() => handleSmoothScroll("home")}
+              className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => handleSmoothScroll("programs")}
+              className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
+            >
+              Programs
+            </button>
+            <button
+              onClick={() => handleSmoothScroll("innovation")}
+              className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
+            >
+              Innovation
+            </button>
+            <button
+              onClick={() => handleSmoothScroll("placements")}
+              className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
+            >
+              Placements
+            </button>
+            <button
+              onClick={() => handleSmoothScroll("campus-life")}
+              className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
+            >
+              Campus Life
+            </button>
+            <button
+              onClick={() =>
+                window.open("https://old.snsct.org/nirf3/", "_blank")
+              }
+              className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
+            >
+              NIRF
+            </button>
+          </nav>
 
           {/* Desktop Apply Now Button */}
           <button
@@ -141,20 +151,23 @@ const Header = () => {
         >
           <div className="w-6 h-6 flex flex-col justify-center items-center">
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen
-                ? "rotate-45 translate-y-1"
-                : "-translate-y-0.5"
-                }`}
+              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
+                isMobileMenuOpen
+                  ? "rotate-45 translate-y-1"
+                  : "-translate-y-0.5"
+              }`}
             ></span>
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"
-                }`}
+              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${
+                isMobileMenuOpen ? "opacity-0" : "opacity-100"
+              }`}
             ></span>
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen
-                ? "-rotate-45 -translate-y-1"
-                : "translate-y-0.5"
-                }`}
+              className={`bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
+                isMobileMenuOpen
+                  ? "-rotate-45 -translate-y-1"
+                  : "translate-y-0.5"
+              }`}
             ></span>
           </div>
         </button>
@@ -162,12 +175,12 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-gray-800/95 backdrop-blur-md transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
+        className={`lg:hidden absolute top-full left-0 w-full bg-gray-800/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
       >
         <div className="px-4 py-6 space-y-4">
           {/* TNEA Code in Mobile Menu */}
-
 
           {/* Mobile Navigation Links */}
           <button
@@ -200,6 +213,12 @@ const Header = () => {
           >
             Campus Life
           </button>
+          <button
+            onClick={() => handleSmoothScroll("campus-life")}
+            className="block w-full text-left text-white hover:text-yellow-200 transition-colors py-3 px-4 rounded-md hover:bg-white/10 bg-transparent border-none"
+          >
+            NIRF
+          </button>
 
           {/* Mobile Apply Now Button */}
           <button
@@ -213,199 +232,198 @@ const Header = () => {
 
       {/* Custom CSS for smooth zoom animation */}
       <style jsx>{`
-  @keyframes pulse-zoom {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-  }
+        @keyframes pulse-zoom {
+          0%,
+          100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.05);
+          }
+        }
 
-  .animate-pulse-zoom {
-    animation: pulse-zoom 2s ease-in-out infinite;
-  }
+        .animate-pulse-zoom {
+          animation: pulse-zoom 2s ease-in-out infinite;
+        }
 
-  nav button,
-  .mobile-nav button {
-    font-size: inherit;
-    font-family: inherit;
-    outline: none;
-  }
+        nav button,
+        .mobile-nav button {
+          font-size: inherit;
+          font-family: inherit;
+          outline: none;
+        }
 
-  nav button:focus,
-  .mobile-nav button:focus {
-    outline: none;
-  }
+        nav button:focus,
+        .mobile-nav button:focus {
+          outline: none;
+        }
 
-  /* Laptop View Only Styles (1024px - 1540px) */
-  @media (min-width: 1024px) and (max-width: 1540px) {
-    /* Main container adjustments */
-    .header-container {
-      margin-left: 3rem !important;
-      margin-right: 3rem !important;
-      gap: 1rem;
-    }
+        /* Laptop View Only Styles (1024px - 1540px) */
+        @media (min-width: 1024px) and (max-width: 1540px) {
+          /* Main container adjustments */
+          .header-container {
+            margin-left: 3rem !important;
+            margin-right: 3rem !important;
+            gap: 1rem;
+          }
 
-    /* Logo section */
-    .logo-section {
-      max-width: 350px;
-      flex-shrink: 0;
-    }
+          /* Logo section */
+          .logo-section {
+            max-width: 350px;
+            flex-shrink: 0;
+          }
 
-    .logo-section img {
-      width: 4.5rem !important;
-      height: 2.75rem !important;
-    }
+          .logo-section img {
+            width: 4.5rem !important;
+            height: 2.75rem !important;
+          }
 
-    .logo-section h1 {
-      font-size: 0.875rem !important;
-      line-height: 1.25rem !important;
-    }
+          .logo-section h1 {
+            font-size: 0.875rem !important;
+            line-height: 1.25rem !important;
+          }
 
-    .logo-section p {
-      font-size: 0.625rem !important;
-    }
+          .logo-section p {
+            font-size: 0.625rem !important;
+          }
 
-    /* Hide original TNEA badge for laptop view */
-    .tnea-badge {
-      display: none !important;
-    }
+          /* Hide original TNEA badge for laptop view */
+          .tnea-badge {
+            display: none !important;
+          }
 
-    /* Show TNEA badge under logo for laptop view */
-    .tnea-badge-under-logo {
-      display: block !important;
-      padding-left: 0.5rem !important;
-      padding-right: 1.5rem !important;
-      padding-top: 0.25rem !important;
-      padding-bottom: 0.25rem !important;
-      border-radius: 16px !important;
-      margin-top: 0.25rem !important;
-    }
+          /* Show TNEA badge under logo for laptop view */
+          .tnea-badge-under-logo {
+            display: block !important;
+            padding-left: 0.5rem !important;
+            padding-right: 1.5rem !important;
+            padding-top: 0.25rem !important;
+            padding-bottom: 0.25rem !important;
+            border-radius: 16px !important;
+            margin-top: 0.25rem !important;
+          }
 
-    .tnea-badge-under-logo span {
-      font-size: 0.625rem !important;
-    }
+          .tnea-badge-under-logo span {
+            font-size: 0.625rem !important;
+          }
 
-    /* Navigation */
-    .desktop-nav {
-      gap: 0.75rem !important;
-    }
+          /* Navigation */
+          .desktop-nav {
+            gap: 0.75rem !important;
+          }
 
-    .desktop-nav button {
-      font-size: 0.875rem !important;
-      font-weight: 500 !important;
-    }
+          .desktop-nav button {
+            font-size: 0.875rem !important;
+            font-weight: 500 !important;
+          }
 
-    /* Apply Now Button */
-    .apply-button {
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
-      font-size: 0.875rem !important;
-    }
+          /* Apply Now Button */
+          .apply-button {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            font-size: 0.875rem !important;
+          }
 
-    /* Hide "Apply Now 2025" and show "Apply" for laptop view */
-    .apply-button .apply-full-text {
-      display: none !important;
-    }
+          /* Hide "Apply Now 2025" and show "Apply" for laptop view */
+          .apply-button .apply-full-text {
+            display: none !important;
+          }
 
-    .apply-button .apply-short-text {
-      display: inline !important;
-    }
+          .apply-button .apply-short-text {
+            display: inline !important;
+          }
 
-    /* Right section container */
-    .right-section {
-      gap: 1rem !important;
-      flex-shrink: 0;
-    }
-  }
+          /* Right section container */
+          .right-section {
+            gap: 1rem !important;
+            flex-shrink: 0;
+          }
+        }
 
-  /* Larger Screens (1440px) */
-  @media (min-width: 1440px) {
-    /* Main container adjustments */
-    .header-container {
-      margin-left: auto !important;
-      margin-right: auto !important;
-      max-width: 1440px;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
+        /* Larger Screens (1440px) */
+        @media (min-width: 1440px) {
+          /* Main container adjustments */
+          .header-container {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            max-width: 1440px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+          }
 
-    /* Logo section */
-    .logo-section {
-      display: flex;
-      align-items: center;
-      max-width: 400px;
-      flex-shrink: 0;
-    }
+          /* Logo section */
+          .logo-section {
+            display: flex;
+            align-items: center;
+            max-width: 400px;
+            flex-shrink: 0;
+          }
 
-    .logo-section img {
-      width: 5rem !important;
-      height: 3rem !important;
-    }
+          .logo-section img {
+            width: 5rem !important;
+            height: 3rem !important;
+          }
 
-    .logo-text-section {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+          .logo-text-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
 
-    .logo-text-section h1 {
-      font-size: 1.125rem !important;
-      line-height: 1.75rem !important;
-    }
+          .logo-text-section h1 {
+            font-size: 1.125rem !important;
+            line-height: 1.75rem !important;
+          }
 
-    .logo-text-section p {
-      font-size: 0.75rem !important;
-    }
+          .logo-text-section p {
+            font-size: 0.75rem !important;
+          }
 
-    /* TNEA badge */
-    .tnea-badge {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-left: 1rem;
-    }
+          /* TNEA badge */
+          .tnea-badge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 1rem;
+          }
 
-    .tnea-badge span {
-      font-size: 0.875rem !important;
-    }
+          .tnea-badge span {
+            font-size: 0.875rem !important;
+          }
 
-    /* Navigation */
-    .desktop-nav {
-      gap: 1.5rem !important;
-    }
+          /* Navigation */
+          .desktop-nav {
+            gap: 1.5rem !important;
+          }
 
-    .desktop-nav button {
-      font-size: 1rem !important;
-      font-weight: 500 !important;
-    }
+          .desktop-nav button {
+            font-size: 1rem !important;
+            font-weight: 500 !important;
+          }
 
-    /* Apply Now Button */
-    .apply-button {
-      padding-left: 1.5rem !important;
-      padding-right: 1.5rem !important;
-      font-size: 1rem !important;
-    }
+          /* Apply Now Button */
+          .apply-button {
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+            font-size: 1rem !important;
+          }
 
-    /* Hide "Apply Now 2025" and show "Apply" for larger screens */
-    .apply-button .apply-full-text {
-      display: inline !important;
-    }
+          /* Hide "Apply Now 2025" and show "Apply" for larger screens */
+          .apply-button .apply-full-text {
+            display: inline !important;
+          }
 
-    .apply-button .apply-short-text {
-      display: none !important;
-    }
+          .apply-button .apply-short-text {
+            display: none !important;
+          }
 
-    /* Right section container */
-    .right-section {
-      gap: 2rem !important;
-      flex-shrink: 0;
-    }
-  }
-`}</style>
-
+          /* Right section container */
+          .right-section {
+            gap: 2rem !important;
+            flex-shrink: 0;
+          }
+        }
+      `}</style>
     </header>
   );
 };

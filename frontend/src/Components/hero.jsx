@@ -4,9 +4,12 @@ import { useState, useEffect, useRef } from "react";
 import Rocket from "../assets/Vector (1).png";
 import rocket from "../assets/rocket.svg";
 import herobg from "../assets/herobg.svg";
-import Playbtn from "../assets/play.png"
-import {PlayCircle,Play, X} from "lucide-react";
-import YouTube from 'react-youtube';
+import Playbtn from "../assets/play.png";
+import { PlayCircle, Play, X } from "lucide-react";
+import YouTube from "react-youtube";
+import browserSvg from "../assets/browser.svg";
+import whatsapp from "../assets/whatsapp.svg";
+import chatBubbleSvg from "../assets/chatBubble.svg";
 
 const HeroSection = () => {
   // State for parallax background effect
@@ -15,16 +18,17 @@ const HeroSection = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   // Ref to access the hero section element
   const heroRef = useRef(null);
-  
+
   // State for video modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentVideoId, setCurrentVideoId] = useState("");
 
   // Function to extract video ID from YouTube URL
   const getVideoId = (url) => {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const regExp =
+      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
     const match = url.match(regExp);
-    return (match && match[2].length === 11) ? match[2] : null;
+    return match && match[2].length === 11 ? match[2] : null;
   };
 
   // Function to open video modal
@@ -34,7 +38,7 @@ const HeroSection = () => {
       setCurrentVideoId(videoId);
       setIsModalOpen(true);
       // Prevent body scroll when modal is open
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     }
   };
 
@@ -43,13 +47,13 @@ const HeroSection = () => {
     setIsModalOpen(false);
     setCurrentVideoId("");
     // Restore body scroll
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   // YouTube player options
   const youtubeOpts = {
-    height: '315',
-    width: '560',
+    height: "315",
+    width: "560",
     playerVars: {
       autoplay: 1,
       rel: 0,
@@ -61,8 +65,8 @@ const HeroSection = () => {
   const getResponsiveOpts = () => {
     const isMobile = window.innerWidth < 768;
     return {
-      height: isMobile ? '200' : '315',
-      width: isMobile ? '300' : '560',
+      height: isMobile ? "200" : "315",
+      width: isMobile ? "300" : "560",
       playerVars: {
         autoplay: 1,
         rel: 0,
@@ -83,27 +87,27 @@ const HeroSection = () => {
         ticking = true;
       }
     };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Handle escape key and cleanup
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape' && isModalOpen) {
+      if (e.key === "Escape" && isModalOpen) {
         closeVideoModal();
       }
     };
 
     if (isModalOpen) {
-      document.addEventListener('keydown', handleEscape);
+      document.addEventListener("keydown", handleEscape);
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener("keydown", handleEscape);
       // Cleanup body scroll on component unmount
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isModalOpen]);
 
@@ -201,15 +205,20 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="hero-sticky bg-red-600 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center">
+    <section
+      ref={heroRef}
+      className="hero-sticky bg-red-600 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center"
+    >
       {/* Background Decorative Bubble Following Cursor */}
       <div
         className="absolute w-48 h-48 bg-white rounded-full opacity-15 transition-transform duration-300 ease-out pointer-events-none"
         style={{
-          transform: `translate(${cursorPosition.x - 100}px, ${cursorPosition.y - 400}px)`,
+          transform: `translate(${cursorPosition.x - 100}px, ${
+            cursorPosition.y - 400
+          }px)`,
         }}
       ></div>
-      
+
       {/* Background image with parallax */}
       <img
         src={herobg || "/placeholder.svg"}
@@ -217,7 +226,7 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none"
         style={{
           transform: `translateY(${scrollY * 0.3}px)`,
-          transition: 'transform 0.1s ease-out'
+          transition: "transform 0.1s ease-out",
         }}
         aria-hidden="true"
       />
@@ -240,49 +249,50 @@ const HeroSection = () => {
         </h1>
 
         {/* Description */}
-          <div className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 xl:mb-10 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto text-center px-2 sm:px-4">
-            <p className="mb-2 sm:mb-3 md:mb-4">
-              <span className="text-white opacity-90">
-                India's first institute to implement{" "}
-              </span>
-              <span className="font-bold text-white">
-                Design Thinking Framework
-              </span>
-              <span className="text-white opacity-90"> in education.</span>
-            </p>
-            <p>
-              <span className="text-white opacity-90">Building </span>
-              <span className="font-bold text-white">1000 AI Startups</span>
-              <span className="text-white opacity-90">
-                {" "}
-                through revolutionary SPINE + iHub ecosystem.
-              </span>
-            </p>
-          </div>
-
-               
+        <div className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 xl:mb-10 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto text-center px-2 sm:px-4">
+          <p className="mb-2 sm:mb-3 md:mb-4">
+            <span className="text-white opacity-90">
+              India's first institute to implement{" "}
+            </span>
+            <span className="font-bold text-white">
+              Design Thinking Framework
+            </span>
+            <span className="text-white opacity-90"> in education.</span>
+          </p>
+          <p>
+            <span className="text-white opacity-90">Building </span>
+            <span className="font-bold text-white">1000 AI Startups</span>
+            <span className="text-white opacity-90">
+              {" "}
+              through revolutionary SPINE + iHub ecosystem.
+            </span>
+          </p>
+        </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center mb-8 sm:mb-12 xl:mb-20 px-4 sm:px-0">
           <button
-            onClick={() => openVideoModal("https://www.youtube.com/watch?v=Jb5OmhkmR4s")}
+            onClick={() =>
+              openVideoModal("https://www.youtube.com/watch?v=Jb5OmhkmR4s")
+            }
             className="text-black bg-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg"
           >
-              <img src={rocket} alt="rocket" className="w-6 h-6 mr-2" />
-               Innovation Hub Story
+            <img src={rocket} alt="rocket" className="w-6 h-6 mr-2" />
+            Innovation Hub Story
           </button>
 
           <button
-            onClick={() => openVideoModal("https://www.youtube.com/watch?v=Lb3dAhZ5TQI")}
+            onClick={() =>
+              openVideoModal("https://www.youtube.com/watch?v=Lb3dAhZ5TQI")
+            }
             className="border-2 border-white text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-full font-semibold hover:bg-red-300 hover:text-red-500 transition-colors flex items-center justify-center cursor-pointer text-sm sm:text-base md:text-lg"
           >
             <PlayCircle className="w-6 h-6 mr-2" />
-             Campus Life Tour
+            Campus Life Tour
           </button>
         </div>
 
-
-          {/* Statistics with Animation */}
+        {/* Statistics with Animation */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 text-white px-2 sm:px-4">
           <div ref={lpaRef} className="text-center">
             <div
@@ -337,10 +347,11 @@ const HeroSection = () => {
 
           <div ref={gradeRef} className="text-center">
             <div
-              className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 transition-all duration-1000 ${gradeVisible
+              className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-1 sm:mb-2 transition-all duration-1000 ${
+                gradeVisible
                   ? "opacity-100 transform scale-100"
                   : "opacity-0 transform scale-75"
-                }`}
+              }`}
               style={{
                 background: "white",
                 WebkitBackgroundClip: "text",
@@ -359,14 +370,14 @@ const HeroSection = () => {
 
       {/* Video Modal */}
       {isModalOpen && (
-        <div 
+        <div
           className="fixed inset-0 backdrop-blur-xs flex items-center justify-center z-50 p-4"
           onClick={closeVideoModal}
         >
-          <div 
+          <div
             className="relative bg-black rounded-lg overflow-hidden max-w-4xl w-full"
             onClick={(e) => e.stopPropagation()}
-            style={{ aspectRatio: '16/9' }}
+            style={{ aspectRatio: "16/9" }}
           >
             {/* Close button */}
             <button
@@ -375,7 +386,7 @@ const HeroSection = () => {
             >
               <X className="w-6 h-6" />
             </button>
-            
+
             {/* YouTube player container - Full size */}
             <div className="w-full h-full">
               <YouTube
@@ -389,6 +400,69 @@ const HeroSection = () => {
           </div>
         </div>
       )}
+      <div className="fixed bottom-6 right-4 flex flex-col items-end space-y-3 z-50">
+        {/* Browser Bubble */}
+        <div className="flex items-center">
+          {/* Icon */}
+          <div className="p-2 rounded-full mb-2">
+            <img
+              src={browserSvg}
+              alt="Browser Icon"
+              className="w-8 h-8 sm:w-10 sm:h-10" // smaller on mobile
+            />
+          </div>
+
+          {/* SVG Bubble Button */}
+          <button
+            onClick={() => window.open("https://old.snsct.org", "_blank")}
+            className="relative w-[200px] h-[50px] sm:w-[290px] sm:h-[60px] -ml-2 -mb-2"
+          >
+            {/* SVG Bubble as Background */}
+            <img
+              src={chatBubbleSvg}
+              alt="Chat Bubble"
+              className="absolute top-0 left-0 w-full h-full"
+            />
+
+            {/* Text on top of SVG */}
+            <span className="relative z-10 text-black font-bold text-sm sm:text-xl">
+              View More (Old site)
+            </span>
+          </button>
+        </div>
+
+        {/* WhatsApp Bubble */}
+        <div className="flex items-center">
+          {/* Icon */}
+          <div className="p-2 mb-2 rounded-full">
+            <img
+              src={whatsapp}
+              alt="WhatsApp Icon"
+              className="w-8 h-8 sm:w-10 sm:h-10" // responsive size
+            />
+          </div>
+
+          {/* SVG Bubble Button */}
+          <a
+            href="https://wa.me/919566423456"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative w-[200px] h-[50px] sm:w-[250px] sm:h-[60px] -ml-2 flex items-center justify-center"
+          >
+            {/* SVG Bubble as Background */}
+            <img
+              src={chatBubbleSvg}
+              alt="Chat Bubble"
+              className="absolute top-0 left-0 w-full h-full"
+            />
+
+            {/* Centered Text Over SVG */}
+            <span className="relative z-10 text-black font-bold text-sm sm:text-lg">
+              +91 9566423456
+            </span>
+          </a>
+        </div>
+      </div>
     </section>
   );
 };
