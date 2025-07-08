@@ -20,12 +20,12 @@ const App = () => {
         <div className="flex flex-row-reverse items-center">
           <div
             className=" rounded-full mb-2 cursor-pointer animate-wave bg-white mr-2"
-            onClick={() => window.open("https://old.snsct.org", "_blank")}
+            onClick={() => window.open("https://snsct.org/main", "_blank")}
           >
             <img src={browserSvg} alt="Browser Icon" className="w-7 h-7 " />
           </div>
           <button
-            onClick={() => window.open("https://snsct.org/main/", "_blank")}
+            onClick={() => window.open("https://snsct.org/main", "_blank")}
             className="relative w-[200px] h-[50px] sm:w-[160px] sm:h-[60px] -mb-2 group overflow-hidden cursor-pointer hidden sm:block animate-wave mr-1"
           >
             <img
