@@ -7,9 +7,7 @@ import herobg from "../assets/herobg.svg";
 import Playbtn from "../assets/play.png";
 import { PlayCircle, Play, X } from "lucide-react";
 import YouTube from "react-youtube";
-import browserSvg from "../assets/browser.svg";
-import whatsapp from "../assets/whatsapp.svg";
-import chatBubbleSvg from "../assets/chatBubble.svg";
+
 
 const HeroSection = () => {
   // State for parallax background effect
@@ -400,69 +398,6 @@ const HeroSection = () => {
           </div>
         </div>
       )}
-      <div className="fixed bottom-6 right-4 flex flex-col items-end space-y-3 z-50">
-        {/* Browser Bubble */}
-        <div className="flex items-center">
-          {/* Icon */}
-          <div className="p-2 rounded-full mb-2">
-            <img
-              src={browserSvg}
-              alt="Browser Icon"
-              className="w-8 h-8 sm:w-10 sm:h-10" // smaller on mobile
-            />
-          </div>
-
-          {/* SVG Bubble Button */}
-          <button
-            onClick={() => window.open("https://old.snsct.org", "_blank")}
-            className="relative w-[200px] h-[50px] sm:w-[290px] sm:h-[60px] -ml-2 -mb-2"
-          >
-            {/* SVG Bubble as Background */}
-            <img
-              src={chatBubbleSvg}
-              alt="Chat Bubble"
-              className="absolute top-0 left-0 w-full h-full"
-            />
-
-            {/* Text on top of SVG */}
-            <span className="relative z-10 text-black font-bold text-sm sm:text-xl">
-              View More (Old site)
-            </span>
-          </button>
-        </div>
-
-        {/* WhatsApp Bubble */}
-        <div className="flex items-center">
-          {/* Icon */}
-          <div className="p-2 mb-2 rounded-full">
-            <img
-              src={whatsapp}
-              alt="WhatsApp Icon"
-              className="w-8 h-8 sm:w-10 sm:h-10" // responsive size
-            />
-          </div>
-
-          {/* SVG Bubble Button */}
-          <a
-            href="https://wa.me/919566423456"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative w-[200px] h-[50px] sm:w-[250px] sm:h-[60px] -ml-2 flex items-center justify-center"
-          >
-            {/* SVG Bubble as Background */}
-            <img
-              src={chatBubbleSvg}
-              alt="Chat Bubble"
-              className="absolute top-0 left-0 w-full h-full"
-            />
-
-            {/* Centered Text Over SVG */}
-            <span className="relative z-10 text-black font-bold text-sm sm:text-lg">
-              +91 9566423456
-            </span>
-          </a>
-        </div>
-      </div>
     </section>
   );
 };
