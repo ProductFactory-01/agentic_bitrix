@@ -25,7 +25,7 @@ const App = () => {
             <img src={browserSvg} alt="Browser Icon" className="w-7 h-7 " />
           </div>
           <button
-            onClick={() => window.open("https://old.snsct.org", "_blank")}
+            onClick={() => window.open("https://snsct.org/main/", "_blank")}
             className="relative w-[200px] h-[50px] sm:w-[160px] sm:h-[60px] -mb-2 group overflow-hidden cursor-pointer hidden sm:block animate-wave mr-1"
           >
             <img
