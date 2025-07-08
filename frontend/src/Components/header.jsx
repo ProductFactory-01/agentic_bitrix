@@ -125,7 +125,7 @@ const Header = () => {
             </button>
             <button
               onClick={() =>
-                window.open("https://old.snsct.org/nirf3/", "_blank")
+                window.open("https://snsct.org/nirf3/", "_blank")
               }
               className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
             >
