@@ -125,7 +125,7 @@ const Header = () => {
             </button>
             <button
               onClick={() =>
-                window.open("https://snsct.org/nirf3/", "_blank")
+                window.open("https://snsct.bitrix24.site/nirf3/", "_blank")
               }
               className="text-white hover:text-yellow-200 transition-colors cursor-pointer bg-transparent border-none lg:text-xs xl:text-base font-medium whitespace-nowrap"
             >
@@ -214,7 +214,7 @@ const Header = () => {
             Campus Life
           </button>
           <button
-              onClick={() => window.open("https://snsct.org/nirf3/", "_blank")}
+              onClick={() => window.open("https://snsct.bitrix24.site/nirf3/", "_blank")}
               className="block w-full text-left text-white hover:text-yellow-200 transition-colors py-3 px-4 rounded-md hover:bg-white/10 bg-transparent border-none"
           >
             NIRF
