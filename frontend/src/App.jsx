@@ -34,10 +34,7 @@ const App = () => {
               className="absolute top-0 left-0 w-full h-full"
             />
             <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden font-bold text-xs sm:text-sm">
-              <span className="transition-all duration-500 ease-in-out transform group-hover:-translate-y-full group-hover:opacity-0 opacity-100">
-                View More
-              </span>
-              <span className="absolute transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0 group-hover:opacity-100 opacity-0">
+              <span >
                 Old Site
               </span>
             </div>
