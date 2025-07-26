@@ -1,80 +1,70 @@
-# SNSCT Agentic Bitrix - College Website
+# SNSCT Website
 
-**A modern, responsive college website built with React and Vite, showcasing academic programs, facilities, and student services.**
+Welcome to the official repository for the SNS College of Technology (SNSCT) website, built with ReactJS! This project aims to provide an interactive, modern, and responsive platform for prospective students, current students, faculty, and stakeholders to access information about academic programs, innovation, placements, startups, campus life, and admissions.
 
-# 🚀Features
-Responsive Design - Optimized for all devices (mobile, tablet, desktop)
-Academic Programs - Interactive program listings with filtering
-Innovation Labs - Showcase of cutting-edge facilities
-SPINE Experience - 5-level activity center with world-class facilities
-Startup Incubator - Information about the startup ecosystem
-Admissions - Comprehensive admission information
-Placement Services - Career and placement details
+## Live Deployment - (https://agentic-bitrix-updated.vercel.app/)
 
-# 🛠️Tech Stack
-Frontend: React 18
-Build Tool: Vite
-Styling: Tailwind CSS
-Icons: Lucide React
-Development: ESLint for code quality
+## 🚀 Features
 
-# 📁Project Structure
-agentic_bitrix/
-├── frontend/
-│   ├── src/
-│   │   ├── assets/          # Images and static files
-│   │   ├── Components/      # React components
-│   │   │   ├── academic-programs.jsx
-│   │   │   ├── admission-section.jsx
-│   │   │   ├── BitrixForm.jsx
-│   │   │   ├── footer.jsx
-│   │   │   ├── header.jsx
-│   │   │   ├── hero.jsx
-│   │   │   ├── innovation.jsx
-│   │   │   ├── placement.jsx
-│   │   │   ├── spine.jsx
-│   │   │   └── startup.jsx
-│   │   ├── App.jsx          # Main app component
-│   │   ├── main.jsx         # Entry point
-│   │   ├── App.css          # Global styles
-│   │   └── index.css        # Base styles
-│   ├── public/              # Public assets
-│   ├── package.json         # Dependencies
-│   └── vite.config.js       # Vite configuration
-└── README.md
+- **Modern UI/UX:** A clean, responsive interface optimized for desktop and mobile devices.
+- **Academic Programs:** Detailed information about courses and programs offered.
+- **Innovation Ecosystem:** Showcase of innovation initiatives, labs, and activities.
+- **Startups:** Highlights and stories from student and alumni startups.
+- **Placements:** Placement statistics, recruiter details, and success stories.
+- **Campus Life:** Insights into campus facilities, events, and student life.
+- **Admissions:** Easy access to admission details and forms.
+- **Interactive Contact Options:** Quick links to WhatsApp and old site for user convenience.
+- **Bitrix Integration:** Embedded Bitrix form for inquiries and lead collection.
 
-** 📱Responsive Breakpoints **
-Mobile: < 640px
-Tablet: 640px - 1024px
-Desktop: > 1024px
-
-
-## 🖥️ Command Line Instructions
-
-### Initial Setup
-
-```bash
-
-Node.js (v16 or higher)
-npm or yarn
-
-**Installation**
-# Clone and setup
-git clone https://github.com/ksnaveenkumar2k/agentic_bitrix
-
-# Navigate to frontend directory
-cd agentic_bitrix
-
-cd frontend
-
-# Install dependencies
-npm install
-
-
-#Start development server**
-npm run dev
-
-
+## 🏗️ Project Structure
 
 ```
+frontend/
+├── src/
+│   ├── App.jsx
+│   ├── Components/
+│   │   ├── header.jsx
+│   │   ├── hero.jsx
+│   │   ├── academic-programs.jsx
+│   │   ├── innovation.jsx
+│   │   ├── startup.jsx
+│   │   ├── placement.jsx
+│   │   ├── spine.jsx
+│   │   ├── admission-section.jsx
+│   │   ├── footer.jsx
+│   │   └── BitrixForm.jsx
+│   ├── assets/
+│   │   ├── browser.svg
+│   │   ├── whatsapp.svg
+│   │   └── chatBubble.svg
+│   └── ...
+└── ...
+```
 
+## 🖥️ Getting Started
+
+### Prerequisites
+
+- [React.js](https://react.dev/) (v20+ recommended)
+
+
+### Installation
+
+```bash
+git clone https://github.com/ProductFactory-01/agentic_bitrix.git
+cd agentic_bitrix/frontend
+npm install
+```
+
+### Running Locally
+
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`.
+
+
+## 📄 License
+
+This project is licensed under the [MIT License].
