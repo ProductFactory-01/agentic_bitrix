@@ -4,7 +4,7 @@ Welcome to the official repository for the SNS College of Technology (SNSCT) web
 
 ## Live Deployment - (https://agentic-bitrix-updated.vercel.app/)
 
-## 🚀 Features
+## Features
 
 - **Modern UI/UX:** A clean, responsive interface optimized for desktop and mobile devices.
 - **Academic Programs:** Detailed information about courses and programs offered.
@@ -16,7 +16,7 @@ Welcome to the official repository for the SNS College of Technology (SNSCT) web
 - **Interactive Contact Options:** Quick links to WhatsApp and old site for user convenience.
 - **Bitrix Integration:** Embedded Bitrix form for inquiries and lead collection.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 frontend/
@@ -41,7 +41,7 @@ frontend/
 └── ...
 ```
 
-## 🖥️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -65,6 +65,6 @@ npm run dev
 The app will be available at `http://localhost:5173`.
 
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License].
